@@ -9,16 +9,20 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: #111827;
             background-color: #ffffff;
-            line-height: 1.5;
+            line-height: 1.4;
             margin: 0;
-            padding: 40px;
+            padding: 30px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
         h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             margin: 0 0 5px 0;
             text-transform: uppercase;
@@ -26,31 +30,32 @@
             color: #0f172a;
         }
         h2 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            margin: 20px 0 8px 0;
+            margin: 15px 0 6px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #1e293b;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 3px;
+            padding-bottom: 2px;
         }
         h3 {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            margin: 0 0 2px 0;
+            margin: 0 0 3px 0;
             color: #334155;
         }
         p {
-            font-size: 12px;
-            margin: 0 0 10px 0;
+            font-size: 11.5px;
+            margin: 0 0 8px 0;
             color: #475569;
         }
         .contact-info {
             font-size: 11px;
             color: #475569;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
         }
@@ -63,20 +68,21 @@
         }
         .quote {
             font-style: italic;
-            font-size: 12px;
+            font-size: 11px;
             color: #64748b;
-            margin: 10px 0 15px 0;
+            margin: 5px 0 10px 0;
             border-left: 3px solid #cbd5e1;
             padding-left: 10px;
+            display: inline-block;
         }
         .experience-item, .project-item {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .item-header {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 3px;
+            font-size: 11.5px;
+            margin-bottom: 2px;
         }
         .role {
             font-weight: 700;
@@ -87,38 +93,38 @@
             font-weight: 500;
         }
         ul {
-            margin: 0 0 8px 0;
-            padding-left: 20px;
-            font-size: 12px;
+            margin: 0 0 6px 0;
+            padding-left: 18px;
+            font-size: 11.5px;
             color: #475569;
         }
         li {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            font-size: 12px;
+            gap: 10px 20px;
+            font-size: 11.5px;
         }
         .skills-category {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         .category-title {
             font-weight: 700;
             color: #334155;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         @media print {
             body {
-                padding: 20px;
-                font-size: 11px;
+                padding: 15px;
+                font-size: 10.5px;
             }
             .no-print {
                 display: none;
             }
             h2 {
-                margin-top: 15px;
+                margin-top: 10px;
             }
         }
     </style>
@@ -126,8 +132,8 @@
 <body>
     <div class="container">
         <!-- Print / PDF Hint -->
-        <p class="no-print" style="text-align: right; margin-bottom: 20px;">
-            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 12px;">Print / Save as PDF</a>
+        <p class="no-print" style="text-align: right; margin-bottom: 15px;">
+            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 11px;">Print / Save as PDF</a>
         </p>
 
         <!-- Header -->
@@ -145,7 +151,7 @@
             </div>
         </header>
 
-        <!-- Profile Summary -->
+        <!-- Professional Summary -->
         <section>
             <h2>Professional Summary</h2>
             <p>
@@ -153,17 +159,43 @@
             </p>
         </section>
 
-        <!-- Core Skills -->
+        <!-- Education -->
         <section>
-            <h2>Technical Skills & Competencies</h2>
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="role">University of South Dakota</span>
+                    <span class="date-location">Vermillion, SD | Expected May 2027</span>
+                </div>
+                <div style="font-size: 11.5px; color: #475569; font-weight: 500; margin-top: 1px;">
+                    B.S. Computer Science, Minor in Innovation & Entrepreneurship
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skills-category">
-                    <div class="category-title">Systems Core (Builder)</div>
-                    <div>Python, TypeScript, SQL, Node.js, C++, Next.js 15, React 19, FastAPI, Express, Supabase, WebSockets, WebRTC, AST parsing, Cryptography (AES-256-GCM), Multi-Agent RL.</div>
+                    <div class="category-title">Languages</div>
+                    <div>Python, TypeScript, JavaScript, SQL</div>
                 </div>
                 <div class="skills-category">
-                    <div class="category-title">Venture Core (Operator)</div>
-                    <div>Go-To-Market (GTM) Execution, Customer Discovery, SaaS Pricing Architecture, Campus Distribution Channels, Creative Direction, Brand Consulting, live athletic broadcast production.</div>
+                    <div class="category-title">Frameworks & Libraries</div>
+                    <div>Next.js, React, Node.js, Tailwind CSS</div>
+                </div>
+                <div class="skills-category">
+                    <div class="category-title">AI/ML</div>
+                    <div>Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost</div>
+                </div>
+                <div class="skills-category">
+                    <div class="category-title">Tools & Infra</div>
+                    <div>Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git</div>
+                </div>
+                <div class="skills-category" style="grid-column: span 2;">
+                    <div class="category-title">Other</div>
+                    <div>WebRTC, REST APIs, CodeMirror 6, Piston API</div>
                 </div>
             </div>
         </section>
@@ -202,7 +234,7 @@
                 </div>
                 <ul>
                     <li>Managed brand identities and distribution campaigns for 10+ internet creators and small businesses.</li>
-                    <li>Maintained 100% long-term client retention under strict NDAs, coordinating assets and channel logic.</li>
+                    <li>Maintained 100% long-term client retention under NDAs, coordinating assets and channel logic.</li>
                 </ul>
             </div>
 
@@ -212,48 +244,70 @@
                     <span class="date-location">USD Athletics | 2025 – Present</span>
                 </div>
                 <ul>
-                    <li>Direct live-event audio, stadium display boards, and broadcast cues under high-stakes real-time parameters with zero scheduling tolerance.</li>
+                    <li>Direct live-event audio, stadium display boards, and broadcast cues under high-stakes parameters with zero scheduling tolerance.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Selected Projects -->
         <section>
-            <h2>Selected Projects</h2>
+            <h2>Selected Projects & Research</h2>
 
             <div class="project-item">
-                <h3>Vibein (<a href="https://vibein.us" target="_blank">vibein.us</a>) — Anonymous Professional Network</h3>
-                <p>Designed and built an anonymous matchmaking tool relying on peer recommendation matrices and mutual intent. Scaled network to 821 users pre-beta with 40% Daily Active User retention using campus club distribution playbooks.</p>
+                <div class="item-header">
+                    <span class="role">PRISM — PR Risk Intelligence & Structural Modeling (Research)</span>
+                    <span class="date-location">2026</span>
+                </div>
+                <ul>
+                    <li>Designed an ML system predicting post-merge engineering risk from pull request structural signals; trained XGBoost model over ~45 engineered features (AST complexity via tree-sitter, dependency graph betweenness via NetworkX, SZZ-inspired bug labels).</li>
+                    <li>Implemented explainability workflows via SHAP TreeExplainer; achieved AUC target ≥ 0.80 and maintained cross-repository generalization gap ΔAUC &lt; 0.05.</li>
+                    <li>Produced two formal research proposals: USD faculty version and MSU mentorship version with full mathematical appendix.</li>
+                </ul>
             </div>
 
             <div class="project-item">
-                <h3>ArenaHQ (<a href="https://arenahq.us" target="_blank">arenahq.us</a>) — 1v1 Competitive Coding Platform</h3>
-                <p>Created a live evaluation tournament engine with CodeMirror 6, Supabase WebSockets, and P2P camera authentication. Monetized via an enterprise Recruiter Portal allowing recruiters to fast-track winners, bypassing traditional resume loops.</p>
+                <div class="item-header">
+                    <span class="role">COGN — Cognitive Integrity Layer for AI-Assisted Codebases</span>
+                    <span class="date-location">2026</span>
+                </div>
+                <ul>
+                    <li>Coined and developed the concept of "cognitive drift"—measurable shifts in reasoning patterns introduced by AI-generated code.</li>
+                    <li>Designed three core primitives (<code style="font-weight: bold; color: #1e293b;">cogn.signature</code>, <code style="font-weight: bold; color: #1e293b;">cogn.transfer</code>, <code style="font-weight: bold; color: #1e293b;">cogn.integrity</code>) and a CI/CD GitHub Action that scores PRs for cognitive coherence against repository baselines.</li>
+                    <li>Positioned as open-source developer tooling; established a v0 monetization target of $49 for manual Cognitive Audit Reports.</li>
+                </ul>
             </div>
 
             <div class="project-item">
-                <h3>WTFcode — CLI Dependency Graph Engine</h3>
-                <p>Developed a local python CLI (`pip install wtfcode`) that maps code AST relationships and import blast-radius details. Saves developer token costs by compressing large code repo contexts 832x (568K tokens to 683) for AI coders.</p>
+                <div class="item-header">
+                    <span class="role">Vibein (vibein.us) — Anonymous Professional Network</span>
+                    <span class="date-location">2025</span>
+                </div>
+                <ul>
+                    <li>Designed and built an anonymous matchmaking tool relying on peer recommendation matrices and mutual intent.</li>
+                    <li>Scaled network to 821 users pre-beta with 40% Daily Active User retention using campus club distribution playbooks.</li>
+                </ul>
             </div>
 
             <div class="project-item">
-                <h3>ARC — Behavioral Intelligence Platform</h3>
-                <p>Built a temporal behavior autoencoder mapping 847 performance dimensions using persistent homology algorithms to track user focus. Sourced $2.1M Pre-Seed and secured 3 clinical partnerships (Johns Hopkins, MIT, Stanford d.school).</p>
+                <div class="item-header">
+                    <span class="role">ArenaHQ (arenahq.us) — 1v1 Competitive Coding Platform</span>
+                    <span class="date-location">2025</span>
+                </div>
+                <ul>
+                    <li>Created a live evaluation tournament engine with CodeMirror 6, Supabase WebSockets, and P2P camera authentication.</li>
+                    <li>Monetized via an enterprise Recruiter Portal allowing recruiters to fast-track winners, bypassing traditional resume loops.</li>
+                </ul>
             </div>
 
             <div class="project-item">
-                <h3>ALASKA — Veteran Assistant</h3>
-                <p>Developed a local-first, privacy-first VA benefit claims mapper utilizing AES-256-GCM encryption and Gemini Vision to auto-fill 10 structured forms. Placed in Top 10 at the Wildfire Labs Hackathon.</p>
-            </div>
-
-            <div class="project-item">
-                <h3>AccessFlow — Accessibility Triage Tool</h3>
-                <p>Designed an accessibility audit console to help software engineering teams triage WCAG issues, determining whether to fix, replace, or completely deprecate problematic components.</p>
-            </div>
-
-            <div class="project-item">
-                <h3>Revenue Leak Auditor — Billing Recovery Script</h3>
-                <p>Built a developer analytics tool that parses git history and tracker logs to identify unbilled hours, helping freelance agencies recover lost revenue streams.</p>
+                <div class="item-header">
+                    <span class="role">WTFcode — CLI Dependency Graph Engine</span>
+                    <span class="date-location">2025</span>
+                </div>
+                <ul>
+                    <li>Developed a local Python CLI (`pip install wtfcode`) mapping code AST relationships and import blast-radius details.</li>
+                    <li>Saves developer token costs by compressing large code repository contexts 832x (from 568K tokens to 683) for AI coders.</li>
+                </ul>
             </div>
         </section>
     </div>
