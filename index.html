@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddartha Reddy Munugala | Portfolio Ledger</title>
+    
+    <!-- SEO Best Practices -->
+    <meta name="description" content="Portfolio of Siddartha Reddy Munugala - A fusion of hardcore technical builder and high-leverage business operator. Custom bento-grid, mobile-first design, interactive terminal, and dynamic Builder/Operator modes.">
+    <meta name="keywords" content="Siddartha Reddy Munugala, Siddartha Munugala, redsid5, Software Engineer, GTM Operator, Product Builder, Portfolio, Bento Grid, AI Developer">
+    <meta name="author" content="Siddartha Reddy Munugala">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#080B11',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/css">
+        :root {
+            --accent: #14B8A6;
+            --accent-glow: rgba(20, 184, 166, 0.08);
+            --accent-border: rgba(20, 184, 166, 0.2);
+            --accent-border-hover: rgba(20, 184, 166, 0.5);
+            --accent-text-light: #2DD4BF;
+        }
+
+        body.mode-operator {
+            --accent: #8B5CF6;
+            --accent-glow: rgba(139, 92, 246, 0.08);
+            --accent-border: rgba(139, 92, 246, 0.2);
+            --accent-border-hover: rgba(139, 92, 246, 0.5);
+            --accent-text-light: #A78BFA;
+        }
+
+        body {
+            background-color: #080B11;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .accent-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Scanline Overlay for Terminal */
+        .scanlines {
+            position: relative;
+            overflow: hidden;
+        }
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080B11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Glowing background blobs */
+        .glow-blob {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(8, 11, 17, 0) 70%);
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+            transition: background 0.5s ease;
+        }
+
+        /* Matrix Rain Canvas */
+        #matrix-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Command Autocomplete indicator */
+        .input-caret::after {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--accent);
+            vertical-align: middle;
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent }
+            50% { background-color: var(--accent) }
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col relative select-none accent-transition">
+    
+    <!-- Background elements -->
+    <canvas id="matrix-canvas"></canvas>
+    <div class="glow-blob top-10 left-[-100px]" style="--accent-glow: rgba(20, 184, 166, 0.06);"></div>
+    <div class="glow-blob bottom-40 right-[-100px]" style="--accent-glow: rgba(139, 92, 246, 0.04);"></div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800/80 bg-[#080B11]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+            <a href="#" class="font-mono font-bold tracking-tight text-white text-base sm:text-lg hover:opacity-85 transition-opacity">
+                SIDDARTHA REDDY MUNUGALA
+            </a>
+            <span class="hidden lg:inline-block font-mono text-[10px] text-gray-500 border border-gray-800 rounded px-2 py-0.5">
+                SECURE_ID: 0xREDSID5
+            </span>
+        </div>
+        
+        <div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 font-mono text-xs">
+            <a href="https://github.com/Redsid5" target="_blank" id="nav-github" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ GITHUB ]</a>
+            <a href="https://linkedin.com/in/siddartha-reddy-munugala-95b35a333" target="_blank" id="nav-linkedin" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ LINKEDIN ]</a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" id="nav-email" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ EMAIL ]</a>
+            
+            <!-- Sliding Switch Toggle -->
+            <div class="relative bg-gray-900/80 border border-gray-800 rounded-full p-0.5 flex items-center w-52 h-8 select-none">
+                <div id="toggle-bg" class="absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-teal-500/10 border border-teal-500/30"></div>
+                <button onclick="setMode('builder')" id="btn-builder" class="relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-teal-400">
+                    [ BUILDER ]
+                </button>
+                <button onclick="setMode('operator')" id="btn-operator" class="relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500">
+                    [ OPERATOR ]
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="relative z-10 pt-32 pb-16 px-4 sm:px-8 max-w-7xl mx-auto w-full flex-grow space-y-12 sm:space-y-16">
+        
+        <!-- Hero Split Pane -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Hero Description Panel (Left) -->
+            <div class="lg:col-span-7 flex flex-col justify-between border border-gray-800/80 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 accent-transition hover:border-[var(--accent-border-hover)]">
+                
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    
+                    <!-- Styled Avatar Headshot -->
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-[var(--accent)] bg-gray-950/80 p-1 shrink-0 accent-transition shadow-[0_0_15px_var(--accent-border)]">
+                        <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="space-y-3 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-950/85 border border-gray-800 font-mono text-[10px] uppercase tracking-widest text-gray-400">
+                            <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse accent-transition"></span>
+                            <span id="identity-status">BUILDER STATE_ACTIVE</span>
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                            Siddartha Reddy Munugala
+                        </h1>
+                        <p class="text-gray-400 text-sm font-mono tracking-wider uppercase text-[var(--accent)] accent-transition">
+                            Systems Builder & Venture Operator
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-gray-250 text-lg sm:text-xl font-medium leading-relaxed font-sans">
+                        I turn complex engineering ideas into clean, fast, premium systems.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        Fusing production-grade engineering structures with product-focused startup execution. I deploy systems designed to reduce friction, establish workflow loops, and scale efficiently.
+                    </p>
+                    
+                    <!-- Bold Quote block -->
+                    <div class="border-l-2 border-[var(--accent)] pl-4 py-1 italic text-xs text-gray-300 font-mono accent-transition bg-gray-950/40 pr-3 rounded-r">
+                        "Instead of doing nothing, I choose to do everything possible."
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3 pt-2 font-mono text-xs w-full">
+                    <a href="resume.html" target="_blank" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg border border-gray-800 bg-gray-955 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
+                        [ VIEW CV / RESUME ]
+                    </a>
+                    <a href="#projects" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg bg-white text-slate-955 hover:bg-gray-200 min-h-[48px] flex items-center justify-center sm:flex-1">
+                        [ VIEW PROJECTS ]
+                    </a>
+                    <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg border border-gray-800 bg-gray-955 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
+                        [ CONTACT ME ]
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal Panel (Right) -->
+            <div class="lg:col-span-5 border border-gray-800/80 bg-black/50 rounded-xl overflow-hidden flex flex-col h-[380px] font-mono text-xs shadow-2xl relative scanlines group hover:border-[var(--accent-border-hover)] accent-transition">
+                <!-- Terminal Header -->
+                <div class="bg-gray-900/60 px-4 py-3 border-b border-gray-800/80 flex justify-between items-center select-none z-20">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/70"></span>
+                        <span class="text-gray-500 text-[10px] ml-2 tracking-wider">TERMINAL ACTIVE // SIDDARTHA_REDDY</span>
+                    </div>
+                    <span class="text-gray-650 text-[10px]">v2.2.0</span>
+                </div>
+                
+                <!-- Terminal Screen -->
+                <div id="terminal-screen" class="p-4 flex-1 overflow-y-auto space-y-2 text-gray-300 scrollbar z-20">
+                    <!-- Typing boot sequence is populated by JavaScript -->
+                </div>
+                
+                <!-- Terminal Input Panel -->
+                <div class="p-4 bg-gray-950/60 border-t border-gray-950 flex items-center gap-2 z-20">
+                    <span class="text-[var(--accent)] accent-transition select-none font-bold">guest@redsid5:~$</span>
+                    <input type="text" id="terminal-input" class="bg-transparent text-white border-none outline-none flex-1 font-mono text-xs focus:ring-0 focus:outline-none" autocomplete="off" placeholder="Type 'help'..." aria-label="Terminal Input">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Metric Marquee Ticker -->
+        <section class="w-full border border-gray-850 bg-gray-950/40 backdrop-blur-sm rounded-xl overflow-hidden py-3.5 select-none relative z-10">
+            <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-950 to-transparent z-20"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-950 to-transparent z-20"></div>
+            <div class="flex whitespace-nowrap overflow-hidden">
+                <div class="flex items-center gap-12 font-mono text-xs tracking-wider text-gray-400 uppercase animate-marquee">
+                    <span>⚡ ARC: $2.1M Pre-Seed Closed // 12,400 Waitlist Signups // 81% Phase Accuracy at 60 days</span>
+                    <span>⚡ WTFcode: 832x Token Compression (568K tokens to 683)</span>
+                    <span>⚡ Vibein: 821 Registered Users Pre-Beta // 40% DAU // $0 Paid CAC</span>
+                    <span>⚡ PETRI-Verse: 62 LLM Agents // Autonomous Behavior logged at t=89</span>
+                    <span>⚡ ALASKA: VA PDF auto-fill completed via local AES-256-GCM layer</span>
+                    <span>⚡ AccessFlow: Automated WCAG triaging console active</span>
+                    <span>⚡ Revenue Leak Auditor: Found unbilled hourly billing streams</span>
+                    
+                    <span>⚡ ARC: $2.1M Pre-Seed Closed // 12,400 Waitlist Signups // 81% Phase Accuracy at 60 days</span>
+                    <span>⚡ WTFcode: 832x Token Compression (568K tokens to 683)</span>
+                    <span>⚡ Vibein: 821 Registered Users Pre-Beta // 40% DAU // $0 Paid CAC</span>
+                    <span>⚡ PETRI-Verse: 62 LLM Agents // Autonomous Behavior logged at t=89</span>
+                    <span>⚡ ALASKA: VA PDF auto-fill completed via local AES-256-GCM layer</span>
+                    <span>⚡ AccessFlow: Automated WCAG triaging console active</span>
+                    <span>⚡ Revenue Leak Auditor: Found unbilled hourly billing streams</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deeper About Me Section -->
+        <section id="about" class="space-y-6 relative z-10">
+            <div class="border-b border-gray-850 pb-4">
+                <h2 class="text-xl font-bold tracking-tight text-white">About Me</h2>
+                <p class="text-gray-500 text-xs font-mono">// The intentional fusion of logic and execution</p>
+            </div>
+
+            <!-- Bento Grid About Structure -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Box 1: Short Intro -->
+                <div class="lg:col-span-2 border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHO I AM</div>
+                    <p class="text-gray-300 text-base leading-relaxed font-sans">
+                        I’m Siddartha Reddy Munugala, a builder focused on full-stack development, AI tools, product thinking, and startup execution. I like turning ideas into real products that feel premium, clear, and useful.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        I build with a mix of engineering, design taste, and storytelling. For me, a great product is not just functional — it should feel sharp, memorable, and easy to understand. I care about speed, clarity, polish, and making things people actually want to use.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        My work often sits at the intersection of software, systems, and human behavior. I enjoy designing products that remove friction, create flow, and solve meaningful problems in a way that feels elegant. I like building things that are both technically strong and visually compelling.
+                    </p>
+                </div>
+
+                <!-- Box 2: What I Build -->
+                <div class="border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I BUILD</div>
+                    <ul class="space-y-2 text-gray-300 text-sm font-sans">
+                        <li class="flex items-start gap-2">
+                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
+                            <span>High-concurrency full-stack architectures (Next.js 15, FastAPI)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
+                            <span>Optimized AI prompt contexts & CLI pipelines (AST parsing)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
+                            <span>Local-first, encrypted browser tools (Web Crypto API)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Box 3: What I Care About -->
+                <div class="border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I CARE ABOUT</div>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        I enjoy creating systems that reduce friction, improve flow, and make complex ideas feel simple. Whether it’s a product, a tool, or a brand experience, I want it to feel intentional and memorable.
+                    </p>
+                </div>
+
+                <!-- Box 4: How I Work -->
+                <div class="border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// HOW I WORK</div>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        I combine user-driven discovery with aggressive development loops. I believe in running clean validation interviews, shipping functional CLI tools to optimize costs, and maintaining top-tier security models.
+                    </p>
+                </div>
+
+                <!-- Box 5: Outside of Code -->
+                <div class="border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// OUTSIDE OF CODE</div>
+                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
+                        Managing digital operations for the NSLS Executive Board and directing real-time media board operations for USD Athletics under tight live broadcast parameters.
+                    </p>
+                </div>
+
+                <!-- Box 6: What I'm Looking For (Full width on tablet/desktop) -->
+                <div class="lg:col-span-3 border border-gray-850 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I'M LOOKING FOR</div>
+                    <p class="text-gray-300 text-sm leading-relaxed font-sans">
+                        I’m especially interested in projects that combine product thinking with technical execution. My goal is to build work that looks sharp, performs well, and leaves a strong, lasting impression.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bento Grid Projects Matrix -->
+        <section id="projects" class="space-y-6 relative z-10">
+            <div class="flex justify-between items-end border-b border-gray-855 pb-4">
+                <div>
+                    <h2 class="text-xl font-bold tracking-tight text-white">Featured Projects</h2>
+                    <p class="text-gray-500 text-xs font-mono">// Live production modules and experimental codebases</p>
+                </div>
+                <div class="font-mono text-[10px] uppercase text-gray-500 hidden sm:block">
+                    7 active system logs found
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: ARC -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ARC_BEHAVIOR ]</span>
+                            <span id="badge-arc" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">ARC</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A behavioral intelligence platform for student-founders and dual-context lives.
+                        </p>
+                        
+                        <div id="content-arc" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: ArenaHQ -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ARENA_HQ ]</span>
+                            <span id="badge-arena" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">ArenaHQ</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A live competitive coding arena where skill is shown in real time.
+                        </p>
+                        
+                        <div id="content-arena" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: WTFcode -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: WTF_CODE ]</span>
+                            <span id="badge-wtf" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">WTFcode</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A dependency-map CLI that helps AI and developers understand large repositories faster.
+                        </p>
+                        
+                        <div id="content-wtf" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Vibein -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: VIBEIN_NET ]</span>
+                            <span id="badge-vibe" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">Vibein</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Anonymous professional networking based on trust, mutual intent, and meaningful matching.
+                        </p>
+                        
+                        <div id="content-vibe" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: ALASKA -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ALASKA_VA ]</span>
+                            <span id="badge-alaska" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">ALASKA</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A privacy-focused assistant for veterans that helps with documents, support, and VA flows.
+                        </p>
+                        
+                        <div id="content-alaska" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: AccessFlow -->
+                <div class="border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ACCESS_FLOW ]</span>
+                            <span id="badge-access" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">AccessFlow</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A triage tool that helps teams decide whether to fix, replace, or remove accessibility issues.
+                        </p>
+                        
+                        <div id="content-access" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Revenue Leak Auditor (Full width on tablet/desktop) -->
+                <div class="md:col-span-2 lg:col-span-3 border border-gray-850 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: REVENUE_LEAK ]</span>
+                            <span id="badge-leak" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-tight">Revenue Leak Auditor</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            A developer analytics tool that finds missed billing work and helps agencies recover lost revenue.
+                        </p>
+                        
+                        <div id="content-leak" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                            <!-- Loaded by JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Strengths / Why Work With Me Section -->
+        <section id="strengths" class="space-y-6 relative z-10">
+            <div class="border-b border-gray-855 pb-4">
+                <h2 class="text-xl font-bold tracking-tight text-white">Why Work With Me</h2>
+                <p class="text-gray-500 text-xs font-mono">// Core execution standards that drive results</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Strength 1 -->
+                <div class="border border-gray-850 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">01</div>
+                    <h3 class="text-sm font-bold text-white font-mono uppercase">Extreme Velocity</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
+                        I operate in short delivery loops. Turning conceptual ideas into verified engineering structures with zero unnecessary downtime.
+                    </p>
+                </div>
+                <!-- Strength 2 -->
+                <div class="border border-gray-850 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">02</div>
+                    <h3 class="text-sm font-bold text-white font-mono uppercase">Product Taste</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
+                        Engineering alone isn't enough. I design interfaces that prioritize user flow, visual consistency, and highly premium styling.
+                    </p>
+                </div>
+                <!-- Strength 3 -->
+                <div class="border border-gray-850 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">03</div>
+                    <h3 class="text-sm font-bold text-white font-mono uppercase">High-Signal Execution</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
+                        No fake metrics or noise. I build components designed around core conversion paths, compression goals, and clear business metrics.
+                    </p>
+                </div>
+                <!-- Strength 4 -->
+                <div class="border border-gray-850 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
+                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">04</div>
+                    <h3 class="text-sm font-bold text-white font-mono uppercase">Human Storytelling</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
+                        I compile complex technological operations into simple, readable explanations, ensuring partners understand the concrete value generated.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline & Skills Telemetry Split -->
+        <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 relative z-10">
+            
+            <!-- Column 1: Timeline -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="border-b border-gray-855 pb-4">
+                    <h2 class="text-xl font-bold text-white">Execution Timeline</h2>
+                    <p class="text-gray-500 text-xs font-mono">// History of development ownership and institutional leadership</p>
+                </div>
+                
+                <div class="space-y-6 font-sans">
+                    
+                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
+                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
+                            <span class="text-white font-bold text-sm">FOUNDER & CEO</span>
+                            <span class="text-gray-500 uppercase">VIBEIN / ARENAHQ | 2025 - PRESENT</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Coordinate complete production design cycles, system scaling pipelines, and real-time database schemas. Conducted 50+ discovery cycles and constructed strategic student-founder wedge market campaigns.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
+                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
+                            <span class="text-white font-bold text-sm">IT COORDINATOR & PUBLICITY CHAIR</span>
+                            <span class="text-gray-500 uppercase">NSLS BOARD | 2024 - PRESENT</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Oversee digital pipeline structures and directory systems for the National Society of Leadership and Success chapter. Implement systematic member tracking and distribution campaigns.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
+                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
+                            <span class="text-white font-bold text-sm">CREATIVE DIRECTOR & BRAND CONSULTANT</span>
+                            <span class="text-gray-500 uppercase">FREELANCE | 2019 - 2023</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Owned brand identities and audience growth algorithms for 10+ long-term clients. Executed end-to-end design frameworks and distribution models entirely protected under strict client NDAs.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
+                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
+                            <span class="text-white font-bold text-sm">MARKETING & PRODUCTION STAFF</span>
+                            <span class="text-gray-500 uppercase">USD ATHLETICS | 2025 - PRESENT</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Deploy and monitor high-stakes live media events, PA audio pipelines, and stadium video boards under tight real-time broadcast schedules.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Column 2: Skill Matrix -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="border-b border-gray-855 pb-4">
+                    <h2 class="text-xl font-bold text-white">Capabilities</h2>
+                    <p class="text-gray-500 text-xs font-mono">// Stack variables mapped to active mode matrices</p>
+                </div>
+
+                <div class="border border-gray-850 rounded-xl overflow-hidden font-mono text-xs bg-gray-900/10 backdrop-blur-sm">
+                    <!-- Builder Skills -->
+                    <div class="bg-gray-950/60 border-b border-gray-850 p-3 font-bold uppercase text-[var(--accent)] accent-transition tracking-wider flex justify-between items-center">
+                        <span>🛠️ Systems Core (Builder)</span>
+                        <span class="text-[9px] text-gray-500">READY</span>
+                    </div>
+                    <div class="p-4 space-y-2 text-gray-300">
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Languages:</span>
+                            <span class="text-right">Python, TypeScript, SQL, C++</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Frameworks:</span>
+                            <span class="text-right">Next.js 15, React 19, FastAPI, Express</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Infrastructure:</span>
+                            <span class="text-right">Supabase, WebRTC, Websockets, AST</span>
+                        </div>
+                        <div class="flex justify-between pb-0.5">
+                            <span class="text-gray-500">AI Architectures:</span>
+                            <span class="text-right">Transformer VAEs, TDA, Multi-Agent IRL</span>
+                        </div>
+                    </div>
+
+                    <!-- Operator Skills -->
+                    <div class="bg-gray-950/60 border-t border-gray-850 border-b border-gray-855 p-3 font-bold uppercase text-violet-400 tracking-wider flex justify-between items-center">
+                        <span>📈 Venture Core (Operator)</span>
+                        <span class="text-[9px] text-gray-500">READY</span>
+                    </div>
+                    <div class="p-4 space-y-2 text-gray-300">
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Growth Models:</span>
+                            <span class="text-right">GTM Wedge Campaigns, $0 CAC loops</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Discovery:</span>
+                            <span class="text-right">50+ Customer Discovery Interviews</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
+                            <span class="text-gray-500">Pricing Structures:</span>
+                            <span class="text-right">3-Tier SaaS, Enterprise Recruiter model</span>
+                        </div>
+                        <div class="flex justify-between pb-0.5">
+                            <span class="text-gray-500">Identity:</span>
+                            <span class="text-right">Storytelling Hooks, Creative Direction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="border border-gray-855 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 relative z-10 hover:border-[var(--accent-border-hover)] accent-transition">
+            <div class="space-y-2 text-center max-w-xl mx-auto">
+                <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider tracking-widest accent-transition">// CONNECT LAYER</div>
+                <h2 class="text-2xl font-bold tracking-tight text-white">Let's build something useful.</h2>
+                <p class="text-gray-400 text-sm font-sans leading-relaxed">
+                    Interested in starting a project, examining an architectural implementation, or collaborating on high-leverage product distribution? Let's get in touch.
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 max-w-lg mx-auto font-mono text-xs w-full">
+                <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
+                    [ SEND EMAIL ]
+                </a>
+                <a href="https://linkedin.com/in/siddartha-reddy-munugala-95b35a333" target="_blank" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-955 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
+                    [ LINKEDIN ]
+                </a>
+                <a href="https://github.com/Redsid5" target="_blank" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-955 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
+                    [ GITHUB ]
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 mt-16 py-8 text-center font-mono text-[9px] text-gray-655 relative z-10">
+        SIDDARTHA REDDY MUNUGALA // ALL RIGHTS RESERVED © 2026 // PRODUCTION PIPELINE: OPTIMIZED
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // Project Multi-Mode Database Matrix
+        const projectData = {
+            arc: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Model Pipeline:</span><span class="text-teal-400">4-Scale Temporal VAE</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">TDA Pipeline:</span><span class="text-white">Ripser Persistent Homology</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Engine Core:</span><span class="text-white">Python, PyTorch, FastAPI</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Frontend Stack:</span><span class="text-white">Next.js 15, React 19, Supabase RLS</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Sourced Funds:</span><span class="text-violet-400">$2.1M Pre-Seed Sourced</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Distribution:</span><span class="text-white">Student-Founder Wedge Market</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Clinicals:</span><span class="text-white">Johns Hopkins, MIT, Stanford</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Monetization:</span><span class="text-white">3-Tier SaaS Licensing Scale</span></div>
+                `
+            },
+            arena: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Realtime Network:</span><span class="text-teal-400">Supabase Websockets (TS)</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Media Pipeline:</span><span class="text-white">WebRTC Camera Multi-Stream</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Interpreter:</span><span class="text-white">Isolated Sandbox Piston API</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Editor Layer:</span><span class="text-white">CodeMirror 6, TS Strict</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Distribution:</span><span class="text-violet-400">Vibein Talent Network Feed</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Monetization:</span><span class="text-white">Enterprise Recruiter Portal</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Value Loop:</span><span class="text-white">Skip resume screening directly</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">GTM Funnel:</span><span class="text-white">Branded coding challenges</span></div>
+                `
+            },
+            wtf: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Parsing Engine:</span><span class="text-teal-400">Local AST Syntax Tree</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Topology Graph:</span><span class="text-white">Blast Radius Dependency Map</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Language Base:</span><span class="text-white">Python CLI (pip distribution)</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Mitigation:</span><span class="text-white">Flag Single Point of Failure files</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">GTM Funnel:</span><span class="text-violet-400">Zero-Friction Dev Adoption</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">API Compression:</span><span class="text-white">832x Token Savings (CLI AST)</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Token Cost:</span><span class="text-white">568,000 → 683 Tokens Map</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Value Loop:</span><span class="text-white">Context packaging prevents breakages</span></div>
+                `
+            },
+            vibe: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Scale Architecture:</span><span class="text-teal-400">Solo Architect Build</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Privacy Layer:</span><span class="text-white">Text Anonymizer Masking</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Recommendation:</span><span class="text-white">Custom Peer Link Heuristics</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Datastore:</span><span class="text-white">PostgreSQL relational models</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">User Growth:</span><span class="text-violet-400">821 Pre-Beta Signups</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Retention:</span><span class="text-white">40% Daily Active Users</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Paid CAC Loop:</span><span class="text-white">$0 Campus Distribution Network</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Interviews:</span><span class="text-white">50+ Target User Discovery Cycles</span></div>
+                `
+            },
+            alaska: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Encrypted Base:</span><span class="text-teal-400">Web Crypto AES-256-GCM</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Mapping:</span><span class="text-white">pdf-lib layout coordinate tables</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Vision Analysis:</span><span class="text-white">Gemini Vision Form Matching</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Infrastructure:</span><span class="text-white">Client-side only local state</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Hackathon Vector:</span><span class="text-violet-400">Wildfire Hackathon Top 10</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">VA Documents:</span><span class="text-white">10 Structured Forms Auto-fill</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Emergency Hook:</span><span class="text-white">Straight crisis router to 988</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Database Safety:</span><span class="text-white">Zero server storage footprint</span></div>
+                `
+            },
+            access: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Audit Metric:</span><span class="text-teal-400">Automated WCAG parsing</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Engine Core:</span><span class="text-white">NodeJS runtime triage rules</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Flow Action:</span><span class="text-white">Fix, replace, or deprecated tags</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Output Log:</span><span class="text-white">Structured triage reports</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Value Loop:</span><span class="text-violet-400">Accelerates compliance auditing</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Market Pain:</span><span class="text-white">Bypasses long manual triaging</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Cost Savings:</span><span class="text-white">Decreases legal/regulatory liabilities</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Integration:</span><span class="text-white">Developer CI/CD pipeline triggers</span></div>
+                `
+            },
+            leak: {
+                builder: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Audit Logic:</span><span class="text-teal-400">Git commit & log analytics</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Data Schema:</span><span class="text-white">Untracked code revisions map</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Tool Type:</span><span class="text-white">Python analytics package</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Data Source:</span><span class="text-white">GitHub / Jira task triggers</span></div>
+                `,
+                operator: `
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Revenue Recovery:</span><span class="text-violet-400">Recovers lost billing hours</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Agency Value:</span><span class="text-white">Identifies missed billable loops</span></div>
+                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">ROI Metric:</span><span class="text-white">Proven hourly gains tracking</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">Market Wedge:</span><span class="text-white">Freelance development networks</span></div>
+                `
+            }
+        };
+
+        // State Machine Controller
+        function setMode(mode) {
+            const body = document.body;
+            const toggleBg = document.getElementById('toggle-bg');
+            const btnBuilder = document.getElementById('btn-builder');
+            const btnOperator = document.getElementById('btn-operator');
+            const identityStatus = document.getElementById('identity-status');
+            
+            const badges = {
+                arc: document.getElementById('badge-arc'),
+                arena: document.getElementById('badge-arena'),
+                wtf: document.getElementById('badge-wtf'),
+                vibe: document.getElementById('badge-vibe'),
+                alaska: document.getElementById('badge-alaska'),
+                access: document.getElementById('badge-access'),
+                leak: document.getElementById('badge-leak')
+            };
+
+            if (mode === 'builder') {
+                body.classList.remove('mode-operator');
+                
+                // Toggle Switch Styling
+                toggleBg.style.transform = 'translateX(0)';
+                toggleBg.className = "absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-teal-500/10 border border-teal-500/30";
+                btnBuilder.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-teal-400";
+                btnOperator.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500";
+                
+                // Navigation Active State Highlight
+                document.getElementById('nav-github').className = "text-gray-400 hover:text-teal-400 accent-transition";
+                document.getElementById('nav-linkedin').className = "text-gray-400 hover:text-teal-400 accent-transition";
+                document.getElementById('nav-email').className = "text-gray-400 hover:text-teal-400 accent-transition";
+                
+                // Status Pill
+                identityStatus.innerText = "BUILDER STATE_ACTIVE";
+                
+                // Morph content matrices to builder (technical) mode
+                Object.keys(projectData).forEach(key => {
+                    const contentEl = document.getElementById(`content-${key}`);
+                    if(contentEl) {
+                        contentEl.style.opacity = '0';
+                        setTimeout(() => {
+                            contentEl.innerHTML = projectData[key].builder;
+                            contentEl.style.opacity = '1';
+                        }, 150);
+                    }
+                    if(badges[key]) {
+                        badges[key].className = "font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition";
+                        badges[key].innerText = "Builder";
+                    }
+                });
+            } else {
+                body.classList.add('mode-operator');
+                
+                // Toggle Switch Styling
+                toggleBg.style.transform = 'translateX(104px)';
+                toggleBg.className = "absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-violet-500/10 border border-violet-500/30";
+                btnBuilder.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500";
+                btnOperator.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-violet-400";
+                
+                // Navigation Active State Highlight
+                document.getElementById('nav-github').className = "text-gray-400 hover:text-violet-400 accent-transition";
+                document.getElementById('nav-linkedin').className = "text-gray-400 hover:text-violet-400 accent-transition";
+                document.getElementById('nav-email').className = "text-gray-400 hover:text-violet-400 accent-transition";
+                
+                // Status Pill
+                identityStatus.innerText = "OPERATOR STATE_ACTIVE";
+
+                // Morph content matrices to operator (business/GTM) mode
+                Object.keys(projectData).forEach(key => {
+                    const contentEl = document.getElementById(`content-${key}`);
+                    if(contentEl) {
+                        contentEl.style.opacity = '0';
+                        setTimeout(() => {
+                            contentEl.innerHTML = projectData[key].operator;
+                            contentEl.style.opacity = '1';
+                        }, 150);
+                    }
+                    if(badges[key]) {
+                        badges[key].className = "font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-violet-500/20 bg-violet-500/5 text-violet-400 accent-transition";
+                        badges[key].innerText = "Operator";
+                    }
+                });
+            }
+        }
+
+        // Terminal Helper: Append Output
+        function appendTerminalOutput(htmlContent) {
+            const terminalScreen = document.getElementById('terminal-screen');
+            const line = document.createElement('div');
+            line.innerHTML = htmlContent;
+            terminalScreen.appendChild(line);
+            terminalScreen.scrollTop = terminalScreen.scrollHeight;
+        }
+
+        // Terminal Bootup Log Diagnostics
+        const bootSequence = [
+            { text: "// INITIATING MAIN SYSTEM PORTFOLIO BOOTSTRAP...", delay: 100, color: "text-gray-500" },
+            { text: "CPU: AMD Zen Virtual Engine // IMAGE MATRIX: INTEGRATED", delay: 250, color: "text-gray-400" },
+            { text: "QUOTE LOADED: 'Instead of doing nothing, I choose to do everything possible.'", delay: 400, color: "text-violet-400" },
+            { text: "✔ [SYS_01] ARC: 847 Behavioral dimensions verified. Phase Accuracy: 81%", delay: 600, color: "text-teal-400" },
+            { text: "✔ [SYS_02] ArenaHQ: WebSocket P2P camera authentication active.", delay: 800, color: "text-teal-400" },
+            { text: "✔ [SYS_03] WTFcode: AST CLI AST parser online. Token saving 832x.", delay: 1000, color: "text-teal-400" },
+            { text: "✔ [SYS_04] Vibein: Anonymous talent routing verified. 821 signups.", delay: 1200, color: "text-teal-400" },
+            { text: "✔ [SYS_05] ALASKA: Web Crypto AES-256 forms verified.", delay: 1400, color: "text-teal-400" },
+            { text: "✔ [SYS_06] AccessFlow: Automated WCAG triaging logic loaded.", delay: 1550, color: "text-teal-400" },
+            { text: "✔ [SYS_07] Revenue Leak Auditor: Git log analytics active.", delay: 1700, color: "text-teal-400" },
+            { text: "PORTFOLIO LEDGER LOADED. Welcome to Siddartha's Core Terminal.", delay: 1850, color: "text-blue-400" },
+            { text: "Type 'help' to review directory commands, or 'projects' to dump the data ledger.", delay: 1950, color: "text-gray-400" }
+        ];
+
+        function runBootSequence() {
+            bootSequence.forEach(step => {
+                setTimeout(() => {
+                    appendTerminalOutput(`<div class="${step.color}">${step.text}</div>`);
+                }, step.delay);
+            });
+        }
+
+        // Console Emulation Logic Engine
+        const terminalInput = document.getElementById('terminal-input');
+
+        terminalInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const command = this.value.trim().toLowerCase();
+                
+                // Echo command back to screen
+                appendTerminalOutput(`<div class="text-gray-500 pt-1"><span class="text-[var(--accent)] accent-transition">guest@redsid5:~$</span> ${this.value}</div>`);
+                this.value = '';
+
+                setTimeout(() => {
+                    switch(command) {
+                        case 'help':
+                            appendTerminalOutput(`
+                                <div class="text-gray-400">Available commands:</div>
+                                <div> - <span class="text-teal-400">projects</span>: Dumps active metric infrastructure state arrays.</div>
+                                <div> - <span class="text-teal-400">resume</span>: Dumps core functional execution profile.</div>
+                                <div> - <span class="text-teal-400">builder</span>: Forces site state switch to BUILDER teal matrix.</div>
+                                <div> - <span class="text-teal-400">operator</span>: Forces site state switch to OPERATOR violet matrix.</div>
+                                <div> - <span class="text-teal-400">clear</span>: Wipes the console viewport thread.</div>
+                            `);
+                            break;
+                        case 'clear':
+                            document.getElementById('terminal-screen').innerHTML = '';
+                            break;
+                        case 'projects':
+                            appendTerminalOutput(`
+                                <div class="text-teal-400 font-bold">[ GLOBAL METRICS PRODUCTION DUMP ]</div>
+                                <div>• ARC: temporal VAE model (FastAPI/PyTorch) - $2.1M Pre-seed.</div>
+                                <div>• ArenaHQ: Live WebSockets competition sandbox (Turbopack/CodeMirror).</div>
+                                <div>• WTFcode: AST parser & blast radius context minimizer CLI tool.</div>
+                                <div>• Vibein: Anonymous network, 821 users pre-beta, 40% active retention.</div>
+                                <div>• ALASKA: local Web Crypto VA filing assistant, AES-256 compliance.</div>
+                                <div>• AccessFlow: Accessibility triaging rules engine.</div>
+                                <div>• Revenue Leak Auditor: commits Git-based billings recovery checker.</div>
+                            `);
+                            break;
+                        case 'resume':
+                            appendTerminalOutput(`
+                                <div class="text-violet-400 font-bold">[ CAREER SPECIFICATIONS ]</div>
+                                <div>Siddartha Reddy Munugala — Systems Builder & Venture Operator.</div>
+                                <div>• Founder & CEO, Vibein/ArenaHQ (2025-Present)</div>
+                                <div>• IT Coordinator, NSLS executive board (2024-Present)</div>
+                                <div>• Creative Director & consultant, Freelance (2019-2023)</div>
+                                <div>• Production Operations, USD Athletics (2025-Present)</div>
+                            `);
+                            break;
+                        case 'builder':
+                            setMode('builder');
+                            appendTerminalOutput(`<div class="text-teal-400">Switching state metrics: Mode changed to BUILDER. Accent matrix color green updated.</div>`);
+                            break;
+                        case 'operator':
+                            setMode('operator');
+                            appendTerminalOutput(`<div class="text-violet-400">Switching state metrics: Mode changed to OPERATOR. Accent matrix color gold updated.</div>`);
+                            break;
+                        case '':
+                            break;
+                        default:
+                            appendTerminalOutput(`<span class="text-red-400">✘ Command syntax deviation error:</span> '${command}' not recognized. Type 'help'.`);
+                    }
+                }, 50);
+            }
+        });
+
+        // Matrix Rain Canvas Simulation
+        const canvas = document.getElementById("matrix-canvas");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        const columns = Math.floor(canvas.width / 20) + 1;
+        const yPositions = Array(columns).fill(0);
+
+        function matrixStep() {
+            ctx.fillStyle = "rgba(8, 11, 17, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Set color based on mode
+            const isOperator = document.body.classList.contains("mode-operator");
+            ctx.fillStyle = isOperator ? "#8B5CF6" : "#14B8A6";
+            ctx.font = "10px monospace";
+
+            yPositions.forEach((y, index) => {
+                const char = String.fromCharCode(33 + Math.random() * 93);
+                const x = index * 20;
+                ctx.fillText(char, x, y);
+
+                if (y > 100 + Math.random() * 10000) {
+                    yPositions[index] = 0;
+                } else {
+                    yPositions[index] = y + 10;
+                }
+            });
+        }
+        setInterval(matrixStep, 50);
+
+        // System Initialization
+        window.onload = function() {
+            setMode('builder');
+            runBootSequence();
+        };
+    </script>
+</body>
+</html>
