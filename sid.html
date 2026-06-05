@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sid | Personal Profile Ledger</title>
+    
+    <!-- SEO Best Practices -->
+    <meta name="description" content="Personal Profile of Sid (Siddartha Reddy Munugala). High-energy, conversation-driven builder, fast thinker, and startup operator. Unfiltered, bold, and human.">
+    <meta name="keywords" content="Sid, Siddartha Reddy Munugala, redsid5, Builder Persona, Personal Profile, Startup Builder">
+    <meta name="author" content="Siddartha Reddy Munugala">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#06090F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/css">
+        body {
+            background-color: #06090F;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .accent-transition {
+            transition: all 0.25s ease-in-out;
+        }
+        /* Glowing background blobs */
+        .glow-blob {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.05) 0%, rgba(6, 9, 15, 0) 70%);
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06090F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col relative select-none accent-transition">
+    
+    <!-- Background elements -->
+    <div class="glow-blob top-10 left-[-100px]"></div>
+    <div class="glow-blob bottom-40 right-[-100px]" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, rgba(6, 9, 15, 0) 70%);"></div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#06090F]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+            <span class="font-mono font-bold tracking-tight text-white text-base sm:text-lg">
+                SID_PROFILE // THE_REAL_SID
+            </span>
+            <span class="hidden lg:inline-block font-mono text-[9px] text-gray-500 border border-gray-800 rounded px-2 py-0.5 animate-pulse">
+                STATUS: UNFILTERED
+            </span>
+        </div>
+        
+        <div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 font-mono text-xs">
+            <a href="index.html" class="text-gray-400 hover:text-teal-400 accent-transition">[ PROFESSIONAL_LEDGER ]</a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="text-gray-400 hover:text-teal-400 accent-transition">[ EMAIL ]</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 pt-32 pb-16 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-12">
+        
+        <!-- Hero Header Card -->
+        <section class="border border-gray-800 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 hover:border-teal-500/30 accent-transition">
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                
+                <!-- Avatar headshot styled and cropped -->
+                <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-xl overflow-hidden border border-gray-800 bg-white p-0.5 shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
+                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg scale-[1.2] opacity-95 transition-transform duration-500 hover:scale-100">
+                </div>
+                
+                <div class="space-y-3 text-center md:text-left flex-grow">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/5 border border-teal-500/20 font-mono text-[9px] uppercase tracking-wider text-teal-400">
+                        ⚡ AI Brain // Human Mode
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                        Meet Sid.
+                    </h1>
+                    <p class="text-gray-300 text-sm font-mono leading-relaxed max-w-xl">
+                        "Talk to me like you're speaking to my AI brain — fast, direct, no fluff."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bold, confident statement block -->
+            <div class="border-t border-gray-800 pt-6 space-y-4">
+                <p class="text-gray-250 text-base leading-relaxed font-sans">
+                    I'm a conversation-first builder who operates at the high-velocity overlap of software engineering, business loops, and human behavior. I don't wait for permission. I build fast, spot patterns, and execute ideas.
+                </p>
+                <div class="italic text-xs text-gray-400 font-mono bg-gray-950/40 p-3 rounded border-l border-teal-500">
+                    "Instead of doing nothing, I choose to do everything possible."
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Details -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Box 1: The Core Loop -->
+            <div class="md:col-span-2 border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
+                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// MY REAL EDUCATION</div>
+                <h3 class="text-lg font-bold text-white tracking-tight">Conversation is the Real Education System</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    I learn through talking to people. Meetups, networking events, or random deep chats are where the real parameters are updated. Once I start talking, it’s hard to stop me—and honestly, I don't try to be. I chase ideas, not corporate hierarchy. If a concept is crazy enough to have a future impact, I’ll build it even without immediate funding.
+                </p>
+            </div>
+
+            <!-- Box 2: Telemetry Stats -->
+            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// LINGUISTIC FIRMWARE</div>
+                    <h3 class="text-lg font-bold text-white tracking-tight">Languages</h3>
+                    <div class="space-y-1.5 font-mono text-xs text-gray-300">
+                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">English:</span><span>Native/Fluent</span></div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Telugu:</span><span>Native</span></div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Hindi:</span><span>Fluent</span></div>
+                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Hyderabadi Hindi:</span><span>Fluent</span></div>
+                        <div class="flex justify-between pb-0.5"><span class="text-gray-500">Spanish:</span><span>Basic</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 3: Interests Matrix -->
+            <div class="md:col-span-3 border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
+                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// INTEREST VECTORS</div>
+                <h3 class="text-lg font-bold text-white tracking-tight">Interests & Daily Cycles</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 font-sans text-sm text-gray-400">
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-white font-bold">Startups (Build > Talk)</div>
+                        <p class="text-xs">Chasing zero-friction mechanics. I prefer shipping functional prototypes to talking about abstract roadmaps.</p>
+                    </div>
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-white font-bold">Low-Key Serious Cooking</div>
+                        <p class="text-xs">I approach kitchen recipes like coding loops—speed, precise timing, and high-quality outcomes.</p>
+                    </div>
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-white font-bold">Sports Telemetry</div>
+                        <p class="text-xs">Active tracking: Cricket, Formula 1, MotoGP, American Football, and Volleyball.</p>
+                    </div>
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-white font-bold">Recreation Logs</div>
+                        <p class="text-xs">Playing racquetball and heading to the bowling alley to balance continuous monitor time.</p>
+                    </div>
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-white font-bold">Late-Night Walks</div>
+                        <p class="text-xs">Chasing late-night blocks for quiet processing and deep, unfiltered conversations.</p>
+                    </div>
+                    <div class="space-y-1 border-l border-gray-800 pl-3">
+                        <div class="font-mono text-xs text-teal-400 font-bold">Character Development Arc</div>
+                        <p class="text-xs">Listening to my Indian dad roast me daily. It's the ultimate reality check and character building loop.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 4: Human Profile Details -->
+            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
+                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// SOCIAL SPECIFICATIONS</div>
+                <h3 class="text-lg font-bold text-white tracking-tight">Personality Matrix</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Social, curious, and slightly unfiltered. I prefer raw human signaling over corporate business cards. I don't look for traditional jobs; I look for something worth building with people who move fast.
+                </p>
+            </div>
+
+            <!-- Box 5: The Match Profile -->
+            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
+                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// CONNECTION TARGETS</div>
+                <h3 class="text-lg font-bold text-white tracking-tight">Relationship Profile</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Single, open-minded. I'm highly interested in connecting with non-coding, creative, or business-minded individuals who see the world differently and aren't afraid of chaos.
+                </p>
+            </div>
+
+            <!-- Box 6: Small Chaos Circle -->
+            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// THE CORE CLUSTER</div>
+                    <h3 class="text-lg font-bold text-white tracking-tight">The Chaos Circle</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Hanging with a tight circle of 4 close friends. Equal parts pure chaos, startup banter, and happiness energy.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CTAs -->
+        <section class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 font-mono text-xs w-full max-w-lg mx-auto">
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-teal-500/40 hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
+                [ INITIATE CONVERSATION ]
+            </a>
+            <a href="index.html" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg bg-white text-slate-950 hover:bg-gray-200 min-h-[48px] flex items-center justify-center sm:flex-1">
+                [ RETURN TO LEDGER ]
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 mt-16 py-8 text-center font-mono text-[9px] text-gray-600">
+        SIDDARTHA REDDY MUNUGALA // ALL RIGHTS RESERVED © 2026 // LOG TYPE: UNFILTERED
+    </footer>
+
+</body>
+</html>
