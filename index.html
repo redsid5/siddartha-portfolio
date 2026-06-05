@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddartha Reddy Munugala | Portfolio Ledger</title>
+    <title>Siddartha Reddy Munugala | Proof of Execution</title>
     
     <!-- SEO Best Practices -->
-    <meta name="description" content="Portfolio of Siddartha Reddy Munugala - A fusion of hardcore technical builder and high-leverage business operator. Custom bento-grid, mobile-first design, interactive terminal, and dynamic Builder/Operator modes.">
-    <meta name="keywords" content="Siddartha Reddy Munugala, Siddartha Munugala, redsid5, Software Engineer, GTM Operator, Product Builder, Portfolio, Bento Grid, AI Developer">
+    <meta name="description" content="Proof of Execution Ledger - Siddartha Reddy Munugala. Building AI and product-driven systems focused on real-world user and business problems. Dynamic case studies, metrics, and active product telemetry.">
+    <meta name="keywords" content="Siddartha Reddy Munugala, redsid5, Product Builder, Systems Engineer, GTM Operator, Venture Architect, Case Studies">
     <meta name="author" content="Siddartha Reddy Munugala">
     
     <!-- Google Fonts -->
@@ -27,7 +27,7 @@
                     },
                     colors: {
                         slate: {
-                            950: '#080B11',
+                            950: '#06090F',
                         }
                     }
                 }
@@ -38,29 +38,29 @@
     <style type="text/css">
         :root {
             --accent: #14B8A6;
-            --accent-glow: rgba(20, 184, 166, 0.08);
-            --accent-border: rgba(20, 184, 166, 0.2);
-            --accent-border-hover: rgba(20, 184, 166, 0.5);
+            --accent-glow: rgba(20, 184, 166, 0.05);
+            --accent-border: rgba(20, 184, 166, 0.15);
+            --accent-border-hover: rgba(20, 184, 166, 0.4);
             --accent-text-light: #2DD4BF;
         }
 
         body.mode-operator {
             --accent: #8B5CF6;
-            --accent-glow: rgba(139, 92, 246, 0.08);
-            --accent-border: rgba(139, 92, 246, 0.2);
-            --accent-border-hover: rgba(139, 92, 246, 0.5);
+            --accent-glow: rgba(139, 92, 246, 0.05);
+            --accent-border: rgba(139, 92, 246, 0.15);
+            --accent-border-hover: rgba(139, 92, 246, 0.4);
             --accent-text-light: #A78BFA;
         }
 
         body {
-            background-color: #080B11;
+            background-color: #06090F;
             color: #F3F4F6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
         .accent-transition {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Scanline Overlay for Terminal */
@@ -73,7 +73,7 @@
             display: block;
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
             z-index: 10;
             background-size: 100% 4px, 6px 100%;
             pointer-events: none;
@@ -85,7 +85,7 @@
             height: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #080B11;
+            background: #06090F;
         }
         ::-webkit-scrollbar-thumb {
             background: #1F2937;
@@ -101,7 +101,7 @@
             100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-            animation: marquee 30s linear infinite;
+            animation: marquee 25s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
@@ -113,7 +113,7 @@
             width: 320px;
             height: 320px;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(8, 11, 17, 0) 70%);
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(6, 9, 15, 0) 70%);
             filter: blur(40px);
             z-index: 0;
             pointer-events: none;
@@ -127,7 +127,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.02;
+            opacity: 0.015;
             pointer-events: none;
             z-index: 0;
         }
@@ -153,17 +153,17 @@
     
     <!-- Background elements -->
     <canvas id="matrix-canvas"></canvas>
-    <div class="glow-blob top-10 left-[-100px]" style="--accent-glow: rgba(20, 184, 166, 0.06);"></div>
-    <div class="glow-blob bottom-40 right-[-100px]" style="--accent-glow: rgba(139, 92, 246, 0.04);"></div>
+    <div class="glow-blob top-10 left-[-100px]" style="--accent-glow: rgba(20, 184, 166, 0.04);"></div>
+    <div class="glow-blob bottom-40 right-[-100px]" style="--accent-glow: rgba(139, 92, 246, 0.03);"></div>
 
     <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#080B11]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#06090F]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-3">
             <a href="#" class="font-mono font-bold tracking-tight text-white text-base sm:text-lg hover:opacity-85 transition-opacity">
                 SIDDARTHA REDDY MUNUGALA
             </a>
-            <span class="hidden lg:inline-block font-mono text-[10px] text-gray-500 border border-gray-800 rounded px-2 py-0.5">
-                SECURE_ID: 0xREDSID5
+            <span class="hidden lg:inline-block font-mono text-[9px] text-gray-500 border border-gray-800 rounded px-2 py-0.5">
+                EXECUTION_LOG: ACTIVE
             </span>
         </div>
         
@@ -173,7 +173,7 @@
             <a href="mailto:Siddarth.lbf341@gmail.com" id="nav-email" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ EMAIL ]</a>
             
             <!-- Sliding Switch Toggle -->
-            <div class="relative bg-gray-900/80 border border-gray-800 rounded-full p-0.5 flex items-center w-52 h-8 select-none">
+            <div class="relative bg-gray-900/60 border border-gray-800 rounded-full p-0.5 flex items-center w-52 h-8 select-none">
                 <div id="toggle-bg" class="absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-teal-500/10 border border-teal-500/30"></div>
                 <button onclick="setMode('builder')" id="btn-builder" class="relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-teal-400">
                     [ BUILDER ]
@@ -192,39 +192,39 @@
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <!-- Hero Description Panel (Left) -->
-            <div class="lg:col-span-7 flex flex-col justify-between border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 accent-transition hover:border-[var(--accent-border-hover)]">
+            <div class="lg:col-span-7 flex flex-col justify-between border border-gray-800 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 accent-transition hover:border-[var(--accent-border-hover)]">
                 
                 <div class="flex flex-col md:flex-row gap-6 items-center">
                     
-                    <!-- Styled Avatar Headshot with zoom-cropping to remove black side bars and watermark -->
-                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border-2 border-[var(--accent)] bg-white p-0.5 shrink-0 accent-transition shadow-[0_0_15px_var(--accent-border)]">
-                        <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg scale-[1.2] opacity-90 hover:opacity-100 transition-all duration-500">
+                    <!-- Styled Avatar Headshot -->
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border border-gray-800 bg-white p-0.5 shrink-0 accent-transition shadow-[0_0_15px_var(--accent-border)]">
+                        <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg scale-[1.2] opacity-90 hover:opacity-100 hover:scale-100 transition-all duration-500">
                     </div>
                     
-                    <div class="space-y-3 text-center md:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-950/80 border border-gray-800 font-mono text-[10px] uppercase tracking-widest text-gray-400">
+                    <div class="space-y-2 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-950/80 border border-gray-800 font-mono text-[9px] uppercase tracking-widest text-gray-400">
                             <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse accent-transition"></span>
                             <span id="identity-status">BUILDER STATE_ACTIVE</span>
                         </div>
                         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                             Siddartha Reddy Munugala
                         </h1>
-                        <p class="text-gray-400 text-sm font-mono tracking-wider uppercase text-[var(--accent)] accent-transition">
+                        <p class="text-gray-400 text-xs font-mono tracking-wider uppercase text-[var(--accent)] accent-transition">
                             Systems Builder & Venture Operator
                         </p>
                     </div>
                 </div>
 
                 <div class="space-y-4">
-                    <p class="text-gray-200 text-lg sm:text-xl font-medium leading-relaxed font-sans">
-                        I turn complex engineering ideas into clean, fast, premium systems.
+                    <p class="text-gray-150 text-xl font-bold leading-tight font-sans">
+                        Building AI and product-driven systems focused on real-world user and business problems.
                     </p>
                     <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        Fusing production-grade engineering structures with product-focused startup execution. I deploy systems designed to reduce friction, establish workflow loops, and scale efficiently.
+                        I validate ideas through execution, user conversations, and live product experiments. I do not design hypothetical templates — I build functioning software layers to capture market signal.
                     </p>
                     
                     <!-- Bold Quote block -->
-                    <div class="border-l-2 border-[var(--accent)] pl-4 py-1.5 italic text-xs text-gray-300 font-mono accent-transition bg-gray-950/40 pr-3 rounded-r">
+                    <div class="border-l border-[var(--accent)] pl-4 py-1.5 italic text-xs text-gray-300 font-mono accent-transition bg-gray-950/40 pr-3 rounded-r">
                         "Instead of doing nothing, I choose to do everything possible."
                     </div>
                 </div>
@@ -234,16 +234,16 @@
                         [ VIEW CV / RESUME ]
                     </a>
                     <a href="#projects" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg bg-white text-slate-950 hover:bg-gray-200 min-h-[48px] flex items-center justify-center sm:flex-1">
-                        [ VIEW PROJECTS ]
+                        [ VIEW LEDGER ]
                     </a>
                     <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
-                        [ CONTACT ME ]
+                        [ CONTACT DIRECTLY ]
                     </a>
                 </div>
             </div>
 
             <!-- Terminal Panel (Right) -->
-            <div class="lg:col-span-5 border border-gray-800 bg-black/50 rounded-xl overflow-hidden flex flex-col h-[380px] font-mono text-xs shadow-2xl relative scanlines group hover:border-[var(--accent-border-hover)] accent-transition">
+            <div class="lg:col-span-5 border border-gray-800 bg-black/40 rounded-xl overflow-hidden flex flex-col h-[380px] font-mono text-xs shadow-2xl relative scanlines group hover:border-[var(--accent-border-hover)] accent-transition">
                 <!-- Terminal Header -->
                 <div class="bg-gray-900/60 px-4 py-3 border-b border-gray-800 flex justify-between items-center select-none z-20">
                     <div class="flex items-center gap-2">
@@ -269,8 +269,40 @@
 
         </section>
 
+        <!-- Currently Building / Active Experiments Telemetry -->
+        <section id="telemetry" class="border border-gray-800 bg-[#111827]/10 rounded-xl p-6 sm:p-8 space-y-6 relative z-10 hover:border-[var(--accent-border-hover)] accent-transition">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-3.5">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-ping accent-transition"></span>
+                    <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-white">// CURRENTLY BUILDING & OUTREACH</h2>
+                </div>
+                <span class="text-[9px] font-mono text-gray-500 uppercase hidden sm:inline-block">Status: Live Feed</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans text-sm">
+                <div class="space-y-2">
+                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[01] VIBEIN AI NETWORKING</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Testing anonymous match loops using peer trust matrices. Conducting 50+ discovery cycles across collegiate founder clubs to build $0 CAC distribution playbooks.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[02] PARTNERSHIPS & OUTREACH</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Securing structured B2B test campaigns for ArenaHQ. Pitching coding challenge recruiter platforms to bypass traditional resume loops for tech firms.
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[03] AI DEVELOPMENT PIPELINES</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Optimizing WTFcode graph compression to minimize token burn on developer prompts. Integrating AST mappings directly to local AI coding workflows.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Metric Marquee Ticker -->
-        <section class="w-full border border-gray-800 bg-gray-950/40 backdrop-blur-sm rounded-xl overflow-hidden py-3.5 select-none relative z-10">
+        <section class="w-full border border-gray-850 bg-gray-950/40 backdrop-blur-sm rounded-xl overflow-hidden py-3.5 select-none relative z-10">
             <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-950 to-transparent z-20"></div>
             <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-950 to-transparent z-20"></div>
             <div class="flex whitespace-nowrap overflow-hidden">
@@ -376,11 +408,11 @@
         <section id="projects" class="space-y-6 relative z-10">
             <div class="flex justify-between items-end border-b border-gray-800 pb-4">
                 <div>
-                    <h2 class="text-xl font-bold tracking-tight text-white">Featured Projects</h2>
-                    <p class="text-gray-500 text-xs font-mono">// Live production modules and experimental codebases</p>
+                    <h2 class="text-xl font-bold tracking-tight text-white">The Proof Ledger</h2>
+                    <p class="text-gray-500 text-xs font-mono">// Case studies and production results mapped to active states</p>
                 </div>
                 <div class="font-mono text-[10px] uppercase text-gray-500 hidden sm:block">
-                    7 active system logs found
+                    7 active systems found
                 </div>
             </div>
 
@@ -398,7 +430,7 @@
                             A behavioral intelligence platform for student-founders and dual-context lives.
                         </p>
                         
-                        <div id="content-arc" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-arc" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -416,7 +448,7 @@
                             A live competitive coding arena where skill is shown in real time.
                         </p>
                         
-                        <div id="content-arena" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-arena" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -434,7 +466,7 @@
                             A dependency-map CLI that helps AI and developers understand large repositories faster.
                         </p>
                         
-                        <div id="content-wtf" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-wtf" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -452,7 +484,7 @@
                             Anonymous professional networking based on trust, mutual intent, and meaningful matching.
                         </p>
                         
-                        <div id="content-vibe" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-vibe" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -470,7 +502,7 @@
                             A privacy-focused assistant for veterans that helps with documents, support, and VA flows.
                         </p>
                         
-                        <div id="content-alaska" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-alaska" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -488,7 +520,7 @@
                             A triage tool that helps teams decide whether to fix, replace, or remove accessibility issues.
                         </p>
                         
-                        <div id="content-access" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-access" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -506,7 +538,7 @@
                             A developer analytics tool that finds missed billing work and helps agencies recover lost revenue.
                         </p>
                         
-                        <div id="content-leak" class="text-xs space-y-2.5 font-mono text-gray-300 pt-2 border-t border-gray-800">
+                        <div id="content-leak" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
                             <!-- Loaded by JS -->
                         </div>
                     </div>
@@ -518,7 +550,7 @@
         <!-- Strengths / Why Work With Me Section -->
         <section id="strengths" class="space-y-6 relative z-10">
             <div class="border-b border-gray-800 pb-4">
-                <h2 class="text-xl font-bold tracking-tight text-white">Why Work With Me</h2>
+                <h2 class="text-xl font-bold tracking-tight text-white">Execution Vectors</h2>
                 <p class="text-gray-500 text-xs font-mono">// Core execution standards that drive results</p>
             </div>
 
@@ -650,7 +682,7 @@
                     </div>
 
                     <!-- Operator Skills -->
-                    <div class="bg-gray-950/60 border-t border-gray-805 border-b border-gray-800 p-3 font-bold uppercase text-violet-400 tracking-wider flex justify-between items-center">
+                    <div class="bg-gray-955/60 border-t border-gray-805 border-b border-gray-800 p-3 font-bold uppercase text-violet-400 tracking-wider flex justify-between items-center">
                         <span>📈 Venture Core (Operator)</span>
                         <span class="text-[9px] text-gray-500">READY</span>
                     </div>
@@ -709,104 +741,118 @@
 
     <!-- Interactive Logic Script -->
     <script>
-        // Project Multi-Mode Database Matrix
+        // Case Study Proof-of-Execution Database Matrix
         const projectData = {
             arc: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Model Pipeline:</span><span class="text-teal-400">4-Scale Temporal VAE</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">TDA Pipeline:</span><span class="text-white">Ripser Persistent Homology</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Engine Core:</span><span class="text-white">Python, PyTorch, FastAPI</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Frontend Stack:</span><span class="text-white">Next.js 15, React 19, Supabase RLS</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Dual-context behavior patterns (student-founders) are invisible to traditional static trackers.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Built a 4-scale Transformer VAE to map 847 behavioral dimensions, coupled with a Ripser persistent homology topological detector.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Generic clustering algorithms failed on dynamic workflow shifts. Pivoted to topological manifold projection.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 81% phase accuracy at 60 days. Secure Postgres RLS.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Sourced Funds:</span><span class="text-violet-400">$2.1M Pre-Seed Sourced</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Distribution:</span><span class="text-white">Student-Founder Wedge Market</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Clinicals:</span><span class="text-white">Johns Hopkins, MIT, Stanford</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Monetization:</span><span class="text-white">3-Tier SaaS Licensing Scale</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Startup scaling requires mapping performance under highly volatile founder conditions.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Secured 3 clinical partnerships (Johns Hopkins, MIT Media Lab, Stanford d.school) to establish data pools.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Targeted student-founders as a high-friction wedge. Structured 3-tier SaaS licensing model.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Funding:</strong> $2.1M Pre-Seed closed. 12,400 waitlist.</div>
                 `
             },
             arena: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Realtime Network:</span><span class="text-teal-400">Supabase Websockets (TS)</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Media Pipeline:</span><span class="text-white">WebRTC Camera Multi-Stream</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Interpreter:</span><span class="text-white">Isolated Sandbox Piston API</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Editor Layer:</span><span class="text-white">CodeMirror 6, TS Strict</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Technical screening relies on static whiteboards rather than active execution variables.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Live tournament socket network (Supabase WebSockets) running CodeMirror 6 with execution sandboxes (Piston API).</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> P2P video stream synchronization latency blocked auth. Swapped to a compressed WebRTC signaling state.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> Multi-stream camera verification, strict TypeScript sandbox.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Distribution:</span><span class="text-violet-400">Vibein Talent Network Feed</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Monetization:</span><span class="text-white">Enterprise Recruiter Portal</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Value Loop:</span><span class="text-white">Skip resume screening directly</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">GTM Funnel:</span><span class="text-white">Branded coding challenges</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Companies waste engineering hours screening candidates with resume theater.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Developed enterprise Recruiter Portal allowing companies to host branded tournaments.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Monetized by allowing recruiters to fast-track winners directly to final interviews.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Second product of the Vibein talent pipeline.</div>
                 `
             },
             wtf: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Parsing Engine:</span><span class="text-teal-400">Local AST Syntax Tree</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Topology Graph:</span><span class="text-white">Blast Radius Dependency Map</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Language Base:</span><span class="text-white">Python CLI (pip distribution)</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Mitigation:</span><span class="text-white">Flag Single Point of Failure files</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> LLM coding assistants break production files due to missing AST import blast-radius details.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Python CLI parser traversing local Abstract Syntax Trees (AST) to map graph single points of failure.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Initially dumped entire file dependency trees, exceeding token scopes. Pivoted to focus on impact vectors.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 832x context compression (568,000 to 683 tokens).</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">GTM Funnel:</span><span class="text-violet-400">Zero-Friction Dev Adoption</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">API Compression:</span><span class="text-white">832x Token Savings (CLI AST)</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Token Cost:</span><span class="text-white">568,000 → 683 Tokens Map</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Value Loop:</span><span class="text-white">Context packaging prevents breakages</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> AI software developers generate high API bills by reading complete files repeatedly.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Reduced LLM token costs by 90% per development run.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Zero-friction developer adoption hook via simple CLI installer (<code class="bg-gray-950 px-1 py-0.5 rounded text-[10px]">pip install wtfcode</code>).</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Publicly released tool mapping complex repository graphs.</div>
                 `
             },
             vibe: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Scale Architecture:</span><span class="text-teal-400">Solo Architect Build</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Privacy Layer:</span><span class="text-white">Text Anonymizer Masking</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Recommendation:</span><span class="text-white">Custom Peer Link Heuristics</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Datastore:</span><span class="text-white">PostgreSQL relational models</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Traditional networking platforms leak user identity, creating career-change anxiety.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Solo build. Built text-anonymizer token masks and trust-score peer recommendation systems.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Heavy central recommendation algorithms lagged on user databases. Pivoted to local group sub-graphs.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> High-security text parsing, structured postgres models.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">User Growth:</span><span class="text-violet-400">821 Pre-Beta Signups</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Retention:</span><span class="text-white">40% Daily Active Users</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Paid CAC Loop:</span><span class="text-white">$0 Campus Distribution Network</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Interviews:</span><span class="text-white">50+ Target User Discovery Cycles</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> High customer acquisition cost (CAC) blocks early social networking growth.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Executed 3 full onboarding campus lifecycles. 40% Daily Active User (DAU) retention.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Partnered with university club networks for a $0 CAC loop. Conducted 50+ discovery interviews.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> 821 users registered pre-beta.</div>
                 `
             },
             alaska: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Encrypted Base:</span><span class="text-teal-400">Web Crypto AES-256-GCM</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Mapping:</span><span class="text-white">pdf-lib layout coordinate tables</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Vision Analysis:</span><span class="text-white">Gemini Vision Form Matching</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Infrastructure:</span><span class="text-white">Client-side only local state</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Veterans face complex filing formats while leaking medical histories to third-party APIs.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Local-first Web Crypto AES-256-GCM tool mapping VA forms with Gemini Vision layouts.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Browser-side PDF compiling was too memory-heavy on mobile. Swapped to a segmented coordinate layout matrix.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 10 VA forms auto-fill, zero data persistence.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Hackathon Vector:</span><span class="text-violet-400">Wildfire Hackathon Top 10</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">VA Documents:</span><span class="text-white">10 Structured Forms Auto-fill</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Emergency Hook:</span><span class="text-white">Straight crisis router to 988</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Database Safety:</span><span class="text-white">Zero server storage footprint</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> VA benefit applications are highly fragmented, leading to critical filing delays.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Top 10 finish in Wildfire Labs Hackathon. Built crisis-detection overlay routing straight to 988.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Private veteran support networks. Zero server-breach surface area.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> 48-hour build showing operational utility.</div>
                 `
             },
             access: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Audit Metric:</span><span class="text-teal-400">Automated WCAG parsing</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Engine Core:</span><span class="text-white">NodeJS runtime triage rules</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Flow Action:</span><span class="text-white">Fix, replace, or deprecated tags</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Output Log:</span><span class="text-white">Structured triage reports</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Automated checkers dump list violations without prioritizing site conversion impact.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> NodeJS parser mapping code violations directly against WCAG standard tags.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Teams ignored warnings. Swapped from basic warnings to actionable replacement files.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> Fast triage pipeline indicating fix, replace, or drop directives.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Value Loop:</span><span class="text-violet-400">Accelerates compliance auditing</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Market Pain:</span><span class="text-white">Bypasses long manual triaging</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Cost Savings:</span><span class="text-white">Decreases legal/regulatory liabilities</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Integration:</span><span class="text-white">Developer CI/CD pipeline triggers</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Auditing digital accessibility is slow, costing agencies valuable compliance time.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Replaced manual audit steps with automated triaging consoles.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Freelance web development agencies facing strict regulatory requirements.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Decreased compliance auditing cycles from days to hours.</div>
                 `
             },
             leak: {
                 builder: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Audit Logic:</span><span class="text-teal-400">Git commit & log analytics</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Data Schema:</span><span class="text-white">Untracked code revisions map</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Tool Type:</span><span class="text-white">Python analytics package</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Data Source:</span><span class="text-white">GitHub / Jira task triggers</span></div>
+                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Developers forget to document small fix cycles, leading to billable leakage.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Git history analysis parsing commits and tracking unbilled development runs.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Scraping git messages led to false positives. Pivot to code block diff tracking.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> Clean analytics dashboard displaying missed billing hours.</div>
                 `,
                 operator: `
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Revenue Recovery:</span><span class="text-violet-400">Recovers lost billing hours</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">Agency Value:</span><span class="text-white">Identifies missed billable loops</span></div>
-                    <div class="flex justify-between border-b border-gray-800/40 pb-1.5"><span class="text-gray-500">ROI Metric:</span><span class="text-white">Proven hourly gains tracking</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">Market Wedge:</span><span class="text-white">Freelance development networks</span></div>
+                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Small agency operations lose up to 15% of margins due to untracked minor commits.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Recovered agency revenue streams by matching commits against billed time.</div>
+                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Boutique engineering groups and independent contract developers.</div>
+                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Implemented script tracking time patterns to prevent leakages.</div>
                 `
             }
         };
@@ -907,17 +953,17 @@
 
         // Terminal Bootup Log Diagnostics
         const bootSequence = [
-            { text: "// INITIATING MAIN SYSTEM PORTFOLIO BOOTSTRAP...", delay: 100, color: "text-gray-500" },
-            { text: "CPU: AMD Zen Virtual Engine // IMAGE MATRIX: INTEGRATED", delay: 250, color: "text-gray-400" },
+            { text: "// INITIATING PORTFOLIO PROOF LEDGER BOOTSTRAP...", delay: 100, color: "text-gray-500" },
+            { text: "CPU: Zen Virtual Engine // POSITIONING: DUAL MATRIX STRAP", delay: 250, color: "text-gray-400" },
             { text: "QUOTE LOADED: 'Instead of doing nothing, I choose to do everything possible.'", delay: 400, color: "text-violet-400" },
-            { text: "✔ [SYS_01] ARC: 847 Behavioral dimensions verified. Phase Accuracy: 81%", delay: 600, color: "text-teal-400" },
-            { text: "✔ [SYS_02] ArenaHQ: WebSocket P2P camera authentication active.", delay: 800, color: "text-teal-400" },
-            { text: "✔ [SYS_03] WTFcode: AST CLI AST parser online. Token saving 832x.", delay: 1000, color: "text-teal-400" },
-            { text: "✔ [SYS_04] Vibein: Anonymous talent routing verified. 821 signups.", delay: 1200, color: "text-teal-400" },
-            { text: "✔ [SYS_05] ALASKA: Web Crypto AES-256 forms verified.", delay: 1400, color: "text-teal-400" },
-            { text: "✔ [SYS_06] AccessFlow: Automated WCAG triaging logic loaded.", delay: 1550, color: "text-teal-400" },
-            { text: "✔ [SYS_07] Revenue Leak Auditor: Git log analytics active.", delay: 1700, color: "text-teal-400" },
-            { text: "PORTFOLIO LEDGER LOADED. Welcome to Siddartha's Core Terminal.", delay: 1850, color: "text-blue-400" },
+            { text: "✔ [SYS_01] ARC: Temporal Manifold loaded. Clinically partnered.", delay: 600, color: "text-teal-400" },
+            { text: "✔ [SYS_02] ArenaHQ: Recruiter sandbox execution framework operational.", delay: 800, color: "text-teal-400" },
+            { text: "✔ [SYS_03] WTFcode: Context compression mapped to AST graph.", delay: 1000, color: "text-teal-400" },
+            { text: "✔ [SYS_04] Vibein: Anonymous matchmaking logic active with $0 CAC loop.", delay: 1200, color: "text-teal-400" },
+            { text: "✔ [SYS_05] ALASKA: VA Cryptography form layers validated.", delay: 1400, color: "text-teal-400" },
+            { text: "✔ [SYS_06] AccessFlow: Automated WCAG triaging console ready.", delay: 1550, color: "text-teal-400" },
+            { text: "✔ [SYS_07] Revenue Leak Auditor: Git time-analytics engine online.", delay: 1700, color: "text-teal-400" },
+            { text: "DIAGNOSTICS SUCCESSFUL. Welcome to Siddartha's Core Ledger.", delay: 1850, color: "text-blue-400" },
             { text: "Type 'help' to review directory commands, or 'projects' to dump the data ledger.", delay: 1950, color: "text-gray-400" }
         ];
 
@@ -982,7 +1028,7 @@
                             appendTerminalOutput(`<div class="text-teal-400">Switching state metrics: Mode changed to BUILDER. Accent matrix color green updated.</div>`);
                             break;
                         case 'operator':
-                            setMode('violet-400');
+                            setMode('operator');
                             appendTerminalOutput(`<div class="text-violet-400">Switching state metrics: Mode changed to OPERATOR. Accent matrix color gold updated.</div>`);
                             break;
                         case '':
@@ -1009,7 +1055,7 @@
         const yPositions = Array(columns).fill(0);
 
         function matrixStep() {
-            ctx.fillStyle = "rgba(8, 11, 17, 0.05)";
+            ctx.fillStyle = "rgba(6, 9, 15, 0.05)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Set color based on mode
