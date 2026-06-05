@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sid | Personal Profile Ledger</title>
+    <title>Sid's Cozy Zone 🎀</title>
     
     <!-- SEO Best Practices -->
-    <meta name="description" content="Personal Profile of Sid (Siddartha Reddy Munugala). High-energy, conversation-driven builder, fast thinker, and startup operator. Unfiltered, bold, and human.">
-    <meta name="keywords" content="Sid, Siddartha Reddy Munugala, redsid5, Builder Persona, Personal Profile, Startup Builder">
+    <meta name="description" content="Welcome to Sid's personal zone! A sweet pink, kid-hearted, pookie-style diary of Sid's life, hobbies, and favorite things.">
+    <meta name="keywords" content="Sid, Siddartha Munugala, Pookie Log, Personal Diary, Real Sid">
     <meta name="author" content="Siddartha Reddy Munugala">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Fredoka (Rounded & Playful) & Playpen Sans (Cursive) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Playpen+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS Play CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
+                        sans: ['Fredoka', 'sans-serif'],
+                        playful: ['Playpen Sans', 'cursive'],
                     },
                     colors: {
-                        slate: {
-                            950: '#06090F',
+                        pookie: {
+                            50: '#FFF0F3',
+                            100: '#FFE5EC',
+                            200: '#FFC2D1',
+                            300: '#FFB3C6',
+                            400: '#FF8FAB',
+                            500: '#FB6F92',
+                            600: '#E05375',
+                            700: '#B83554',
+                            800: '#8A1F39',
+                            900: '#5C0E21',
                         }
                     }
                 }
@@ -37,208 +46,434 @@
     
     <style type="text/css">
         body {
-            background-color: #06090F;
-            color: #F3F4F6;
-            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #FFF0F3 0%, #FFE5EC 100%);
+            color: #5C0E21;
+            font-family: 'Fredoka', sans-serif;
             overflow-x: hidden;
         }
-        .accent-transition {
-            transition: all 0.25s ease-in-out;
+        
+        /* Premium Pookie Card Styles */
+        .pookie-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 3px solid #FFE5EC;
+            box-shadow: 0 10px 0px #FFC2D1;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        /* Glowing background blobs */
-        .glow-blob {
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.05) 0%, rgba(6, 9, 15, 0) 70%);
-            filter: blur(40px);
-            z-index: 0;
-            pointer-events: none;
+        .pookie-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 16px 0px #FFB3C6;
+            border-color: #FFB3C6;
         }
+
+        /* Fluid animated blob shape for avatar frame */
+        .blob-frame {
+            border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+            animation: blobby 8s ease-in-out infinite;
+        }
+        @keyframes blobby {
+            0%, 100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
+            50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+        }
+
+        /* Subtle float animation for badges & bows */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+        
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #06090F;
+            background: #FFF0F3;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1F2937;
-            border-radius: 3px;
+            background: #FFC2D1;
+            border-radius: 10px;
+            border: 2px solid #FFF0F3;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
+            background: #FB6F92;
         }
     </style>
 </head>
-<body class="min-h-full flex flex-col relative select-none accent-transition">
-    
-    <!-- Background elements -->
-    <div class="glow-blob top-10 left-[-100px]"></div>
-    <div class="glow-blob bottom-40 right-[-100px]" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, rgba(6, 9, 15, 0) 70%);"></div>
+<body class="min-h-full flex flex-col relative select-none">
 
-    <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#06090F]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="flex items-center gap-3">
-            <span class="font-mono font-bold tracking-tight text-white text-base sm:text-lg">
-                SID_PROFILE // THE_REAL_SID
-            </span>
-            <span class="hidden lg:inline-block font-mono text-[9px] text-gray-500 border border-gray-800 rounded px-2 py-0.5 animate-pulse">
-                STATUS: UNFILTERED
-            </span>
+    <!-- Interactive Canvas Background (Sparkles & Hearts) -->
+    <canvas id="sparkleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    
+    <!-- Top Sweet Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b-3 border-pookie-100 bg-white/70 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 font-playful font-bold text-pookie-500">
+            <span class="text-xl">🌸</span>
+            <span class="tracking-tight text-lg sm:text-xl">sid's cozy world</span>
+            <span class="text-xs bg-pookie-100 text-pookie-600 px-3 py-1 rounded-full font-sans font-medium float-animation">sweet mode</span>
         </div>
         
-        <div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 font-mono text-xs">
-            <a href="index.html" class="text-gray-400 hover:text-teal-400 accent-transition">[ PROFESSIONAL_LEDGER ]</a>
-            <a href="mailto:Siddarth.lbf341@gmail.com" class="text-gray-400 hover:text-teal-400 accent-transition">[ EMAIL ]</a>
+        <div class="flex items-center gap-4 sm:gap-6 font-bold text-sm">
+            <a href="index.html" class="text-pookie-500 hover:text-pookie-700 transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-pookie-50">
+                <span>🏡</span> <span class="hidden sm:inline">Back Home</span>
+            </a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="text-pookie-500 hover:text-pookie-700 transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-pookie-50">
+                <span>✉️</span> <span class="hidden sm:inline">Send Hello</span>
+            </a>
         </div>
     </nav>
 
     <!-- Main Content Container -->
-    <main class="relative z-10 pt-32 pb-16 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-12">
+    <main class="relative z-10 pt-28 pb-20 px-4 sm:px-8 max-w-4xl mx-auto w-full flex-grow space-y-10">
         
-        <!-- Hero Header Card -->
-        <section class="border border-gray-800 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 hover:border-teal-500/30 accent-transition">
-            <div class="flex flex-col md:flex-row gap-6 items-center">
+        <!-- Hero Box -->
+        <section class="pookie-card rounded-[2rem] p-8 space-y-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-pookie-100 rounded-full blur-2xl opacity-60"></div>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
                 
-                <!-- Avatar headshot styled and cropped -->
-                <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-xl overflow-hidden border border-gray-800 bg-white p-0.5 shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
-                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg scale-[1.2] opacity-95 transition-transform duration-500 hover:scale-100">
+                <!-- Bubble Avatar Frame -->
+                <div class="w-36 h-36 sm:w-44 sm:h-44 blob-frame border-4 border-pookie-300 bg-white shrink-0 overflow-hidden shadow-lg float-animation relative">
+                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover scale-[1.2] opacity-95 transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-pookie-400/5"></div>
                 </div>
                 
-                <div class="space-y-3 text-center md:text-left flex-grow">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/5 border border-teal-500/20 font-mono text-[9px] uppercase tracking-wider text-teal-400">
-                        ⚡ AI Brain // Human Mode
+                <div class="space-y-4 text-center md:text-left flex-grow">
+                    <div class="inline-flex items-center gap-1.5 px-4.5 py-1 rounded-full bg-pookie-50 border-2 border-pookie-200 font-playful text-xs text-pookie-500 font-bold">
+                        💖 Kid At Heart & Cozy Vibes
                     </div>
-                    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                        Meet Sid.
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight font-playful text-pookie-600">
+                        Hi, I'm Sid! ✨
                     </h1>
-                    <p class="text-gray-300 text-sm font-mono leading-relaxed max-w-xl">
-                        "Talk to me like you're speaking to my AI brain — fast, direct, no fluff."
+                    <p class="text-pookie-800 text-lg font-medium leading-relaxed max-w-xl">
+                        I love talking to people directly, sharing laughs, and chasing cool ideas! Let's skip the boring stuff and be real.
                     </p>
                 </div>
             </div>
 
-            <!-- Bold, confident statement block -->
-            <div class="border-t border-gray-800 pt-6 space-y-4">
-                <p class="text-gray-250 text-base leading-relaxed font-sans">
-                    I'm a conversation-first builder who operates at the high-velocity overlap of software engineering, business loops, and human behavior. I don't wait for permission. I build fast, spot patterns, and execute ideas.
+            <!-- Quote Block -->
+            <div class="border-t-3 border-pookie-100 pt-6 space-y-4">
+                <p class="text-pookie-900 text-xl leading-relaxed font-playful font-semibold text-center md:text-left">
+                    "Instead of doing nothing, I choose to do everything possible." 🎀
                 </p>
-                <div class="italic text-xs text-gray-400 font-mono bg-gray-950/40 p-3 rounded border-l border-teal-500">
-                    "Instead of doing nothing, I choose to do everything possible."
+                <div class="text-sm bg-pookie-50/70 p-5 rounded-2xl border-l-6 border-pookie-400 text-pookie-800 leading-relaxed font-medium">
+                    Life is way too short to sit on the sidelines. I speak my mind, listen with my whole heart, and connect with people who make the world feel alive.
                 </div>
+            </div>
+        </section>
+
+        <!-- Interactive Mood Board Section -->
+        <section class="pookie-card rounded-[2rem] p-6 sm:p-8 space-y-6">
+            <div class="text-center space-y-2">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">🌟 Click To Check In</div>
+                <h3 class="text-2xl font-bold font-playful text-pookie-600">What is Sid doing right now?</h3>
+                <p class="text-xs text-pookie-700">Click a button to check my vibe and spawn sparkles!</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <button onclick="changeVibe('cooking')" class="py-3 px-4 rounded-2xl bg-white border-2 border-pookie-100 hover:border-pookie-300 text-pookie-800 font-bold text-sm shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span>🍳</span> Cooking
+                </button>
+                <button onclick="changeVibe('sports')" class="py-3 px-4 rounded-2xl bg-white border-2 border-pookie-100 hover:border-pookie-300 text-pookie-800 font-bold text-sm shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span>🏎️</span> Racing fan
+                </button>
+                <button onclick="changeVibe('walks')" class="py-3 px-4 rounded-2xl bg-white border-2 border-pookie-100 hover:border-pookie-300 text-pookie-800 font-bold text-sm shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span>🌙</span> Night Walks
+                </button>
+                <button onclick="changeVibe('ideas')" class="py-3 px-4 rounded-2xl bg-white border-2 border-pookie-100 hover:border-pookie-300 text-pookie-800 font-bold text-sm shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span>💡</span> Daydreaming
+                </button>
+            </div>
+
+            <!-- Vibe Display Box -->
+            <div class="bg-pookie-50/80 border-2 border-pookie-200 rounded-2xl p-5 text-center transition-all duration-300 min-h-[90px] flex flex-col justify-center items-center">
+                <div id="vibeEmoji" class="text-3xl mb-1.5 float-animation">🧸</div>
+                <p id="vibeText" class="text-sm sm:text-base font-semibold text-pookie-900 font-playful">
+                    Sid is currently cozying up, probably thinking of a new recipe to try!
+                </p>
             </div>
         </section>
 
         <!-- Bento Grid Details -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <!-- Box 1: The Core Loop -->
-            <div class="md:col-span-2 border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
-                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// MY REAL EDUCATION</div>
-                <h3 class="text-lg font-bold text-white tracking-tight">Conversation is the Real Education System</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    I learn through talking to people. Meetups, networking events, or random deep chats are where the real parameters are updated. Once I start talking, it’s hard to stop me—and honestly, I don't try to be. I chase ideas, not corporate hierarchy. If a concept is crazy enough to have a future impact, I’ll build it even without immediate funding.
+            <!-- Box 1: Conversation First -->
+            <div class="md:col-span-2 pookie-card rounded-[2rem] p-6 sm:p-8 space-y-4">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">💬 My Real School</div>
+                <h3 class="text-2xl font-bold font-playful text-pookie-600">I Love Talking & Connecting!</h3>
+                <p class="text-pookie-800 text-sm leading-relaxed font-medium">
+                    I learn through talking to people! Hangouts, random conversations, and local meetups are my absolute favorite things. Once I start talking, it is honestly hard to stop me—and I don’t even try to! I prefer real, warm human vibes over formal meetings. If a creative business idea is wild enough to be fun, I am always down to jump in and make it happen!
                 </p>
             </div>
 
-            <!-- Box 2: Telemetry Stats -->
-            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// LINGUISTIC FIRMWARE</div>
-                    <h3 class="text-lg font-bold text-white tracking-tight">Languages</h3>
-                    <div class="space-y-1.5 font-mono text-xs text-gray-300">
-                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">English:</span><span>Native/Fluent</span></div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Telugu:</span><span>Native</span></div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Hindi:</span><span>Fluent</span></div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1"><span class="text-gray-500">Hyderabadi Hindi:</span><span>Fluent</span></div>
-                        <div class="flex justify-between pb-0.5"><span class="text-gray-500">Spanish:</span><span>Basic</span></div>
-                    </div>
+            <!-- Box 2: Language Spells -->
+            <div class="pookie-card rounded-[2rem] p-6 sm:p-8 space-y-4">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">🗣️ My Languages</div>
+                <h3 class="text-xl font-bold font-playful text-pookie-600">Talk Spells</h3>
+                <div class="space-y-2.5 font-sans text-xs text-pookie-900 font-semibold">
+                    <div class="flex justify-between border-b-2 border-pookie-50 pb-1.5"><span>English</span><span class="text-pookie-500">Fluent ✨</span></div>
+                    <div class="flex justify-between border-b-2 border-pookie-50 pb-1.5"><span>Telugu</span><span class="text-pookie-500">Native 🌸</span></div>
+                    <div class="flex justify-between border-b-2 border-pookie-50 pb-1.5"><span>Hindi</span><span class="text-pookie-500">Fluent 🌟</span></div>
+                    <div class="flex justify-between border-b-2 border-pookie-50 pb-1.5"><span>Hyderabadi Hindi</span><span class="text-pookie-500">Fluent 🎉</span></div>
+                    <div class="flex justify-between pb-0.5"><span>Spanish</span><span class="text-pookie-500">Basic 🧸</span></div>
                 </div>
             </div>
 
-            <!-- Box 3: Interests Matrix -->
-            <div class="md:col-span-3 border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
-                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// INTEREST VECTORS</div>
-                <h3 class="text-lg font-bold text-white tracking-tight">Interests & Daily Cycles</h3>
+            <!-- Box 3: Things I Love -->
+            <div class="md:col-span-3 pookie-card rounded-[2rem] p-6 sm:p-8 space-y-4">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">🍰 My Cozy Checklist</div>
+                <h3 class="text-2xl font-bold font-playful text-pookie-600">Things That Make Me Smile</h3>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 font-sans text-sm text-gray-400">
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-white font-bold">Startups (Build > Talk)</div>
-                        <p class="text-xs">Chasing zero-friction mechanics. I prefer shipping functional prototypes to talking about abstract roadmaps.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 text-sm text-pookie-900">
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>🍳</span> Kitchen Art
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">I am low-key very serious about cooking! Experimenting with new flavors and spices in the kitchen feels like painting a picture.</p>
                     </div>
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-white font-bold">Low-Key Serious Cooking</div>
-                        <p class="text-xs">I approach kitchen recipes like coding loops—speed, precise timing, and high-quality outcomes.</p>
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>🏎️</span> Speed & Fields
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">Always watching fast engines and sports! Big fan of Cricket, Formula 1, MotoGP, American Football, and Volleyball.</p>
                     </div>
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-white font-bold">Sports Telemetry</div>
-                        <p class="text-xs">Active tracking: Cricket, Formula 1, MotoGP, American Football, and Volleyball.</p>
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>🎳</span> Bowling & Courts
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">Love heading out to the lanes for bowling games with friends or playing a high-energy round of racquetball.</p>
                     </div>
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-white font-bold">Recreation Logs</div>
-                        <p class="text-xs">Playing racquetball and heading to the bowling alley to balance continuous monitor time.</p>
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>🌙</span> Midnight Talks
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">I live for late-night walks under the stars, talking about life, crazy ideas, dreams, and everything in between.</p>
                     </div>
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-white font-bold">Late-Night Walks</div>
-                        <p class="text-xs">Chasing late-night blocks for quiet processing and deep, unfiltered conversations.</p>
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>👯‍♂️</span> The Chaos Crew
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">Hanging out with my close circle of 4 friends. It is always a fun mix of pure laughter, support, and chaos.</p>
                     </div>
-                    <div class="space-y-1 border-l border-gray-800 pl-3">
-                        <div class="font-mono text-xs text-teal-400 font-bold">Character Development Arc</div>
-                        <p class="text-xs">Listening to my Indian dad roast me daily. It's the ultimate reality check and character building loop.</p>
+                    <div class="space-y-2 border-l-3 border-pookie-200 pl-3.5">
+                        <div class="font-playful text-sm text-pookie-600 font-bold flex items-center gap-1.5">
+                            <span>👨‍👦</span> Dad's Playful Roasts
+                        </div>
+                        <p class="text-xs text-pookie-800 font-medium">Listening to my Indian dad roast me daily. Honestly, it is my favorite character development arc and keeps me grounded!</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Box 4: Human Profile Details -->
-            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
-                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// SOCIAL SPECIFICATIONS</div>
-                <h3 class="text-lg font-bold text-white tracking-tight">Personality Matrix</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">
-                    Social, curious, and slightly unfiltered. I prefer raw human signaling over corporate business cards. I don't look for traditional jobs; I look for something worth building with people who move fast.
+            <!-- Box 4: Relationship Status -->
+            <div class="pookie-card rounded-[2rem] p-6 sm:p-8 space-y-3">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">❤️ Heart Radar</div>
+                <h3 class="text-xl font-bold font-playful text-pookie-600">Relationship</h3>
+                <p class="text-pookie-800 text-xs leading-relaxed font-medium">
+                    Single, open-minded, and looking for creative, business-focused, or artistic partners who think differently. strictly no dry topics allowed! Let's talk about dreams and stories instead.
                 </p>
             </div>
 
-            <!-- Box 5: The Match Profile -->
-            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition">
-                <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// CONNECTION TARGETS</div>
-                <h3 class="text-lg font-bold text-white tracking-tight">Relationship Profile</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">
-                    Single, open-minded. I'm highly interested in connecting with non-coding, creative, or business-minded individuals who see the world differently and aren't afraid of chaos.
+            <!-- Box 5: Personality -->
+            <div class="pookie-card rounded-[2rem] p-6 sm:p-8 space-y-3">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">🎈 My Vibe</div>
+                <h3 class="text-xl font-bold font-playful text-pookie-600">Personality</h3>
+                <p class="text-pookie-800 text-xs leading-relaxed font-medium">
+                    Social, warm, curious, and slightly unfiltered. I prefer friendly banter and deep connections over formal conversations.
                 </p>
             </div>
 
-            <!-- Box 6: Small Chaos Circle -->
-            <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-4 hover:border-teal-500/30 accent-transition flex flex-col justify-between">
-                <div class="space-y-2">
-                    <div class="font-mono text-[10px] text-teal-400 uppercase tracking-wider">// THE CORE CLUSTER</div>
-                    <h3 class="text-lg font-bold text-white tracking-tight">The Chaos Circle</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        Hanging with a tight circle of 4 close friends. Equal parts pure chaos, startup banter, and happiness energy.
-                    </p>
-                </div>
+            <!-- Box 6: Mindset -->
+            <div class="pookie-card rounded-[2rem] p-6 sm:p-8 space-y-3">
+                <div class="font-playful text-xs text-pookie-500 font-bold uppercase tracking-wider">🧸 Dreams</div>
+                <h3 class="text-xl font-bold font-playful text-pookie-600">Creativity</h3>
+                <p class="text-pookie-800 text-xs leading-relaxed font-medium">
+                    I don't care about stuffy corporate rules. I just want to find something worth building and creating that makes life memorable and happy.
+                </p>
             </div>
 
         </section>
 
-        <!-- CTAs -->
-        <section class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 font-mono text-xs w-full max-w-lg mx-auto">
-            <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-teal-500/40 hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
-                [ INITIATE CONVERSATION ]
+        <!-- Sparkles CTA Buttons -->
+        <section class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 font-playful text-sm w-full max-w-md mx-auto">
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="w-full sm:w-auto text-center font-bold py-4 px-8 rounded-full bg-pookie-500 hover:bg-pookie-400 text-white transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0 min-h-[48px] flex items-center justify-center sm:flex-1 shadow-[0_6px_0px_#8A1F39] hover:shadow-[0_8px_0px_#8A1F39] active:shadow-[0_2px_0px_#8A1F39]">
+                🎀 SEND A HELLO
             </a>
-            <a href="index.html" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg bg-white text-slate-950 hover:bg-gray-200 min-h-[48px] flex items-center justify-center sm:flex-1">
-                [ RETURN TO LEDGER ]
+            <a href="index.html" class="w-full sm:w-auto text-center font-bold py-4 px-8 rounded-full bg-white hover:bg-pookie-50 text-pookie-600 border-3 border-pookie-100 transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0 min-h-[48px] flex items-center justify-center sm:flex-1 shadow-[0_6px_0px_#FFC2D1] hover:shadow-[0_8px_0px_#FFB3C6] active:shadow-[0_2px_0px_#FFC2D1]">
+                🏡 GO TO MAIN PAGE
             </a>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-900 mt-16 py-8 text-center font-mono text-[9px] text-gray-600">
-        SIDDARTHA REDDY MUNUGALA // ALL RIGHTS RESERVED © 2026 // LOG TYPE: UNFILTERED
+    <footer class="border-t-3 border-pookie-100 mt-16 py-8 text-center font-playful text-xs text-pookie-400">
+        made with 💖 by sid // 2026
     </footer>
 
+    <!-- Interactive Canvas Particle Script & Vibe Script -->
+    <script>
+        // --- Particle Sparkle System ---
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+        let lastSpawn = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y, type = 'sparkle') {
+                this.x = x;
+                this.y = y;
+                this.type = type; // 'sparkle', 'heart', 'star'
+                this.size = Math.random() * 8 + 4;
+                this.speedX = (Math.random() - 0.5) * 2;
+                this.speedY = -Math.random() * 1.5 - 0.5; // Upward drift
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.01;
+                this.color = ['#FF8FAB', '#FB6F92', '#FFC0D9', '#FFF0F3', '#FFB3C6'][Math.floor(Math.random() * 5)];
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.05;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.rotation += this.rotationSpeed;
+                this.alpha -= this.decay;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+
+                if (this.type === 'heart') {
+                    // Draw mini heart
+                    ctx.beginPath();
+                    ctx.moveTo(0, -this.size / 4);
+                    ctx.bezierCurveTo(-this.size / 2, -this.size / 2, -this.size, -this.size / 4, -this.size, this.size / 4);
+                    ctx.bezierCurveTo(-this.size, this.size * 0.7, 0, this.size * 1.2, 0, this.size * 1.4);
+                    ctx.bezierCurveTo(0, this.size * 1.2, this.size, this.size * 0.7, this.size, this.size / 4);
+                    ctx.bezierCurveTo(this.size, -this.size / 4, this.size / 2, -this.size / 2, 0, -this.size / 4);
+                    ctx.closePath();
+                    ctx.fill();
+                } else if (this.type === 'star') {
+                    // Draw 4-point star
+                    ctx.beginPath();
+                    for (let i = 0; i < 4; i++) {
+                        ctx.lineTo(0, -this.size);
+                        ctx.lineTo(this.size / 3, -this.size / 3);
+                        ctx.rotate(Math.PI / 2);
+                    }
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    // Draw soft sparkle circle
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+        }
+
+        // Spawn particles on mouse move
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            const now = Date.now();
+            if (now - lastSpawn > 50) { // Limit spawn rate on move
+                const types = ['sparkle', 'star', 'heart'];
+                particles.push(new Particle(mouseX, mouseY, types[Math.floor(Math.random() * types.length)]));
+                lastSpawn = now;
+            }
+        });
+
+        // Spawn a burst of particles on click
+        window.addEventListener('click', (e) => {
+            spawnBurst(e.clientX, e.clientY, 15);
+        });
+
+        function spawnBurst(x, y, count) {
+            const types = ['sparkle', 'star', 'heart'];
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle(x, y, types[Math.floor(Math.random() * types.length)]));
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.update();
+                p.draw();
+                if (p.alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // --- Mood Selector System ---
+        const vibes = {
+            cooking: {
+                emoji: '👩‍🍳',
+                text: 'Sid is currently: Preparing a secret spicy dish in the kitchen! 🍳'
+            },
+            sports: {
+                emoji: '🏁',
+                text: 'Sid is currently: Cheering on drivers at the Formula 1 racetrack! 🏎️'
+            },
+            walks: {
+                emoji: '🌌',
+                text: 'Sid is currently: Going on a late-night walk, watching the stars. 🌙'
+            },
+            ideas: {
+                emoji: '💡',
+                text: 'Sid is currently: Daydreaming about a wild business idea that just might work!'
+            }
+        };
+
+        function changeVibe(vibeKey) {
+            const vibe = vibes[vibeKey];
+            if (!vibe) return;
+
+            // Trigger burst of particles at the center of the display card
+            const displayBox = document.getElementById('vibeEmoji').parentElement;
+            const rect = displayBox.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            spawnBurst(centerX, centerY, 25);
+
+            // Update DOM with bouncy transition
+            const emojiEl = document.getElementById('vibeEmoji');
+            const textEl = document.getElementById('vibeText');
+
+            emojiEl.style.transform = 'scale(0)';
+            textEl.style.opacity = '0';
+
+            setTimeout(() => {
+                emojiEl.textContent = vibe.emoji;
+                textEl.textContent = vibe.text;
+                emojiEl.style.transform = 'scale(1)';
+                textEl.style.opacity = '1';
+            }, 150);
+        }
+    </script>
 </body>
 </html>
