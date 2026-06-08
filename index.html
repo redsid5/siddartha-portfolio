@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddartha Reddy Munugala | Proof of Execution</title>
+    <title>Siddartha Reddy Munugala | Software Engineer</title>
     
     <!-- SEO Best Practices -->
-    <meta name="description" content="Proof of Execution Ledger - Siddartha Reddy Munugala. Building AI and product-driven systems focused on real-world user and business problems. Dynamic case studies, metrics, and active product telemetry.">
-    <meta name="keywords" content="Siddartha Reddy Munugala, redsid5, Product Builder, Systems Engineer, GTM Operator, Venture Architect, Case Studies">
+    <meta name="description" content="Portfolio of Siddartha Reddy Munugala - Full-Stack Developer, Product Builder, and AI Systems Engineer. Expected CS Graduation May 2027.">
+    <meta name="keywords" content="Siddartha Reddy Munugala, redsid5, Software Engineer, Full-Stack Developer, Product Builder, AI Systems Engineer, USD">
     <meta name="author" content="Siddartha Reddy Munugala">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter (Clean, legible sans-serif font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,11 +24,6 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        slate: {
-                            950: '#06090F',
-                        }
                     }
                 }
             }
@@ -36,1053 +31,318 @@
     </script>
     
     <style type="text/css">
-        :root {
-            --accent: #14B8A6;
-            --accent-glow: rgba(20, 184, 166, 0.05);
-            --accent-border: rgba(20, 184, 166, 0.15);
-            --accent-border-hover: rgba(20, 184, 166, 0.4);
-            --accent-text-light: #2DD4BF;
-        }
-
-        body.mode-operator {
-            --accent: #8B5CF6;
-            --accent-glow: rgba(139, 92, 246, 0.05);
-            --accent-border: rgba(139, 92, 246, 0.15);
-            --accent-border-hover: rgba(139, 92, 246, 0.4);
-            --accent-text-light: #A78BFA;
-        }
-
         body {
-            background-color: #06090F;
-            color: #F3F4F6;
+            background-color: #0b0f17;
+            color: #f3f4f6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-
-        .accent-transition {
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        .project-card {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid #1f2937;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* Scanline Overlay for Terminal */
-        .scanlines {
-            position: relative;
-            overflow: hidden;
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #4f46e5;
+            background: rgba(17, 24, 39, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.15);
         }
-        .scanlines::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
-            z-index: 10;
-            background-size: 100% 4px, 6px 100%;
-            pointer-events: none;
-        }
-
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #06090F;
+            background: #0b0f17;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1F2937;
-            border-radius: 3px;
+            background: #1f2937;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #374151;
         }
-
-        /* Marquee Animation */
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 25s linear infinite;
-        }
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
-
-        /* Glowing background blobs */
-        .glow-blob {
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(6, 9, 15, 0) 70%);
-            filter: blur(40px);
-            z-index: 0;
-            pointer-events: none;
-            transition: background 0.5s ease;
-        }
-
-        /* Matrix Rain Canvas */
-        #matrix-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.015;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Command Autocomplete indicator */
-        .input-caret::after {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 15px;
-            background-color: var(--accent);
-            vertical-align: middle;
-            margin-left: 2px;
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            from, to { background-color: transparent }
-            50% { background-color: var(--accent) }
-        }
     </style>
 </head>
-<body class="min-h-full flex flex-col relative select-none accent-transition">
-    
-    <!-- Background elements -->
-    <canvas id="matrix-canvas"></canvas>
-    <div class="glow-blob top-10 left-[-100px]" style="--accent-glow: rgba(20, 184, 166, 0.04);"></div>
-    <div class="glow-blob bottom-40 right-[-100px]" style="--accent-glow: rgba(139, 92, 246, 0.03);"></div>
+<body class="min-h-full flex flex-col relative">
 
     <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#06090F]/85 backdrop-blur-md px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="flex items-center gap-3">
-            <a href="#" class="font-mono font-bold tracking-tight text-white text-base sm:text-lg hover:opacity-85 transition-opacity">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#0b0f17]/85 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+        <div>
+            <a href="#" class="font-bold tracking-tight text-white hover:text-indigo-400 transition-colors">
                 SIDDARTHA REDDY MUNUGALA
             </a>
-            <span class="hidden lg:inline-block font-mono text-[9px] text-gray-500 border border-gray-800 rounded px-2 py-0.5">
-                EXECUTION_LOG: ACTIVE
-            </span>
         </div>
         
-        <div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 font-mono text-xs">
-            <a href="https://github.com/Redsid5" target="_blank" id="nav-github" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ GITHUB ]</a>
-            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" id="nav-linkedin" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ LINKEDIN ]</a>
-            <a href="mailto:Siddarth.lbf341@gmail.com" id="nav-email" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ EMAIL ]</a>
-            <a href="sid.html" id="nav-personal" class="text-gray-400 hover:text-[var(--accent)] accent-transition">[ PERSONAL_LOG ]</a>
-            
-            <!-- Sliding Switch Toggle -->
-            <div class="relative bg-gray-900/60 border border-gray-800 rounded-full p-0.5 flex items-center w-52 h-8 select-none">
-                <div id="toggle-bg" class="absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-teal-500/10 border border-teal-500/30"></div>
-                <button onclick="setMode('builder')" id="btn-builder" class="relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-teal-400">
-                    [ BUILDER ]
-                </button>
-                <button onclick="setMode('operator')" id="btn-operator" class="relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500">
-                    [ OPERATOR ]
-                </button>
-            </div>
+        <div class="flex items-center gap-6 text-sm font-medium text-gray-400">
+            <a href="https://github.com/Redsid5" target="_blank" class="hover:text-indigo-400 transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-indigo-400 transition-colors">LinkedIn</a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-indigo-400 transition-colors">Email</a>
+            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b border-indigo-500">Resume</a>
+            <a href="sid.html" class="hover:text-pink-400 transition-colors font-medium">Personal Log 🌸</a>
         </div>
     </nav>
 
     <!-- Main Container -->
-    <main class="relative z-10 pt-32 pb-16 px-4 sm:px-8 max-w-7xl mx-auto w-full flex-grow space-y-12 sm:space-y-16">
+    <main class="relative pt-32 pb-24 px-6 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
         
-        <!-- Hero Split Pane -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            <!-- Hero Description Panel (Left) -->
-            <div class="lg:col-span-7 flex flex-col justify-between border border-gray-800 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 accent-transition hover:border-[var(--accent-border-hover)]">
-                
-                <div class="flex flex-col md:flex-row gap-6 items-center">
-                    
-                    <!-- Styled Avatar Headshot -->
-                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden border border-gray-800 bg-white p-0.5 shrink-0 accent-transition shadow-[0_0_15px_var(--accent-border)]">
-                        <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-lg scale-[1.2] opacity-90 hover:opacity-100 hover:scale-100 transition-all duration-500">
-                    </div>
-                    
-                    <div class="space-y-2 text-center md:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-950/80 border border-gray-800 font-mono text-[9px] uppercase tracking-widest text-gray-400">
-                            <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse accent-transition"></span>
-                            <span id="identity-status">BUILDER STATE_ACTIVE</span>
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                            Siddartha Reddy Munugala
-                        </h1>
-                        <p class="text-gray-400 text-xs font-mono tracking-wider uppercase text-[var(--accent)] accent-transition">
-                            Systems Builder & Venture Operator
-                        </p>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <p class="text-gray-150 text-xl font-bold leading-tight font-sans">
-                        Building AI and product-driven systems focused on real-world user and business problems.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        I validate ideas through execution, user conversations, and live product experiments. I do not design hypothetical templates — I build functioning software layers to capture market signal.
-                    </p>
-                    
-                    <!-- Bold Quote block -->
-                    <div class="border-l border-[var(--accent)] pl-4 py-1.5 italic text-xs text-gray-300 font-mono accent-transition bg-gray-950/40 pr-3 rounded-r">
-                        "Instead of doing nothing, I choose to do everything possible."
-                    </div>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row gap-3 pt-2 font-mono text-xs w-full">
-                    <a href="resume.html" target="_blank" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
-                        [ VIEW CV / RESUME ]
-                    </a>
-                    <a href="#projects" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg bg-white text-slate-950 hover:bg-gray-200 min-h-[48px] flex items-center justify-center sm:flex-1">
-                        [ VIEW LEDGER ]
-                    </a>
-                    <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition text-center font-bold uppercase tracking-wider py-4 px-6 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center sm:flex-1">
-                        [ CONTACT DIRECTLY ]
-                    </a>
-                </div>
-            </div>
-
-            <!-- Terminal Panel (Right) -->
-            <div class="lg:col-span-5 border border-gray-800 bg-black/40 rounded-xl overflow-hidden flex flex-col h-[380px] font-mono text-xs shadow-2xl relative scanlines group hover:border-[var(--accent-border-hover)] accent-transition">
-                <!-- Terminal Header -->
-                <div class="bg-gray-900/60 px-4 py-3 border-b border-gray-800 flex justify-between items-center select-none z-20">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/70"></span>
-                        <span class="text-gray-500 text-[10px] ml-2 tracking-wider">TERMINAL ACTIVE // SIDDARTHA_REDDY</span>
-                    </div>
-                    <span class="text-gray-600 text-[10px]">v2.2.0</span>
-                </div>
-                
-                <!-- Terminal Screen -->
-                <div id="terminal-screen" class="p-4 flex-1 overflow-y-auto space-y-2 text-gray-300 scrollbar z-20">
-                    <!-- Typing boot sequence is populated by JavaScript -->
-                </div>
-                
-                <!-- Terminal Input Panel -->
-                <div class="p-4 bg-gray-955/60 border-t border-gray-950 flex items-center gap-2 z-20">
-                    <span class="text-[var(--accent)] accent-transition select-none font-bold">guest@redsid5:~$</span>
-                    <input type="text" id="terminal-input" class="bg-transparent text-white border-none outline-none flex-1 font-mono text-xs focus:ring-0 focus:outline-none" autocomplete="off" placeholder="Type 'help'..." aria-label="Terminal Input">
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Currently Building / Active Experiments Telemetry -->
-        <section id="telemetry" class="border border-gray-800 bg-[#111827]/10 rounded-xl p-6 sm:p-8 space-y-6 relative z-10 hover:border-[var(--accent-border-hover)] accent-transition">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-3.5">
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-ping accent-transition"></span>
-                    <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-white">// CURRENTLY BUILDING & OUTREACH</h2>
-                </div>
-                <span class="text-[9px] font-mono text-gray-500 uppercase hidden sm:inline-block">Status: Live Feed</span>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans text-sm">
+            <div class="md:col-span-8 space-y-6">
                 <div class="space-y-2">
-                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[01] VIBEIN AI NETWORKING</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        Testing anonymous match loops using peer trust matrices. Conducting 50+ discovery cycles across collegiate founder clubs to build $0 CAC distribution playbooks.
+                    <p class="text-sm font-mono text-indigo-400 tracking-wider uppercase font-semibold">
+                        Full-Stack Developer | Product Builder | AI Systems Engineer
                     </p>
-                </div>
-                <div class="space-y-2">
-                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[02] PARTNERSHIPS & OUTREACH</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        Securing structured B2B test campaigns for ArenaHQ. Pitching coding challenge recruiter platforms to bypass traditional resume loops for tech firms.
-                    </p>
-                </div>
-                <div class="space-y-2">
-                    <div class="font-mono text-xs text-[var(--accent)] font-bold accent-transition">[03] AI DEVELOPMENT PIPELINES</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        Optimizing WTFcode graph compression to minimize token burn on developer prompts. Integrating AST mappings directly to local AI coding workflows.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Metric Marquee Ticker -->
-        <section class="w-full border border-gray-850 bg-gray-950/40 backdrop-blur-sm rounded-xl overflow-hidden py-3.5 select-none relative z-10">
-            <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-950 to-transparent z-20"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-950 to-transparent z-20"></div>
-            <div class="flex whitespace-nowrap overflow-hidden">
-                <div class="flex items-center gap-12 font-mono text-xs tracking-wider text-gray-400 uppercase animate-marquee">
-                    <span>⚡ ARC: 81% Phase Accuracy at 60 days</span>
-                    <span>⚡ WTFcode: 832x Token Compression (568K tokens to 683)</span>
-                    <span>⚡ Vibein: 821 Registered Users Pre-Beta // 40% DAU // $0 Paid CAC</span>
-                    <span>⚡ PETRI-Verse: 62 LLM Agents // Autonomous Behavior logged at t=89</span>
-                    <span>⚡ ALASKA: VA PDF auto-fill completed via local AES-256-GCM layer</span>
-                    <span>⚡ PRISM: PR structural signals predicting merge risk (AUC &gt;= 0.80)</span>
-                    <span>⚡ COGN: AI cognitive drift tracking in CI/CD pipelines</span>
-                    
-                    <span>⚡ ARC: 81% Phase Accuracy at 60 days</span>
-                    <span>⚡ WTFcode: 832x Token Compression (568K tokens to 683)</span>
-                    <span>⚡ Vibein: 821 Registered Users Pre-Beta // 40% DAU // $0 Paid CAC</span>
-                    <span>⚡ PETRI-Verse: 62 LLM Agents // Autonomous Behavior logged at t=89</span>
-                    <span>⚡ ALASKA: VA PDF auto-fill completed via local AES-256-GCM layer</span>
-                    <span>⚡ PRISM: PR structural signals predicting merge risk (AUC &gt;= 0.80)</span>
-                    <span>⚡ COGN: AI cognitive drift tracking in CI/CD pipelines</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deeper About Me Section -->
-        <section id="about" class="space-y-6 relative z-10">
-            <div class="border-b border-gray-800 pb-4">
-                <h2 class="text-xl font-bold tracking-tight text-white">About Me</h2>
-                <p class="text-gray-500 text-xs font-mono">// The intentional fusion of logic and execution</p>
-            </div>
-
-            <!-- Bento Grid About Structure -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Box 1: Short Intro -->
-                <div class="lg:col-span-2 border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-4 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHO I AM</div>
-                    <p class="text-gray-300 text-base leading-relaxed font-sans">
-                        I’m Siddartha Reddy Munugala, a builder focused on full-stack development, AI tools, product thinking, and startup execution. I like turning ideas into real products that feel premium, clear, and useful.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        I build with a mix of engineering, design taste, and storytelling. For me, a great product is not just functional — it should feel sharp, memorable, and easy to understand. I care about speed, clarity, polish, and making things people actually want to use.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        My work often sits at the intersection of software, systems, and human behavior. I enjoy designing products that remove friction, create flow, and solve meaningful problems in a way that feels elegant. I like building things that are both technically strong and visually compelling.
-                    </p>
-                </div>
-
-                <!-- Box 2: What I Build -->
-                <div class="border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I BUILD</div>
-                    <ul class="space-y-2 text-gray-300 text-sm font-sans">
-                        <li class="flex items-start gap-2">
-                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
-                            <span>High-concurrency full-stack architectures (Next.js 15, FastAPI)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
-                            <span>Optimized AI prompt contexts & CLI pipelines (AST parsing)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-[var(--accent)] font-mono accent-transition">→</span>
-                            <span>Local-first, encrypted browser tools (Web Crypto API)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Box 3: What I Care About -->
-                <div class="border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I CARE ABOUT</div>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        I enjoy creating systems that reduce friction, improve flow, and make complex ideas feel simple. Whether it’s a product, a tool, or a brand experience, I want it to feel intentional and memorable.
-                    </p>
-                </div>
-
-                <!-- Box 4: How I Work -->
-                <div class="border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// HOW I WORK</div>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        I combine user-driven discovery with aggressive development loops. I believe in running clean validation interviews, shipping functional CLI tools to optimize costs, and maintaining top-tier security models.
-                    </p>
-                </div>
-
-                <!-- Box 5: Outside of Code -->
-                <div class="border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// OUTSIDE OF CODE</div>
-                    <p class="text-gray-400 text-sm leading-relaxed font-sans">
-                        Managing digital operations for the NSLS Executive Board and directing real-time media board operations for USD Athletics under tight live broadcast parameters.
-                    </p>
-                </div>
-
-                <!-- Box 6: What I'm Looking For (Full width on tablet/desktop) -->
-                <div class="lg:col-span-3 border border-gray-800 bg-[#111827]/20 rounded-xl p-6 sm:p-8 space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider accent-transition">// WHAT I'M LOOKING FOR</div>
-                    <p class="text-gray-300 text-sm leading-relaxed font-sans">
-                        I’m especially interested in projects that combine product thinking with technical execution. My goal is to build work that looks sharp, performs well, and leaves a strong, lasting impression.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Bento Grid Projects Matrix -->
-        <section id="projects" class="space-y-6 relative z-10">
-            <div class="flex justify-between items-end border-b border-gray-800 pb-4">
-                <div>
-                    <h2 class="text-xl font-bold tracking-tight text-white">The Proof Ledger</h2>
-                    <p class="text-gray-500 text-xs font-mono">// Case studies and production results mapped to active states</p>
-                </div>
-                <div class="font-mono text-[10px] uppercase text-gray-500 hidden sm:block">
-                    7 active systems found
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Card 1: ARC -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ARC_BEHAVIOR ]</span>
-                            <span id="badge-arc" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight">ARC</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            A behavioral intelligence platform for student-founders and dual-context lives.
-                        </p>
-                        
-                        <div id="content-arc" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: ArenaHQ -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ARENA_HQ ]</span>
-                            <span id="badge-arena" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-[var(--accent)] accent-transition">ArenaHQ ↗</a></h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            A live competitive coding arena where skill is shown in real time.
-                        </p>
-                        
-                        <div id="content-arena" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: WTFcode -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: WTF_CODE ]</span>
-                            <span id="badge-wtf" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight">WTFcode</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            A dependency-map CLI that helps AI and developers understand large repositories faster.
-                        </p>
-                        
-                        <div id="content-wtf" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Vibein -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: VIBEIN_NET ]</span>
-                            <span id="badge-vibe" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight"><a href="https://vibein.us" target="_blank" class="hover:underline hover:text-[var(--accent)] accent-transition">Vibein ↗</a></h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            Anonymous professional networking based on trust, mutual intent, and meaningful matching.
-                        </p>
-                        
-                        <div id="content-vibe" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: ALASKA -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: ALASKA_VA ]</span>
-                            <span id="badge-alaska" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight">ALASKA</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            A privacy-focused assistant for veterans that helps with documents, support, and VA flows.
-                        </p>
-                        
-                        <div id="content-alaska" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: PRISM -->
-                <div class="border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: PRISM_RISK ]</span>
-                            <span id="badge-prism" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight">PRISM</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            An ML system predicting post-merge engineering risk from pull request structural signals.
-                        </p>
-                        
-                        <div id="content-prism" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 7: COGN (Full width on tablet/desktop) -->
-                <div class="md:col-span-2 lg:col-span-3 border border-gray-800 bg-[#111827]/30 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between space-y-6 group hover:border-[var(--accent-border-hover)] hover:bg-[#111827]/50 transition-all duration-300">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-start">
-                            <span class="font-mono text-[10px] text-gray-500">[ LEDGER_ID: COGN_INTEGRITY ]</span>
-                            <span id="badge-cogn" class="font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition">Builder</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white tracking-tight">COGN</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            A cognitive integrity layer that tracks and scores AI drift in codebases.
-                        </p>
-                        
-                        <div id="content-cogn" class="text-xs space-y-3 font-mono text-gray-300 pt-2 border-t border-gray-800">
-                            <!-- Loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Strengths / Why Work With Me Section -->
-        <section id="strengths" class="space-y-6 relative z-10">
-            <div class="border-b border-gray-800 pb-4">
-                <h2 class="text-xl font-bold tracking-tight text-white">Execution Vectors</h2>
-                <p class="text-gray-500 text-xs font-mono">// Core execution standards that drive results</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Strength 1 -->
-                <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">01</div>
-                    <h3 class="text-sm font-bold text-white font-mono uppercase">Extreme Velocity</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
-                        I operate in short delivery loops. Turning conceptual ideas into verified engineering structures with zero unnecessary downtime.
-                    </p>
-                </div>
-                <!-- Strength 2 -->
-                <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">02</div>
-                    <h3 class="text-sm font-bold text-white font-mono uppercase">Product Taste</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
-                        Engineering alone isn't enough. I design interfaces that prioritize user flow, visual consistency, and highly premium styling.
-                    </p>
-                </div>
-                <!-- Strength 3 -->
-                <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">03</div>
-                    <h3 class="text-sm font-bold text-white font-mono uppercase">High-Signal Execution</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
-                        No fake metrics or noise. I build components designed around core conversion paths, compression goals, and clear business metrics.
-                    </p>
-                </div>
-                <!-- Strength 4 -->
-                <div class="border border-gray-800 bg-[#111827]/10 p-6 rounded-xl space-y-3 hover:border-[var(--accent-border-hover)] accent-transition">
-                    <div class="text-2xl font-bold text-[var(--accent)] accent-transition">04</div>
-                    <h3 class="text-sm font-bold text-white font-mono uppercase">Human Storytelling</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed font-sans">
-                        I compile complex technological operations into simple, readable explanations, ensuring partners understand the concrete value generated.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Timeline & Skills Telemetry Split -->
-        <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 relative z-10">
-            
-            <!-- Column 1: Timeline -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="border-b border-gray-800 pb-4">
-                    <h2 class="text-xl font-bold text-white">Execution Timeline</h2>
-                    <p class="text-gray-500 text-xs font-mono">// History of development ownership and institutional leadership</p>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Siddartha Reddy Munugala
+                    </h1>
                 </div>
                 
-                <div class="space-y-6 font-sans">
-                    
-                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
-                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
-                            <span class="text-white font-bold text-sm">FOUNDER & CEO</span>
-                            <span class="text-gray-500 uppercase">VIBEIN / ARENAHQ | 2025 - PRESENT</span>
-                        </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Coordinate complete production design cycles, system scaling pipelines, and real-time database schemas. Conducted 50+ discovery cycles and constructed strategic student-founder wedge market campaigns.
-                        </p>
-                    </div>
-
-                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
-                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
-                            <span class="text-white font-bold text-sm">IT COORDINATOR & PUBLICITY CHAIR</span>
-                            <span class="text-gray-500 uppercase">NSLS BOARD | 2024 - PRESENT</span>
-                        </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Oversee digital pipeline structures and directory systems for the National Society of Leadership and Success chapter. Implement systematic member tracking and distribution campaigns.
-                        </p>
-                    </div>
-
-                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
-                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
-                            <span class="text-white font-bold text-sm">CREATIVE DIRECTOR & BRAND CONSULTANT</span>
-                            <span class="text-gray-500 uppercase">FREELANCE | 2019 - 2023</span>
-                        </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Owned brand identities and audience growth algorithms for 10+ long-term clients. Executed end-to-end design frameworks and distribution models entirely protected under strict client NDAs.
-                        </p>
-                    </div>
-
-                    <div class="relative pl-6 border-l border-gray-800 space-y-2 group">
-                        <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-gray-800 border border-gray-700 -translate-x-[5.5px] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] accent-transition"></span>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 font-mono text-xs">
-                            <span class="text-white font-bold text-sm">MARKETING & PRODUCTION STAFF</span>
-                            <span class="text-gray-500 uppercase">USD ATHLETICS | 2025 - PRESENT</span>
-                        </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Deploy and monitor high-stakes live media events, PA audio pipelines, and stadium video boards under tight real-time broadcast schedules.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Column 2: Skill Matrix -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="border-b border-gray-855 pb-4">
-                    <h2 class="text-xl font-bold text-white">Capabilities</h2>
-                    <p class="text-gray-500 text-xs font-mono">// Stack variables mapped to active mode matrices</p>
-                </div>
-
-                <div class="border border-gray-800 rounded-xl overflow-hidden font-mono text-xs bg-gray-900/10 backdrop-blur-sm">
-                    <!-- Builder Skills -->
-                    <div class="bg-gray-950/60 border-b border-gray-800 p-3 font-bold uppercase text-[var(--accent)] accent-transition tracking-wider flex justify-between items-center">
-                        <span>🛠️ Systems Core (Builder)</span>
-                        <span class="text-[9px] text-gray-500">READY</span>
-                    </div>
-                    <div class="p-4 space-y-2 text-gray-300">
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Languages:</span>
-                            <span class="text-right">Python, TypeScript, SQL, C++</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Frameworks:</span>
-                            <span class="text-right">Next.js 15, React 19, FastAPI, Express</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Infrastructure:</span>
-                            <span class="text-right">Supabase, WebRTC, Websockets, AST</span>
-                        </div>
-                        <div class="flex justify-between pb-0.5">
-                            <span class="text-gray-500">AI Architectures:</span>
-                            <span class="text-right">Transformer VAEs, TDA, Multi-Agent IRL</span>
-                        </div>
-                    </div>
-
-                    <!-- Operator Skills -->
-                    <div class="bg-gray-955/60 border-t border-gray-805 border-b border-gray-800 p-3 font-bold uppercase text-violet-400 tracking-wider flex justify-between items-center">
-                        <span>📈 Venture Core (Operator)</span>
-                        <span class="text-[9px] text-gray-500">READY</span>
-                    </div>
-                    <div class="p-4 space-y-2 text-gray-300">
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Growth Models:</span>
-                            <span class="text-right">GTM Wedge Campaigns, $0 CAC loops</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Discovery:</span>
-                            <span class="text-right">50+ Customer Discovery Interviews</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-900 pb-1.5">
-                            <span class="text-gray-500">Pricing Structures:</span>
-                            <span class="text-right">3-Tier SaaS, Enterprise Recruiter model</span>
-                        </div>
-                        <div class="flex justify-between pb-0.5">
-                            <span class="text-gray-500">Identity:</span>
-                            <span class="text-right">Storytelling Hooks, Creative Direction</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="border border-gray-800 bg-[#111827]/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 space-y-6 relative z-10 hover:border-[var(--accent-border-hover)] accent-transition">
-            <div class="space-y-2 text-center max-w-xl mx-auto">
-                <div class="font-mono text-[10px] text-[var(--accent)] uppercase tracking-wider tracking-widest accent-transition">// CONNECT LAYER</div>
-                <h2 class="text-2xl font-bold tracking-tight text-white">Let's build something useful.</h2>
-                <p class="text-gray-400 text-sm font-sans leading-relaxed">
-                    Interested in starting a project, examining an architectural implementation, or collaborating on high-leverage product distribution? Let's get in touch.
+                <p class="text-gray-200 text-lg leading-relaxed font-medium">
+                    I build software products, AI-powered applications, and developer tools focused on solving real-world problems and creating measurable user impact.
                 </p>
+                
+                <p class="text-gray-400 text-sm">
+                    Minneapolis, MN | University of South Dakota | Expected May 2027
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3.5 px-6 rounded-lg transition-all shadow-md flex items-center justify-center min-h-[48px]">
+                        Download Resume (PDF)
+                    </a>
+                    <a href="mailto:Siddarth.lbf341@gmail.com" class="border border-gray-800 bg-[#111827]/40 hover:bg-[#111827]/80 text-gray-300 hover:text-white font-semibold py-3.5 px-6 rounded-lg transition-all flex items-center justify-center min-h-[48px]">
+                        Get in Touch
+                    </a>
+                </div>
             </div>
-            
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 max-w-lg mx-auto font-mono text-xs w-full">
-                <a href="mailto:Siddarth.lbf341@gmail.com" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
-                    [ SEND EMAIL ]
-                </a>
-                <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-950 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
-                    [ LINKEDIN ]
-                </a>
-                <a href="https://github.com/Redsid5" target="_blank" class="accent-transition w-full sm:w-auto text-center font-bold py-4 px-8 rounded-lg border border-gray-800 bg-gray-955 text-white hover:border-[var(--accent)] hover:bg-gray-900/50 min-h-[48px] flex items-center justify-center">
-                    [ GITHUB ]
-                </a>
+
+            <!-- Avatar Headshot -->
+            <div class="md:col-span-4 flex justify-center md:justify-end">
+                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-gray-800 bg-[#111827] p-1 shadow-xl">
+                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-xl scale-[1.1] hover:scale-100 transition-transform duration-500">
+                </div>
             </div>
+
+        </section>
+
+        <!-- Stats Proof Points Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-b border-gray-800 py-10 relative z-10 text-center sm:text-left">
+            <div class="space-y-1">
+                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">821+</div>
+                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">Platform Users</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">50+</div>
+                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">User Interviews Conducted</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">40%</div>
+                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">Daily Active User Retention</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="space-y-6">
+            <h2 class="text-xl font-bold tracking-tight text-white">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400 text-sm leading-relaxed">
+                <div class="md:col-span-2 space-y-4">
+                    <p class="text-base text-gray-300 font-medium">
+                        I am a Computer Science student focused on software engineering, AI systems, and product development. I have experience building full-stack applications, conducting user research, developing machine learning solutions, and turning ideas into products used by real people.
+                    </p>
+                    <p>
+                        My work focuses on shipping clean code and execution. Rather than building overdesigned frameworks, I prioritize shipping functioning software that produces measurable outcomes for users.
+                    </p>
+                </div>
+                <div class="bg-[#111827]/30 border border-gray-800 p-6 rounded-xl space-y-3">
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">// Core Focus</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Writing clean full-stack code, translating user feedback directly into product iterations, and executing solid software architectures.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="space-y-6 border-t border-gray-800 pt-12">
+            <h2 class="text-xl font-bold tracking-tight text-white">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+                <div class="space-y-2">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Languages</h3>
+                    <div class="text-gray-400 leading-relaxed font-medium">Python, TypeScript, JavaScript, SQL</div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Frameworks</h3>
+                    <div class="text-gray-400 leading-relaxed font-medium">Next.js, React, Node.js, Tailwind CSS</div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">AI/ML</h3>
+                    <div class="text-gray-400 leading-relaxed font-medium font-medium">Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost</div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Tools & Infra</h3>
+                    <div class="text-gray-400 leading-relaxed font-medium">Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects (Showcasing 3 Strongest) -->
+        <section id="projects" class="space-y-6 border-t border-gray-800 pt-12">
+            <div>
+                <h2 class="text-xl font-bold tracking-tight text-white">Selected Projects & Research</h2>
+                <p class="text-xs text-gray-500 font-mono mt-1">// Structured evidence of impact and technical execution</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Project 1: PRISM -->
+                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base font-bold text-white tracking-tight">PRISM</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Research</span>
+                        </div>
+                        <p class="text-xs text-gray-300 font-semibold font-sans">Research system for predicting PR risk from structural code signals.</p>
+                        
+                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                Pull request review cycles are slow and struggle to catch architectural regressions.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                Engineered the AST extraction parser (using tree-sitter) and built the XGBoost risk prediction model.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                Predicted merge risk probability with validation metrics achieving AUC >= 0.80.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                Python, XGBoost, Tree-Sitter, NetworkX, SHAP
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                        <span class="text-gray-500">2026</span>
+                        <div class="flex gap-3 text-indigo-400 font-semibold">
+                            <span>Code Private</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: COGN -->
+                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base font-bold text-white tracking-tight">COGN</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Tooling</span>
+                        </div>
+                        <p class="text-xs text-gray-300 font-semibold font-sans">Cognitive integrity layer tracking logic drift in AI-assisted codebases.</p>
+                        
+                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                AI-generated code introduces logic changes that drift reasoning patterns over time.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                Authored the CI/CD pull request metrics evaluator and designed three parsing signatures.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                Automates PR scoring against repository baseline to isolate cognitive drifts.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                Node.js, GitHub Actions, AST Parsing
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                        <span class="text-gray-500">2026</span>
+                        <div class="flex gap-3 text-indigo-400 font-semibold">
+                            <span>Git Action</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Vibein -->
+                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base font-bold text-white tracking-tight">Vibein</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Product</span>
+                        </div>
+                        <p class="text-xs text-gray-300 font-semibold font-sans">Anonymous professional network for student discovery.</p>
+                        
+                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                High social friction in traditional campus networking platforms.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                Designed the full-stack architecture, recommendation logic, and instant messaging socket.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                Scaled to 821 users pre-beta with 40% Daily Active User retention.
+                            </div>
+                            <div>
+                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                Next.js, Node.js, WebSockets, Supabase
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                        <span class="text-gray-500">2025</span>
+                        <div class="flex gap-3 text-indigo-400 font-semibold">
+                            <a href="https://vibein.us" target="_blank" class="hover:underline">Live ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Other Projects & Contributions -->
+            <div class="pt-8 space-y-4">
+                <h3 class="text-sm font-bold tracking-wider text-white uppercase font-mono">// Other Projects & Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
+                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
+                        <h4 class="font-bold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-indigo-400">ArenaHQ ↗</a></h4>
+                        <p>Live competitive coding arena featuring socket execution sandboxes, real-time evaluation runtimes, and recruiter portal connections. Built with CodeMirror 6, Supabase, and Piston APIs.</p>
+                    </div>
+                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
+                        <h4 class="font-bold text-white text-sm">WTFcode</h4>
+                        <p>A dependency-mapping CLI tool that parses code AST graphs locally to compress large repository context files 832x, reducing LLM token billing costs by 90%.</p>
+                    </div>
+                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
+                        <h4 class="font-bold text-white text-sm">ALASKA</h4>
+                        <p>Privacy-focused claims filler tool for veterans built during Wildfire Labs Hackathon (Top 10). Employs local AES-256-GCM browser encryption and Gemini Vision models.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Log Callout -->
+        <section class="border border-indigo-950/40 bg-indigo-950/5 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div class="space-y-1">
+                <h3 class="text-base font-bold text-white">Looking for Sid's personal side? 🌸</h3>
+                <p class="text-sm text-gray-400">Check out the personal log for sports, cooking, and hobbies outside of software engineering.</p>
+            </div>
+            <a href="sid.html" class="bg-indigo-900/30 hover:bg-indigo-900/50 text-indigo-400 border border-indigo-800/50 font-semibold py-2.5 px-5 rounded-lg transition-all text-sm min-h-[44px] flex items-center justify-center whitespace-nowrap">
+                View Personal Log
+            </a>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-900 mt-16 py-8 text-center font-mono text-[9px] text-gray-600 relative z-10">
-        SIDDARTHA REDDY MUNUGALA // ALL RIGHTS RESERVED © 2026 // PRODUCTION PIPELINE: OPTIMIZED
+    <footer class="border-t border-gray-800 py-12 text-center text-xs text-gray-600">
+        <div>&copy; 2026 Siddartha Reddy Munugala. All rights reserved.</div>
+        <div class="mt-1.5 font-mono text-[10px] text-gray-700">Minneapolis, MN | University of South Dakota</div>
     </footer>
 
-    <!-- Interactive Logic Script -->
-    <script>
-        // Case Study Proof-of-Execution Database Matrix
-        const projectData = {
-            arc: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Dual-context behavior patterns (student-founders) are invisible to traditional static trackers.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Built a 4-scale Transformer VAE to map 847 behavioral dimensions, coupled with a Ripser persistent homology topological detector.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Generic clustering algorithms failed on dynamic workflow shifts. Pivoted to topological manifold projection.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 81% phase accuracy at 60 days. Secure Postgres RLS.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Startup scaling requires mapping performance under highly volatile founder conditions.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Secured 3 clinical partnerships (Johns Hopkins, MIT Media Lab, Stanford d.school) to establish data pools.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Targeted student-founders as a high-friction wedge. Structured 3-tier SaaS licensing model.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> 81% phase accuracy at 60 days.</div>
-                `
-            },
-            arena: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Technical screening relies on static whiteboards rather than active execution variables.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Live tournament socket network (Supabase WebSockets) running CodeMirror 6 with execution sandboxes (Piston API).</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> P2P video stream synchronization latency blocked auth. Swapped to a compressed WebRTC signaling state.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> Multi-stream camera verification, strict TypeScript sandbox.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Companies waste engineering hours screening candidates with resume theater.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Developed enterprise Recruiter Portal allowing companies to host branded tournaments.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Monetized by allowing recruiters to fast-track winners directly to final interviews.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Second product of the Vibein talent pipeline.</div>
-                `
-            },
-            wtf: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> LLM coding assistants break production files due to missing AST import blast-radius details.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Python CLI parser traversing local Abstract Syntax Trees (AST) to map graph single points of failure.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Initially dumped entire file dependency trees, exceeding token scopes. Pivoted to focus on impact vectors.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 832x context compression (568,000 to 683 tokens).</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> AI software developers generate high API bills by reading complete files repeatedly.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Reduced LLM token costs by 90% per development run.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Zero-friction developer adoption hook via simple CLI installer (<code class="bg-gray-950 px-1 py-0.5 rounded text-[10px]">pip install wtfcode</code>).</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Publicly released tool mapping complex repository graphs.</div>
-                `
-            },
-            vibe: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Traditional networking platforms leak user identity, creating career-change anxiety.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Solo build. Built text-anonymizer token masks and trust-score peer recommendation systems.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Heavy central recommendation algorithms lagged on user databases. Pivoted to local group sub-graphs.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> High-security text parsing, structured postgres models.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> High customer acquisition cost (CAC) blocks early social networking growth.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Executed 3 full onboarding campus lifecycles. 40% Daily Active User (DAU) retention.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Partnered with university club networks for a $0 CAC loop. Conducted 50+ discovery interviews.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> 821 users registered pre-beta.</div>
-                `
-            },
-            alaska: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Veterans face complex filing formats while leaking medical histories to third-party APIs.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Local-first Web Crypto AES-256-GCM tool mapping VA forms with Gemini Vision layouts.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Browser-side PDF compiling was too memory-heavy on mobile. Swapped to a segmented coordinate layout matrix.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> 10 VA forms auto-fill, zero data persistence.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> VA benefit applications are highly fragmented, leading to critical filing delays.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Top 10 finish in Wildfire Labs Hackathon. Built crisis-detection overlay routing straight to 988.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Wedge Market:</strong> Private veteran support networks. Zero server-breach surface area.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> 48-hour build showing operational utility.</div>
-                `
-            },
-            prism: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Post-merge code risks are hard to predict before PR merge hooks run.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> XGBoost classifier over 45 AST complexity variables (tree-sitter structures and NetworkX graphs).</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Generalization:</strong> SHAP TreeExplainer local feature explanation. AUC target &gt;= 0.80.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> Delta AUC &lt; 0.05 across unseen repositories.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> High-risk pull requests slip past manual code review, leading to regression costs.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Designed structural telemetry pipeline mapping risk probabilities before production merge.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Research:</strong> Produced USD Faculty and MSU Mentorship proposals with full mathematical appendix.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Validation:</strong> Generalized risk scoring across diverse repository topologies.</div>
-                `
-            },
-            cogn: {
-                builder: `
-                    <div class="text-[var(--accent)] font-bold mb-1">// SYSTEM METRIC ARCHITECTURE</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> AI-assisted programming drifts reasoning patterns, creating invisible legacy context drift.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Approach:</strong> Core primitives (cogn.signature, cogn.transfer, cogn.integrity) scoring PR logic in CI/CD.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Pivot/What Failed:</strong> Static regex failed to map coherence. Pivoted to deep baseline topological signatures.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Results:</strong> CI/CD GitHub Action assessing pull request cognitive drift.</div>
-                `,
-                operator: `
-                    <div class="text-violet-400 font-bold mb-1">// GO-TO-MARKET LEDGER</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Problem:</strong> Codebases degrade under unchecked AI copilot code contributions.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-white font-mono">Outcomes:</strong> Formulated cognitive drift scoring metrics into automated developer workflows.</div>
-                    <div class="text-gray-400 mb-2 font-sans"><strong class="text-amber-500 font-mono">Monetization:</strong> Target v0 developer monetization: $49 manual Cognitive Audit Report.</div>
-                    <div class="text-gray-400 font-sans"><strong class="text-white font-mono">Traction:</strong> Developer tool packaging for Git repository checkups.</div>
-                `
-            }
-        };
-
-        // State Machine Controller
-        function setMode(mode) {
-            const body = document.body;
-            const toggleBg = document.getElementById('toggle-bg');
-            const btnBuilder = document.getElementById('btn-builder');
-            const btnOperator = document.getElementById('btn-operator');
-            const identityStatus = document.getElementById('identity-status');
-            
-            const badges = {
-                arc: document.getElementById('badge-arc'),
-                arena: document.getElementById('badge-arena'),
-                wtf: document.getElementById('badge-wtf'),
-                vibe: document.getElementById('badge-vibe'),
-                alaska: document.getElementById('badge-alaska'),
-                prism: document.getElementById('badge-prism'),
-                cogn: document.getElementById('badge-cogn')
-            };
-
-            if (mode === 'builder') {
-                body.classList.remove('mode-operator');
-                
-                // Toggle Switch Styling
-                toggleBg.style.transform = 'translateX(0)';
-                toggleBg.className = "absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-teal-500/10 border border-teal-500/30";
-                btnBuilder.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-teal-400";
-                btnOperator.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500";
-                
-                // Navigation Active State Highlight
-                document.getElementById('nav-github').className = "text-gray-400 hover:text-teal-400 accent-transition";
-                document.getElementById('nav-linkedin').className = "text-gray-400 hover:text-teal-400 accent-transition";
-                document.getElementById('nav-email').className = "text-gray-400 hover:text-teal-400 accent-transition";
-                
-                // Status Pill
-                identityStatus.innerText = "BUILDER STATE_ACTIVE";
-                
-                // Morph content matrices to builder (technical) mode
-                Object.keys(projectData).forEach(key => {
-                    const contentEl = document.getElementById(`content-${key}`);
-                    if(contentEl) {
-                        contentEl.style.opacity = '0';
-                        setTimeout(() => {
-                            contentEl.innerHTML = projectData[key].builder;
-                            contentEl.style.opacity = '1';
-                        }, 150);
-                    }
-                    if(badges[key]) {
-                        badges[key].className = "font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-teal-500/20 bg-teal-500/5 text-teal-400 accent-transition";
-                        badges[key].innerText = "Builder";
-                    }
-                });
-            } else {
-                body.classList.add('mode-operator');
-                
-                // Toggle Switch Styling
-                toggleBg.style.transform = 'translateX(104px)';
-                toggleBg.className = "absolute top-[2px] left-[2px] bottom-[2px] w-[100px] rounded-full transition-all duration-300 bg-violet-500/10 border border-violet-500/30";
-                btnBuilder.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-gray-500";
-                btnOperator.className = "relative z-10 w-1/2 text-center text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 text-violet-400";
-                
-                // Navigation Active State Highlight
-                document.getElementById('nav-github').className = "text-gray-400 hover:text-violet-400 accent-transition";
-                document.getElementById('nav-linkedin').className = "text-gray-400 hover:text-violet-400 accent-transition";
-                document.getElementById('nav-email').className = "text-gray-400 hover:text-violet-400 accent-transition";
-                
-                // Status Pill
-                identityStatus.innerText = "OPERATOR STATE_ACTIVE";
-
-                // Morph content matrices to operator (business/GTM) mode
-                Object.keys(projectData).forEach(key => {
-                    const contentEl = document.getElementById(`content-${key}`);
-                    if(contentEl) {
-                        contentEl.style.opacity = '0';
-                        setTimeout(() => {
-                            contentEl.innerHTML = projectData[key].operator;
-                            contentEl.style.opacity = '1';
-                        }, 150);
-                    }
-                    if(badges[key]) {
-                        badges[key].className = "font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-violet-500/20 bg-violet-500/5 text-violet-400 accent-transition";
-                        badges[key].innerText = "Operator";
-                    }
-                });
-            }
-        }
-
-        // Terminal Helper: Append Output
-        function appendTerminalOutput(htmlContent) {
-            const terminalScreen = document.getElementById('terminal-screen');
-            const line = document.createElement('div');
-            line.innerHTML = htmlContent;
-            terminalScreen.appendChild(line);
-            terminalScreen.scrollTop = terminalScreen.scrollHeight;
-        }
-
-        // Terminal Bootup Log Diagnostics
-        const bootSequence = [
-            { text: "// INITIATING PORTFOLIO PROOF LEDGER BOOTSTRAP...", delay: 100, color: "text-gray-500" },
-            { text: "CPU: Zen Virtual Engine // POSITIONING: DUAL MATRIX STRAP", delay: 250, color: "text-gray-400" },
-            { text: "QUOTE LOADED: 'Instead of doing nothing, I choose to do everything possible.'", delay: 400, color: "text-violet-400" },
-            { text: "✔ [SYS_01] ARC: Temporal Manifold loaded. Clinically partnered.", delay: 600, color: "text-teal-400" },
-            { text: "✔ [SYS_02] ArenaHQ: Recruiter sandbox execution framework operational.", delay: 800, color: "text-teal-400" },
-            { text: "✔ [SYS_03] WTFcode: Context compression mapped to AST graph.", delay: 1000, color: "text-teal-400" },
-            { text: "✔ [SYS_04] Vibein: Anonymous matchmaking logic active with $0 CAC loop.", delay: 1200, color: "text-teal-400" },
-            { text: "✔ [SYS_05] ALASKA: VA Cryptography form layers validated.", delay: 1400, color: "text-teal-400" },
-            { text: "✔ [SYS_06] PRISM: Risk probability modeling active (AUC >= 0.80).", delay: 1550, color: "text-teal-400" },
-            { text: "✔ [SYS_07] COGN: Cognitive drift baseline metrics initialized.", delay: 1700, color: "text-teal-400" },
-            { text: "DIAGNOSTICS SUCCESSFUL. Welcome to Siddartha's Core Ledger.", delay: 1850, color: "text-blue-400" },
-            { text: "Type 'help' to review directory commands, or 'projects' to dump the data ledger.", delay: 1950, color: "text-gray-400" }
-        ];
-
-        function runBootSequence() {
-            bootSequence.forEach(step => {
-                setTimeout(() => {
-                    appendTerminalOutput(`<div class="${step.color}">${step.text}</div>`);
-                }, step.delay);
-            });
-        }
-
-        // Console Emulation Logic Engine
-        const terminalInput = document.getElementById('terminal-input');
-
-        terminalInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                const command = this.value.trim().toLowerCase();
-                
-                // Echo command back to screen
-                appendTerminalOutput(`<div class="text-gray-500 pt-1"><span class="text-[var(--accent)] accent-transition">guest@redsid5:~$</span> ${this.value}</div>`);
-                this.value = '';
-
-                setTimeout(() => {
-                    switch(command) {
-                        case 'help':
-                            appendTerminalOutput(`
-                                <div class="text-gray-400">Available commands:</div>
-                                <div> - <span class="text-teal-400">projects</span>: Dumps active metric infrastructure state arrays.</div>
-                                <div> - <span class="text-teal-400">resume</span>: Dumps core functional execution profile.</div>
-                                <div> - <span class="text-teal-400">builder</span>: Forces site state switch to BUILDER teal matrix.</div>
-                                <div> - <span class="text-teal-400">operator</span>: Forces site state switch to OPERATOR violet matrix.</div>
-                                <div> - <span class="text-teal-400">clear</span>: Wipes the console viewport thread.</div>
-                            `);
-                            break;
-                        case 'clear':
-                            document.getElementById('terminal-screen').innerHTML = '';
-                            break;
-                        case 'projects':
-                            appendTerminalOutput(`
-                                <div class="text-teal-400 font-bold">[ GLOBAL METRICS PRODUCTION DUMP ]</div>
-                                <div>• ARC: temporal VAE model (FastAPI/PyTorch) - 81% Phase Accuracy.</div>
-                                <div>• ArenaHQ: Live WebSockets competition sandbox (Turbopack/CodeMirror).</div>
-                                <div>• WTFcode: AST parser & blast radius context minimizer CLI tool.</div>
-                                <div>• Vibein: Anonymous network, 821 users pre-beta, 40% active retention.</div>
-                                <div>• ALASKA: local Web Crypto VA filing assistant, AES-256 compliance.</div>
-                                <div>• PRISM: ML system predicting PR merge risk using structural AST signals.</div>
-                                <div>• COGN: CI/CD cognitive drift scoring layer tracking AI reasoning drift.</div>
-                            `);
-                            break;
-                        case 'resume':
-                            appendTerminalOutput(`
-                                <div class="text-violet-400 font-bold">[ CAREER SPECIFICATIONS ]</div>
-                                <div>Siddartha Reddy Munugala — Systems Builder & Venture Operator.</div>
-                                <div>• Founder & CEO, Vibein/ArenaHQ (2025-Present)</div>
-                                <div>• IT Coordinator, NSLS executive board (2024-Present)</div>
-                                <div>• Creative Director & consultant, Freelance (2019-2023)</div>
-                                <div>• Production Operations, USD Athletics (2025-Present)</div>
-                            `);
-                            break;
-                        case 'builder':
-                            setMode('builder');
-                            appendTerminalOutput(`<div class="text-teal-400">Switching state metrics: Mode changed to BUILDER. Accent matrix color green updated.</div>`);
-                            break;
-                        case 'operator':
-                            setMode('operator');
-                            appendTerminalOutput(`<div class="text-violet-400">Switching state metrics: Mode changed to OPERATOR. Accent matrix color gold updated.</div>`);
-                            break;
-                        case '':
-                            break;
-                        default:
-                            appendTerminalOutput(`<span class="text-red-400">✘ Command syntax deviation error:</span> '${command}' not recognized. Type 'help'.`);
-                    }
-                }, 50);
-            }
-        });
-
-        // Matrix Rain Canvas Simulation
-        const canvas = document.getElementById("matrix-canvas");
-        const ctx = canvas.getContext("2d");
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-
-        const columns = Math.floor(canvas.width / 20) + 1;
-        const yPositions = Array(columns).fill(0);
-
-        function matrixStep() {
-            ctx.fillStyle = "rgba(6, 9, 15, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Set color based on mode
-            const isOperator = document.body.classList.contains("mode-operator");
-            ctx.fillStyle = isOperator ? "#8B5CF6" : "#14B8A6";
-            ctx.font = "10px monospace";
-
-            yPositions.forEach((y, index) => {
-                const char = String.fromCharCode(33 + Math.random() * 93);
-                const x = index * 20;
-                ctx.fillText(char, x, y);
-
-                if (y > 100 + Math.random() * 10000) {
-                    yPositions[index] = 0;
-                } else {
-                    yPositions[index] = y + 10;
-                }
-            });
-        }
-        setInterval(matrixStep, 50);
-
-        // System Initialization
-        window.onload = function() {
-            setMode('builder');
-            runBootSequence();
-        };
-    </script>
 </body>
 </html>

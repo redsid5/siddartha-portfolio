@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #111827;
+            color: #1f2937;
             background-color: #ffffff;
             line-height: 1.4;
             margin: 0;
@@ -19,41 +19,41 @@
         }
         header {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #0f172a;
+            color: #111827;
         }
         h2 {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            margin: 15px 0 6px 0;
+            margin: 14px 0 6px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #1e293b;
-            border-bottom: 2px solid #e2e8f0;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
             padding-bottom: 2px;
         }
         h3 {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
-            margin: 0 0 3px 0;
-            color: #334155;
+            margin: 0 0 2px 0;
+            color: #374151;
         }
         p {
-            font-size: 11.5px;
-            margin: 0 0 8px 0;
-            color: #475569;
+            font-size: 11px;
+            margin: 0 0 6px 0;
+            color: #4b5563;
         }
         .contact-info {
-            font-size: 11px;
-            color: #475569;
-            margin-bottom: 10px;
+            font-size: 10.5px;
+            color: #4b5563;
+            margin-bottom: 8px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -66,37 +66,28 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
-        .quote {
-            font-style: italic;
-            font-size: 11px;
-            color: #64748b;
-            margin: 5px 0 10px 0;
-            border-left: 3px solid #cbd5e1;
-            padding-left: 10px;
-            display: inline-block;
-        }
         .experience-item, .project-item {
             margin-bottom: 10px;
         }
         .item-header {
             display: flex;
             justify-content: space-between;
-            font-size: 11.5px;
+            font-size: 11px;
             margin-bottom: 2px;
         }
         .role {
             font-weight: 700;
-            color: #1e293b;
+            color: #1f2937;
         }
         .date-location {
-            color: #64748b;
+            color: #6b7280;
             font-weight: 500;
         }
         ul {
-            margin: 0 0 6px 0;
+            margin: 0 0 4px 0;
             padding-left: 18px;
-            font-size: 11.5px;
-            color: #475569;
+            font-size: 11px;
+            color: #4b5563;
         }
         li {
             margin-bottom: 3px;
@@ -104,27 +95,27 @@
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px 20px;
-            font-size: 11.5px;
+            gap: 8px 20px;
+            font-size: 11px;
         }
         .skills-category {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .category-title {
             font-weight: 700;
-            color: #334155;
+            color: #374151;
             margin-bottom: 1px;
         }
         @media print {
             body {
                 padding: 15px;
-                font-size: 10.5px;
+                font-size: 10px;
             }
             .no-print {
-                display: none;
+                display: none !important;
             }
             h2 {
-                margin-top: 10px;
+                margin-top: 8px;
             }
         }
     </style>
@@ -132,22 +123,21 @@
 <body>
     <div class="container">
         <!-- Print / PDF Hint -->
-        <p class="no-print" style="text-align: right; margin-bottom: 15px;">
-            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 11px;">Print / Save as PDF</a>
+        <p class="no-print" style="text-align: right; margin-bottom: 10px;">
+            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 5px 10px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 11px;">Print / Save as PDF</a>
         </p>
 
         <!-- Header -->
         <header>
             <h1>Siddartha Reddy Munugala</h1>
             <div class="contact-info">
+                <span>Minneapolis, MN</span>
+                <span>•</span>
                 <span>Email: <a href="mailto:Siddarth.lbf341@gmail.com">Siddarth.lbf341@gmail.com</a></span>
                 <span>•</span>
                 <span>GitHub: <a href="https://github.com/Redsid5" target="_blank">github.com/Redsid5</a></span>
                 <span>•</span>
                 <span>LinkedIn: <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank">linkedin.com/in/siddartha-reddy-munugala-95b35a333</a></span>
-            </div>
-            <div class="quote">
-                "Instead of doing nothing, I choose to do everything possible."
             </div>
         </header>
 
@@ -155,7 +145,7 @@
         <section>
             <h2>Professional Summary</h2>
             <p>
-                Product-minded software developer and venture builder focused on full-stack development, AI-powered developer systems, and startup execution. Proven experience designing high-signal architectures and establishing zero-cost campus distribution funnels. Fuses rigorous engineering practices with robust customer discovery processes to launch products that solve actual user problems.
+                Computer Science student and full-stack developer with experience building real-time socket applications, ML risk prediction pipelines, and custom developer tools. Focuses on shipping clean, high-performance code and executing rapid product loops.
             </p>
         </section>
 
@@ -167,7 +157,7 @@
                     <span class="role">University of South Dakota</span>
                     <span class="date-location">Vermillion, SD | Expected May 2027</span>
                 </div>
-                <div style="font-size: 11.5px; color: #475569; font-weight: 500; margin-top: 1px;">
+                <div style="font-size: 11px; color: #4b5563; font-weight: 500; margin-top: 1px;">
                     B.S. Computer Science, Minor in Innovation & Entrepreneurship
                 </div>
             </div>
@@ -206,45 +196,45 @@
             
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="role">Founder & Chief Executive Officer</span>
-                    <span class="date-location">Vibein / ArenaHQ | 2025 – Present</span>
+                    <span class="role">Co-Founder & Lead Engineer</span>
+                    <span class="date-location">Vibein / ArenaHQ | Jan 2025 – Present</span>
                 </div>
                 <ul>
-                    <li>Lead architecture and scaling operations for two active talent products, managing real-time WebSocket databases and WebRTC P2P streams.</li>
-                    <li>Conducted 50+ target user discovery interviews to iterate features and establish strategic student-founder distribution funnels.</li>
-                    <li>Designed GTM playbooks and monetization models, establishing $0 campus user acquisition loops.</li>
+                    <li>Led full-stack architecture and feature iterations for two active web applications using Node.js, WebSockets, and WebRTC.</li>
+                    <li>Conducted 50+ user interviews to iterate features, improving pre-beta signup retention.</li>
+                    <li>Managed deployment pipelines on Vercel and Supabase, implementing secure database-level access controls.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
                     <span class="role">IT Coordinator & Publicity Chair</span>
-                    <span class="date-location">NSLS Executive Board | 2024 – Present</span>
+                    <span class="date-location">NSLS Executive Board | Sep 2024 – Present</span>
                 </div>
                 <ul>
-                    <li>Manage chapter digital directories, tracking pipelines, and IT infrastructure for a national collegiate leadership society.</li>
-                    <li>Implement systematic communication scripts and recruitment dashboards, optimizing onboarding workflows.</li>
+                    <li>Manage chapter digital directories, tracking pipelines, and IT infrastructure for a collegiate leadership organization.</li>
+                    <li>Implemented communication scripts and recruitment dashboards, streamlining member onboarding workflows.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
                     <span class="role">Creative Director & Brand Consultant</span>
-                    <span class="date-location">Freelance | 2019 – 2023</span>
+                    <span class="date-location">Freelance | Jun 2019 – Dec 2023</span>
                 </div>
                 <ul>
                     <li>Managed brand identities and distribution campaigns for 10+ internet creators and small businesses.</li>
-                    <li>Maintained 100% long-term client retention under NDAs, coordinating assets and channel logic.</li>
+                    <li>Maintained 100% client retention, coordinating asset logistics and brand channels under strict NDAs.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
                     <span class="role">Production Operations Staff</span>
-                    <span class="date-location">USD Athletics | 2025 – Present</span>
+                    <span class="date-location">USD Athletics | Aug 2025 – Present</span>
                 </div>
                 <ul>
-                    <li>Direct live-event audio, stadium display boards, and broadcast cues under high-stakes parameters with zero scheduling tolerance.</li>
+                    <li>Direct live-event audio, stadium display boards, and broadcast cues under strict real-time production parameters.</li>
                 </ul>
             </div>
         </section>
@@ -259,9 +249,9 @@
                     <span class="date-location">2026</span>
                 </div>
                 <ul>
-                    <li>Designed an ML system predicting post-merge engineering risk from pull request structural signals; trained XGBoost model over ~45 engineered features (AST complexity via tree-sitter, dependency graph betweenness via NetworkX, SZZ-inspired bug labels).</li>
-                    <li>Implemented explainability workflows via SHAP TreeExplainer; achieved AUC target ≥ 0.80 and maintained cross-repository generalization gap ΔAUC &lt; 0.05.</li>
-                    <li>Produced two formal research proposals: USD faculty version and MSU mentorship version with full mathematical appendix.</li>
+                    <li>Designed an ML system predicting post-merge engineering risk from pull request structural signals, utilizing XGBoost over 45 engineered features (AST complexity via tree-sitter, dependency graphs via NetworkX).</li>
+                    <li>Implemented explainability workflows via SHAP TreeExplainer, achieving model validation target (AUC &gt;= 0.80) and keeping cross-repository generalization gap ΔAUC &lt; 0.05.</li>
+                    <li>Authored two formal research proposals (USD faculty version and MSU mentorship version) with full mathematical appendices.</li>
                 </ul>
             </div>
 
@@ -271,9 +261,9 @@
                     <span class="date-location">2026</span>
                 </div>
                 <ul>
-                    <li>Coined and developed the concept of "cognitive drift"—measurable shifts in reasoning patterns introduced by AI-generated code.</li>
-                    <li>Designed three core primitives (<code style="font-weight: bold; color: #1e293b;">cogn.signature</code>, <code style="font-weight: bold; color: #1e293b;">cogn.transfer</code>, <code style="font-weight: bold; color: #1e293b;">cogn.integrity</code>) and a CI/CD GitHub Action that scores PRs for cognitive coherence against repository baselines.</li>
-                    <li>Positioned as open-source developer tooling; established a v0 monetization target of $49 for manual Cognitive Audit Reports.</li>
+                    <li>Coined the concept of "cognitive drift"—shifts in reasoning patterns introduced by AI-generated code.</li>
+                    <li>Designed three core primitives (cogn.signature, cogn.transfer, cogn.integrity) and a CI/CD GitHub Action that scores PRs for cognitive coherence against repository baselines.</li>
+                    <li>Positioned as open-source developer tooling; launched manual Cognitive Audit Reports targeting early adopter developers.</li>
                 </ul>
             </div>
 
@@ -290,23 +280,12 @@
 
             <div class="project-item">
                 <div class="item-header">
-                    <span class="role">ArenaHQ (arenahq.us) — 1v1 Competitive Coding Platform</span>
+                    <span class="role">ArenaHQ (arenahq.us) — Live Competitive Coding Platform</span>
                     <span class="date-location">2025</span>
                 </div>
                 <ul>
                     <li>Created a live evaluation tournament engine with CodeMirror 6, Supabase WebSockets, and P2P camera authentication.</li>
-                    <li>Monetized via an enterprise Recruiter Portal allowing recruiters to fast-track winners, bypassing traditional resume loops.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="role">WTFcode — CLI Dependency Graph Engine</span>
-                    <span class="date-location">2025</span>
-                </div>
-                <ul>
-                    <li>Developed a local Python CLI (`pip install wtfcode`) mapping code AST relationships and import blast-radius details.</li>
-                    <li>Saves developer token costs by compressing large code repository contexts 832x (from 568K tokens to 683) for AI coders.</li>
+                    <li>Designed recruiter fast-track workflows, bypassing traditional screening loops.</li>
                 </ul>
             </div>
         </section>
