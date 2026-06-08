@@ -46,7 +46,7 @@
             0%, 100% { opacity: 0.10; transform: scale(1); }
             50% { opacity: 0.16; transform: scale(1.04); }
         }
-        .nebula-indigo {
+        .nebula-blue {
             animation: pulse-slow 8s ease-in-out infinite;
         }
         .nebula-teal {
@@ -72,7 +72,7 @@
             bottom: 0;
             background: radial-gradient(
                 350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
-                rgba(99, 102, 241, 0.09),
+                rgba(59, 130, 246, 0.09),
                 transparent 80%
             );
             z-index: 0;
@@ -85,10 +85,10 @@
         }
         .glass-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.20);
+            border-color: rgba(59, 130, 246, 0.20);
             box-shadow: 
                 0 20px 40px -15px rgba(0, 0, 0, 0.6),
-                0 0 25px -5px rgba(99, 102, 241, 0.10);
+                0 0 25px -5px rgba(59, 130, 246, 0.10);
         }
 
         /* Glass Navigation */
@@ -129,15 +129,15 @@
 
     <!-- Ambient Glowing Nebulas (Background Layer) -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-500/10 blur-[130px] nebula-indigo"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-500/10 blur-[130px] nebula-blue"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-500/8 blur-[130px] nebula-teal"></div>
     </div>
 
     <!-- Navigation Header -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
         <div>
-            <a href="#" class="font-extrabold tracking-tight text-white hover:text-indigo-400 transition-colors text-sm sm:text-base uppercase flex items-center gap-2">
-                <span class="text-indigo-500 font-mono font-bold">&lt;sid&gt;</span>
+            <a href="#" class="font-extrabold tracking-tight text-white hover:text-blue-400 transition-colors text-sm sm:text-base uppercase flex items-center gap-2">
+                <span class="text-blue-500 font-mono font-bold">&lt;sid&gt;</span>
                 Siddartha Reddy Munugala
             </a>
         </div>
@@ -146,7 +146,7 @@
             <a href="https://github.com/Redsid5" target="_blank" class="hover:text-white transition-colors">git://GitHub</a>
             <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-white transition-colors">ln://LinkedIn</a>
             <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-white transition-colors">smtp://Email</a>
-            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b-2 border-indigo-500 pb-0.5">Resume.pdf</a>
+            <a href="resume.html" class="text-white hover:text-blue-400 transition-colors font-semibold border-b-2 border-blue-500 pb-0.5">Resume.pdf</a>
             <a href="sid.html" class="text-pink-400 hover:text-pink-300 transition-colors font-semibold bg-pink-950/20 border border-pink-900/30 px-2.5 py-0.5 rounded-full flex items-center gap-1 font-sans">Personal 🌸</a>
         </div>
     </nav>
@@ -157,18 +157,18 @@
         <!-- Hero Section -->
         <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative py-6">
             <!-- Blueprint Grid Crosshair Marks -->
-            <div class="absolute -top-4 -left-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
-            <div class="absolute -top-4 -right-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
-            <div class="absolute -bottom-4 -left-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
-            <div class="absolute -bottom-4 -right-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
+            <div class="absolute -top-4 -left-4 font-mono text-xs text-blue-500/25 select-none">+</div>
+            <div class="absolute -top-4 -right-4 font-mono text-xs text-blue-500/25 select-none">+</div>
+            <div class="absolute -bottom-4 -left-4 font-mono text-xs text-blue-500/25 select-none">+</div>
+            <div class="absolute -bottom-4 -right-4 font-mono text-xs text-blue-500/25 select-none">+</div>
             
             <div class="md:col-span-7 space-y-6 text-center md:text-left flex flex-col items-center md:items-start relative z-10">
                 <div class="space-y-3">
                     <div class="flex items-center justify-center md:justify-start gap-2">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-bold">commit: a1c2223</span>
                     </div>
-                    <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-bold">
+                    <p class="text-xs sm:text-sm font-mono text-blue-400 tracking-wider uppercase font-bold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
                     </p>
                     <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -185,7 +185,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto font-mono text-xs">
-                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px] tracking-wide">
+                    <a href="resume.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px] tracking-wide">
                         cat resume.pdf
                     </a>
                     <a href="mailto:Siddarth.lbf341@gmail.com" class="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-200 hover:text-white font-bold py-3.5 px-6 rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
@@ -228,31 +228,31 @@
                             <pre id="code-bio" class="space-y-1">
 <span class="text-gray-500">$ curl -s https://api.siddartha.dev/profile</span>
 {
-  <span class="text-indigo-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,
-  <span class="text-indigo-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,
-  <span class="text-indigo-400">"specialization"</span>: [
+  <span class="text-blue-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,
+  <span class="text-blue-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,
+  <span class="text-blue-400">"specialization"</span>: [
     <span class="text-teal-400">"Full-Stack Products"</span>,
     <span class="text-teal-400">"AI Workflows"</span>
   ],
-  <span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>
+  <span class="text-blue-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>
 }</pre>
 
                             <!-- prism.py Code -->
                             <pre id="code-prism" class="hidden space-y-1">
-<span class="text-indigo-400">import</span> tree_sitter, xgboost <span class="text-indigo-400">as</span> xgb
+<span class="text-blue-400">import</span> tree_sitter, xgboost <span class="text-blue-400">as</span> xgb
 
-<span class="text-indigo-400">def</span> <span class="text-teal-400">evaluate_pr_risk</span>(diff_ast):
+<span class="text-blue-400">def</span> <span class="text-teal-400">evaluate_pr_risk</span>(diff_ast):
     <span class="text-gray-500"># Parse diff syntax trees</span>
     features = extract_weights(diff_ast)
     risk_prob = model.predict(features)
     
-    <span class="text-indigo-400">return</span> risk_prob <span class="text-gray-500"># validation AUC &gt;= 0.80</span></pre>
+    <span class="text-blue-400">return</span> risk_prob <span class="text-gray-500"># validation AUC &gt;= 0.80</span></pre>
 
                             <!-- vibein.ts Code -->
                             <pre id="code-vibein" class="hidden space-y-1">
-<span class="text-indigo-400">import</span> { WebSocketServer } <span class="text-indigo-400">from</span> <span class="text-teal-400">'ws'</span>;
+<span class="text-blue-400">import</span> { WebSocketServer } <span class="text-blue-400">from</span> <span class="text-teal-400">'ws'</span>;
 
-<span class="text-indigo-400">const</span> wss = <span class="text-indigo-400">new</span> WebSocketServer({ port: 8080 });
+<span class="text-blue-400">const</span> wss = <span class="text-blue-400">new</span> WebSocketServer({ port: 8080 });
 wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
     <span class="text-gray-500">// Handle concurrent connection pools</span>
     socket.on(<span class="text-teal-400">'message'</span>, (packet) =&gt; {
@@ -266,7 +266,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                         <div class="mt-4 pt-3 border-t border-white/5 flex justify-between items-center font-mono text-[9px]">
                             <span class="text-gray-500">siddartha@dev:~</span>
                             <div class="flex gap-2">
-                                <button onclick="triggerConsoleAction()" class="bg-indigo-950/40 hover:bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 px-2 py-1 rounded transition-colors active:scale-95">
+                                <button onclick="triggerConsoleAction()" class="bg-blue-950/40 hover:bg-blue-950/80 border border-blue-500/30 text-blue-400 px-2 py-1 rounded transition-colors active:scale-95">
                                     [ init_handshake ]
                                 </button>
                             </div>
@@ -280,21 +280,21 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
         <!-- Stats Proof Points Section -->
         <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center font-mono">
             <!-- Blueprint indicators -->
-            <div class="absolute top-2 left-2 text-[9px] text-indigo-500/10 font-mono select-none">ID_01</div>
-            <div class="absolute bottom-2 right-2 text-[9px] text-indigo-500/10 font-mono select-none">ID_03</div>
+            <div class="absolute top-2 left-2 text-[9px] text-blue-500/10 font-mono select-none">ID_01</div>
+            <div class="absolute bottom-2 right-2 text-[9px] text-blue-500/10 font-mono select-none">ID_03</div>
             
             <div class="space-y-1 relative z-10">
-                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Platform Users</div>
                 <div class="text-[9px] text-gray-600">users_staged_total</div>
             </div>
             <div class="space-y-1 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0 relative z-10">
-                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">User Interviews</div>
                 <div class="text-[9px] text-gray-600">telemetry_interviews_run</div>
             </div>
             <div class="space-y-1 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0 relative z-10">
-                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Active User Retention</div>
                 <div class="text-[9px] text-gray-600">dau_retention_ratio</div>
             </div>
@@ -302,8 +302,8 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
         <!-- About Section -->
         <section id="about" class="space-y-6 relative py-4">
-            <div class="absolute -top-2 -left-2 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
-            <h2 class="section-header border-l-4 border-indigo-500 pl-3">About Me</h2>
+            <div class="absolute -top-2 -left-2 font-mono text-[9px] text-blue-500/20 select-none">+</div>
+            <h2 class="section-header border-l-4 border-blue-500 pl-3">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400 text-sm leading-relaxed">
                 <div class="md:col-span-2 space-y-4">
                     <p class="text-base text-gray-300 font-medium">
@@ -314,7 +314,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     </p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl space-y-3 font-mono">
-                    <h3 class="text-xs font-bold text-indigo-400 uppercase tracking-wider">// Core Focus</h3>
+                    <h3 class="text-xs font-bold text-blue-400 uppercase tracking-wider">// Core Focus</h3>
                     <p class="text-xs text-gray-400 leading-relaxed font-medium">
                         Writing clean full-stack code, translating user feedback directly into product iterations, and executing solid software architectures.
                     </p>
@@ -324,9 +324,9 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
         <!-- Selected Projects (Showcasing 3 Strongest) -->
         <section id="projects" class="space-y-6 border-t border-white/5 pt-12 relative">
-            <div class="absolute -top-3 -right-2 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
+            <div class="absolute -top-3 -right-2 font-mono text-[9px] text-blue-500/20 select-none">+</div>
             <div>
-                <h2 class="section-header border-l-4 border-indigo-500 pl-3">Selected Projects & Research</h2>
+                <h2 class="section-header border-l-4 border-blue-500 pl-3">Selected Projects & Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Structured evidence of impact and technical execution</p>
             </div>
 
@@ -337,33 +337,33 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">PRISM</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Research</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Research</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">AST-driven machine learning engine predicting branch merge hazards.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 Pull request review cycles suffer from architectural bottlenecks and high review latency.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Engineered abstract syntax tree (`AST`) node parsing via `tree-sitter`. Built gradient boosted tree models (`XGBoost`) utilizing 45 structural feature weights.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Predicted merge risk factors, achieving test-set validation metrics of `AUC &gt;= 0.80` with generalizing threshold validation delta `&lt; 0.05`.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Python, XGBoost, Tree-Sitter, NetworkX, SHAP
                             </div>
                         </div>
                     </div>
                     <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2026</span>
-                        <div class="flex gap-3 text-indigo-400 font-bold">
-                            <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Code Private</span>
+                        <div class="flex gap-3 text-blue-400 font-bold">
+                            <span class="bg-blue-950/30 border border-blue-900/30 px-2 py-0.5 rounded">Code Private</span>
                         </div>
                     </div>
                 </div>
@@ -373,33 +373,33 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Tooling</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Tooling</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Static analysis layer evaluating cognitive drift in AI-assisted codebases.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 AI-generated code introduces logic modifications that shift codebase reasoning paradigms over time.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Authored static evaluator parsing codebase baselines to flag logic drift. Implemented custom `Node.js` parsing scripts and structured `GitHub Actions` CI/CD workflows.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Scans repositories against a baseline schema to identify structural deviations, printing local audit execution telemetry.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Node.js, GitHub Actions, AST Parsing
                             </div>
                         </div>
                     </div>
                     <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2026</span>
-                        <div class="flex gap-3 text-indigo-400 font-bold">
-                            <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Git Action</span>
+                        <div class="flex gap-3 text-blue-400 font-bold">
+                            <span class="bg-blue-950/30 border border-blue-900/30 px-2 py-0.5 rounded">Git Action</span>
                         </div>
                     </div>
                 </div>
@@ -409,33 +409,33 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Product</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Product</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Real-time socket network utilizing mutual intent matchmaking algorithms.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 High network friction and connection packet-level lag in campus-wide matching interfaces.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Architected Next.js event-driven client, concurrent WebSocket server connection pools, Neon Postgres database constraints, and recommendation matching logic.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Hosted user accounts pre-beta, scaling to 821 profiles with a stable 40% Daily Active User retention index.
                             </div>
                             <div>
-                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Next.js, Node.js, WebSockets, Supabase
                             </div>
                         </div>
                     </div>
                     <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2025</span>
-                        <div class="flex gap-3 text-indigo-400 font-bold">
-                            <a href="https://vibein.us" target="_blank" class="hover:underline bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Live ↗</a>
+                        <div class="flex gap-3 text-blue-400 font-bold">
+                            <a href="https://vibein.us" target="_blank" class="hover:underline bg-blue-950/30 border border-blue-900/30 px-2 py-0.5 rounded">Live ↗</a>
                         </div>
                     </div>
                 </div>
@@ -447,7 +447,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                 <h3 class="text-sm font-bold tracking-wider text-white uppercase font-mono border-l-4 border-teal-500 pl-3">// Other Projects & Tools</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
                     <div class="glass-card p-5 rounded-2xl space-y-3">
-                        <h4 class="font-extrabold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-indigo-400">ArenaHQ ↗</a></h4>
+                        <h4 class="font-extrabold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-blue-400">ArenaHQ ↗</a></h4>
                         <p class="font-medium text-gray-300">Live competitive coding tournament engine built on WebSockets, loading CodeMirror 6 code boxes and piping isolated runner requests to Piston APIs.</p>
                     </div>
                     <div class="glass-card p-5 rounded-2xl space-y-3">
@@ -464,8 +464,8 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
         <!-- Professional Experience Ledger Section -->
         <section id="experience" class="space-y-6 border-t border-white/5 pt-12 relative">
-            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
-            <h2 class="section-header border-l-4 border-indigo-500 pl-3">Professional Experience Ledger</h2>
+            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-blue-500/20 select-none">+</div>
+            <h2 class="section-header border-l-4 border-blue-500 pl-3">Professional Experience Ledger</h2>
             <div class="space-y-6">
                 
                 <!-- Experience Item 1 -->
@@ -473,7 +473,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">Co-Founder & Lead Engineer</h3>
-                            <p class="text-xs text-indigo-400 font-mono font-semibold">Vibein / ArenaHQ</p>
+                            <p class="text-xs text-blue-400 font-mono font-semibold">Vibein / ArenaHQ</p>
                         </div>
                         <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
                             <span class="text-white font-semibold">Jan 2025 – Present</span>
@@ -499,7 +499,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">IT Coordinator & Publicity Chair</h3>
-                            <p class="text-xs text-indigo-400 font-mono font-semibold">NSLS Executive Board</p>
+                            <p class="text-xs text-blue-400 font-mono font-semibold">NSLS Executive Board</p>
                         </div>
                         <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
                             <span class="text-white font-semibold">Sep 2024 – Present</span>
@@ -522,7 +522,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">Production Operations Staff</h3>
-                            <p class="text-xs text-indigo-400 font-mono font-semibold">USD Athletics</p>
+                            <p class="text-xs text-blue-400 font-mono font-semibold">USD Athletics</p>
                         </div>
                         <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
                             <span class="text-white font-semibold">Aug 2025 – Present</span>
@@ -543,7 +543,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
         <!-- Tech Radar & Active Research Section -->
         <section id="radar" class="space-y-6 border-t border-white/5 pt-12 relative">
-            <div class="absolute -top-3 -right-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
+            <div class="absolute -top-3 -right-3 font-mono text-[9px] text-blue-500/20 select-none">+</div>
             <div>
                 <h2 class="section-header border-l-4 border-teal-500 pl-3">Tech Radar & Active Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Technical focus areas mapped by competency and current active research</p>
@@ -553,7 +553,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                 
                 <!-- Radar Column 1 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">Languages & Core</h3>
+                    <h3 class="font-bold text-blue-400 font-mono text-xs uppercase tracking-wider">Languages & Core</h3>
                     <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Python</span>
@@ -569,7 +569,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                         </div>
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>C++ / Rust</span>
-                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                            <span class="w-2 h-2 rounded-full bg-blue-500 shadow-sm animate-pulse" title="Active Study"></span>
                         </div>
                     </div>
                 </div>
@@ -588,7 +588,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                         </div>
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>WebRTC Data</span>
-                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                            <span class="w-2 h-2 rounded-full bg-blue-500 shadow-sm animate-pulse" title="Active Study"></span>
                         </div>
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Node.js / Bun</span>
@@ -599,7 +599,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
                 <!-- Radar Column 3 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">AI & Data Analysis</h3>
+                    <h3 class="font-bold text-blue-400 font-mono text-xs uppercase tracking-wider">AI & Data Analysis</h3>
                     <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Claude/Gemini APIs</span>
@@ -615,7 +615,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                         </div>
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>AST Analysis</span>
-                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                            <span class="w-2 h-2 rounded-full bg-blue-500 shadow-sm animate-pulse" title="Active Study"></span>
                         </div>
                     </div>
                 </div>
@@ -638,7 +638,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                         </div>
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>CI/CD Actions</span>
-                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                            <span class="w-2 h-2 rounded-full bg-blue-500 shadow-sm animate-pulse" title="Active Study"></span>
                         </div>
                     </div>
                 </div>
@@ -651,7 +651,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     <span>Production Competent</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                     <span>Active Exploration / Research</span>
                 </div>
             </div>
@@ -659,7 +659,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
         <!-- Personal Log Callout -->
         <section class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left relative">
-            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
+            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-blue-500/20 select-none">+</div>
             <div class="space-y-1 relative z-10">
                 <h3 class="text-base font-bold text-white flex items-center justify-center sm:justify-start gap-2">
                     Looking for Sid's personal side? <span class="animate-bounce">🌸</span>
@@ -720,12 +720,12 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
             const bioPre = document.getElementById('code-bio');
             
             if (clickCount === 1) {
-                bioPre.innerHTML = `<span class="text-gray-500">$ run init_handshake</span>\n<span class="text-emerald-400">Initializing encryption handshakes...</span>\n<span class="text-emerald-400">Connection established. Latency: 4ms.</span>\n\n{\n  <span class="text-indigo-400">"nodes"</span>: <span class="text-teal-400">"online"</span>,\n  <span class="text-indigo-400">"integrity_score"</span>: <span class="text-amber-400">"0.99"</span>\n}`;
+                bioPre.innerHTML = `<span class="text-gray-500">$ run init_handshake</span>\n<span class="text-emerald-400">Initializing encryption handshakes...</span>\n<span class="text-emerald-400">Connection established. Latency: 4ms.</span>\n\n{\n  <span class="text-blue-400">"nodes"</span>: <span class="text-teal-400">"online"</span>,\n  <span class="text-blue-400">"integrity_score"</span>: <span class="text-amber-400">"0.99"</span>\n}`;
             } else if (clickCount === 2) {
                 bioPre.innerHTML = `<span class="text-gray-500">$ check uptime</span>\n<span class="text-teal-400">Server Status: stable</span>\n<span class="text-teal-400">Telemetry modules: 100% active</span>\n<span class="text-teal-400">Uptime: 247 days, 14h, 32m</span>`;
             } else {
                 // Reset
-                bioPre.innerHTML = `<span class="text-gray-500">$ reset console</span>\n{\n  <span class="text-indigo-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,\n  <span class="text-indigo-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,\n  <span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>\n}`;
+                bioPre.innerHTML = `<span class="text-gray-500">$ reset console</span>\n{\n  <span class="text-blue-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,\n  <span class="text-blue-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,\n  <span class="text-blue-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>\n}`;
                 clickCount = 0;
             }
         }
