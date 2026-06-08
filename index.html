@@ -37,32 +37,78 @@
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
                 radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0);
-            background-size: 100% 100%, 100% 100%, 24px 24px;
+            background-size: 24px 24px;
         }
+        
+        /* Floating Nebulas */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.12; transform: scale(1); }
+            50% { opacity: 0.18; transform: scale(1.05); }
+        }
+        .nebula-indigo {
+            animation: pulse-slow 8s ease-in-out infinite;
+        }
+        .nebula-teal {
+            animation: pulse-slow 12s ease-in-out infinite;
+        }
+
+        /* Interactive Card Glow Effect */
         .glass-card {
-            background: rgba(17, 24, 39, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            background: rgba(10, 15, 30, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+                rgba(99, 102, 241, 0.08),
+                transparent 80%
+            );
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glass-card:hover::before {
+            opacity: 1;
         }
         .glass-card:hover {
             transform: translateY(-4px);
-            background: rgba(17, 24, 39, 0.50);
             border-color: rgba(99, 102, 241, 0.25);
             box-shadow: 
-                0 20px 40px -15px rgba(0, 0, 0, 0.5),
-                0 0 30px -5px rgba(99, 102, 241, 0.12);
+                0 20px 40px -15px rgba(0, 0, 0, 0.6),
+                0 0 25px -5px rgba(99, 102, 241, 0.12);
         }
+
+        /* Glass Navigation */
         .glass-nav {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.70);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
+
+        /* Metallic Gradient Headers */
+        .section-header {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #ffffff 40%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -81,11 +127,17 @@
 </head>
 <body class="min-h-full flex flex-col relative">
 
+    <!-- Ambient Glowing Nebulas (Background Layer) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-500/10 blur-[120px] nebula-indigo"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-500/8 blur-[120px] nebula-teal"></div>
+    </div>
+
     <!-- Navigation Header -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
         <div>
             <a href="#" class="font-extrabold tracking-tight text-white hover:text-indigo-400 transition-colors text-sm sm:text-base uppercase flex items-center gap-2">
-                <span class="text-indigo-500 font-mono">&lt;sid&gt;</span>
+                <span class="text-indigo-500 font-mono font-bold">&lt;sid&gt;</span>
                 Siddartha Reddy Munugala
             </a>
         </div>
@@ -100,16 +152,16 @@
     </nav>
 
     <!-- Main Container -->
-    <main class="relative pt-36 pb-24 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
+    <main class="relative z-10 pt-36 pb-24 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
         
         <!-- Hero Section -->
         <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            <div class="md:col-span-8 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            <div class="md:col-span-7 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
                 <div class="space-y-3">
                     <div class="flex items-center gap-2">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-mono text-[10px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-semibold">commit: 5237569</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-semibold">commit: 63dc8c8</span>
                     </div>
                     <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-bold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
@@ -128,7 +180,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto font-mono text-xs">
-                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px] tracking-wide">
+                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px] tracking-wide">
                         cat resume.pdf
                     </a>
                     <a href="mailto:Siddarth.lbf341@gmail.com" class="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-200 hover:text-white font-bold py-3.5 px-6 rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
@@ -137,11 +189,43 @@
                 </div>
             </div>
 
-            <!-- Avatar Headshot -->
-            <div class="md:col-span-4 flex justify-center md:justify-end">
-                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40 p-1 shadow-2xl relative group">
-                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-xl scale-[1.1] group-hover:scale-100 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-indigo-500/5 group-hover:opacity-0 transition-opacity"></div>
+            <!-- Elevated Technical Visual Profile Box (Combines Headshot & Code Telemetry) -->
+            <div class="md:col-span-5 flex justify-center md:justify-end">
+                <div class="glass-card w-full max-w-[340px] rounded-2xl overflow-hidden shadow-2xl relative border border-white/10">
+                    <!-- Window bar controls -->
+                    <div class="bg-slate-900/60 border-b border-white/5 px-4 py-2.5 flex justify-between items-center">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-[10px] font-mono text-gray-500">profile_spec.json</span>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="p-5 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <!-- Glowing Headshot Box -->
+                            <div class="w-16 h-16 rounded-xl overflow-hidden border border-white/10 bg-slate-950 p-0.5 shadow-lg flex-shrink-0">
+                                <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-[10px] scale-[1.1]">
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-extrabold text-white">Siddartha Reddy</h4>
+                                <p class="text-[10px] font-mono text-indigo-400">Lead Systems Engineer</p>
+                            </div>
+                        </div>
+                        <!-- Mini JSON Display -->
+                        <pre class="bg-black/40 border border-white/5 rounded-xl p-3.5 text-[10px] font-mono text-gray-300 overflow-x-auto leading-relaxed">
+<span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"production_ready"</span>,
+<span class="text-indigo-400">"focus"</span>: [
+  <span class="text-teal-400">"AST Parsing"</span>,
+  <span class="text-teal-400">"WebSocket Pools"</span>,
+  <span class="text-teal-400">"ML Risk Models"</span>
+],
+<span class="text-indigo-400">"telemetry"</span>: {
+  <span class="text-indigo-400">"retention"</span>: <span class="text-amber-400">"0.40"</span>,
+  <span class="text-indigo-400">"interviews"</span>: <span class="text-amber-400">50</span>
+}</pre>
+                    </div>
                 </div>
             </div>
 
@@ -149,17 +233,17 @@
 
         <!-- Stats Proof Points Section -->
         <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center font-mono">
-            <div class="space-y-1">
+            <div class="space-y-1 relative z-10">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Platform Users</div>
                 <div class="text-[9px] text-gray-600">users_staged_total</div>
             </div>
-            <div class="space-y-1 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0">
+            <div class="space-y-1 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0 relative z-10">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">User Interviews</div>
                 <div class="text-[9px] text-gray-600">telemetry_interviews_run</div>
             </div>
-            <div class="space-y-1 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0">
+            <div class="space-y-1 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0 relative z-10">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Active User Retention</div>
                 <div class="text-[9px] text-gray-600">dau_retention_ratio</div>
@@ -168,7 +252,7 @@
 
         <!-- About Section -->
         <section id="about" class="space-y-6">
-            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">About Me</h2>
+            <h2 class="section-header border-l-4 border-indigo-500 pl-3">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400 text-sm leading-relaxed">
                 <div class="md:col-span-2 space-y-4">
                     <p class="text-base text-gray-300 font-medium">
@@ -190,7 +274,7 @@
         <!-- Selected Projects (Showcasing 3 Strongest) -->
         <section id="projects" class="space-y-6 border-t border-white/5 pt-12">
             <div>
-                <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">Selected Projects & Research</h2>
+                <h2 class="section-header border-l-4 border-indigo-500 pl-3">Selected Projects & Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Structured evidence of impact and technical execution</p>
             </div>
 
@@ -198,7 +282,7 @@
                 
                 <!-- Project 1: PRISM -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3">
+                    <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">PRISM</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Research</span>
@@ -224,7 +308,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2026</span>
                         <div class="flex gap-3 text-indigo-400 font-bold">
                             <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Code Private</span>
@@ -234,7 +318,7 @@
  
                 <!-- Project 2: COGN -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3">
+                    <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Tooling</span>
@@ -260,7 +344,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2026</span>
                         <div class="flex gap-3 text-indigo-400 font-bold">
                             <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Git Action</span>
@@ -270,7 +354,7 @@
 
                 <!-- Project 3: Vibein -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3">
+                    <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Product</span>
@@ -296,7 +380,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
                         <span class="text-gray-500">2025</span>
                         <div class="flex gap-3 text-indigo-400 font-bold">
                             <a href="https://vibein.us" target="_blank" class="hover:underline bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Live ↗</a>
@@ -328,12 +412,12 @@
 
         <!-- Professional Experience Ledger Section -->
         <section id="experience" class="space-y-6 border-t border-white/5 pt-12">
-            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">Professional Experience Ledger</h2>
+            <h2 class="section-header border-l-4 border-indigo-500 pl-3">Professional Experience Ledger</h2>
             <div class="space-y-6">
                 
                 <!-- Experience Item 1 -->
                 <div class="glass-card rounded-2xl p-6 space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">Co-Founder & Lead Engineer</h3>
                             <p class="text-xs text-indigo-400 font-mono font-semibold">Vibein / ArenaHQ</p>
@@ -343,12 +427,12 @@
                             <span class="text-gray-500">Minneapolis, MN | Remote</span>
                         </div>
                     </div>
-                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium relative z-10">
                         <li>Designed client-server architectures using Event-Driven WebSockets and WebRTC modules, minimizing payload sizes for concurrent connection profiles.</li>
                         <li>Iterated application logic loops through 50+ recorded user discovery interviews, achieving validation checks for pre-beta signup retention indices.</li>
                         <li>Configured container deployments, edge functions, and Supabase RLS database-level Row Security policies.</li>
                     </ul>
-                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px] relative z-10">
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Node.js</span>
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Next.js</span>
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">WebSockets</span>
@@ -359,7 +443,7 @@
 
                 <!-- Experience Item 2 -->
                 <div class="glass-card rounded-2xl p-6 space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">IT Coordinator & Publicity Chair</h3>
                             <p class="text-xs text-indigo-400 font-mono font-semibold">NSLS Executive Board</p>
@@ -369,11 +453,11 @@
                             <span class="text-gray-500">Vermillion, SD</span>
                         </div>
                     </div>
-                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium relative z-10">
                         <li>Administrate chapter information directories, managing membership directories and data flows for student leadership cohorts.</li>
                         <li>Coded communication automation scripts and metrics tracking dashboards, shortening member onboarding cycle times.</li>
                     </ul>
-                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px] relative z-10">
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Python</span>
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Google Apps Script</span>
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Data Pipelines</span>
@@ -382,7 +466,7 @@
 
                 <!-- Experience Item 3 -->
                 <div class="glass-card rounded-2xl p-6 space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 relative z-10">
                         <div>
                             <h3 class="text-base font-extrabold text-white">Production Operations Staff</h3>
                             <p class="text-xs text-indigo-400 font-mono font-semibold">USD Athletics</p>
@@ -392,10 +476,10 @@
                             <span class="text-gray-500">Vermillion, SD</span>
                         </div>
                     </div>
-                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium relative z-10">
                         <li>Control live event signals including display operations and broadcast triggers under synchronous real-time production requirements.</li>
                     </ul>
-                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px] relative z-10">
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Live Broadcast Systems</span>
                         <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Signal Routing</span>
                     </div>
@@ -407,7 +491,7 @@
         <!-- Tech Radar & Active Research Section -->
         <section id="radar" class="space-y-6 border-t border-white/5 pt-12">
             <div>
-                <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-teal-500 pl-3">Tech Radar & Active Research</h2>
+                <h2 class="section-header border-l-4 border-teal-500 pl-3">Tech Radar & Active Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Technical focus areas mapped by competency and current active research</p>
             </div>
             
@@ -416,7 +500,7 @@
                 <!-- Radar Column 1 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
                     <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">Languages & Core</h3>
-                    <div class="space-y-2">
+                    <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Python</span>
                             <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
@@ -439,7 +523,7 @@
                 <!-- Radar Column 2 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
                     <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Protocols & Runtimes</h3>
-                    <div class="space-y-2">
+                    <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>WebSockets (ws)</span>
                             <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
@@ -462,7 +546,7 @@
                 <!-- Radar Column 3 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
                     <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">AI & Data Analysis</h3>
-                    <div class="space-y-2">
+                    <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Claude/Gemini APIs</span>
                             <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
@@ -485,7 +569,7 @@
                 <!-- Radar Column 4 -->
                 <div class="glass-card rounded-2xl p-5 space-y-4">
                     <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Infrastructure</h3>
-                    <div class="space-y-2">
+                    <div class="space-y-2 relative z-10">
                         <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
                             <span>Docker / Compose</span>
                             <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
@@ -521,13 +605,13 @@
 
         <!-- Personal Log Callout -->
         <section class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
-            <div class="space-y-1">
+            <div class="space-y-1 relative z-10">
                 <h3 class="text-base font-bold text-white flex items-center justify-center sm:justify-start gap-2">
                     Looking for Sid's personal side? <span class="animate-bounce">🌸</span>
                 </h3>
                 <p class="text-sm text-gray-400">Check out the personal log for sports, cooking, and hobbies outside of software engineering.</p>
             </div>
-            <a href="sid.html" class="backdrop-blur-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 border border-pink-500/20 hover:border-pink-500/40 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm min-h-[44px] flex items-center justify-center whitespace-nowrap">
+            <a href="sid.html" class="backdrop-blur-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 border border-pink-500/20 hover:border-pink-500/40 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm min-h-[44px] flex items-center justify-center whitespace-nowrap relative z-10">
                 View Personal Log
             </a>
         </section>
@@ -539,6 +623,19 @@
         <div>&copy; 2026 Siddartha Reddy Munugala. All rights reserved.</div>
         <div class="mt-1.5 font-mono text-[10px] text-gray-700">Minneapolis, MN | University of South Dakota</div>
     </footer>
+
+    <!-- Interactive Mouse-Tracking Script -->
+    <script type="text/javascript font-mono">
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
 
 </body>
 </html>
