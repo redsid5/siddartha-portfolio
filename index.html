@@ -166,7 +166,7 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-center md:justify-start gap-2">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-bold">commit: a04b716</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-bold">commit: 6baadf1</span>
                     </div>
                     <p class="text-xs sm:text-sm font-mono text-blue-400 tracking-wider uppercase font-bold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
@@ -292,9 +292,9 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
             <div class="absolute bottom-2 right-2 text-[9px] text-blue-500/10 font-mono select-none">ID_03</div>
             
             <div class="space-y-1 relative z-10">
-                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">1,621</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Platform Users</div>
-                <div class="text-[9px] text-gray-600">users_staged_total</div>
+                <div class="text-[9px] text-gray-600">combined_user_registry</div>
             </div>
             <div class="space-y-1 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0 relative z-10">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
@@ -302,7 +302,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                 <div class="text-[9px] text-gray-600">telemetry_interviews_run</div>
             </div>
             <div class="space-y-1 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0 relative z-10">
-                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent tracking-tight">20%</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Active User Retention</div>
                 <div class="text-[9px] text-gray-600">dau_retention_ratio</div>
             </div>
@@ -330,15 +330,15 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
             </div>
         </section>
 
-        <!-- Selected Projects (Showcasing 3 Strongest) -->
+        <!-- Selected Projects (Showcasing 4 Expanded Projects) -->
         <section id="projects" class="space-y-6 border-t border-white/5 pt-12 relative">
             <div class="absolute -top-3 -right-2 font-mono text-[9px] text-blue-500/20 select-none">+</div>
             <div>
                 <h2 class="section-header border-l-4 border-blue-500 pl-3">Selected Projects & Research</h2>
-                <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Structured evidence of impact and technical execution</p>
+                <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Expanded case studies with real-time HUD telemetry animations</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Project 1: PRISM -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
@@ -348,8 +348,8 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                             <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Research</span>
                         </div>
                         
-                        <!-- Holographic AST Visualizer Canvas (Iron Man Style HUD) -->
-                        <div class="relative w-full h-32 rounded-xl overflow-hidden border border-white/5 bg-black/50">
+                        <!-- Holographic AST Visualizer Canvas -->
+                        <div class="relative w-full h-36 rounded-xl overflow-hidden border border-white/5 bg-black/50">
                             <canvas id="prismCanvas" class="absolute inset-0 w-full h-full"></canvas>
                         </div>
 
@@ -384,14 +384,20 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
  
                 <!-- Project 2: COGN -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3 relative z-10">
+                    <div class="space-y-4 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Tooling</span>
                         </div>
+                        
+                        <!-- Logic Spectrum/Oscilloscope Canvas -->
+                        <div class="relative w-full h-36 rounded-xl overflow-hidden border border-white/5 bg-black/50">
+                            <canvas id="cognCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                        </div>
+
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Static analysis layer evaluating cognitive drift in AI-assisted codebases.</p>
                         
-                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400 font-sans">
                             <div>
                                 <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 AI-generated code introduces logic modifications that shift codebase reasoning paradigms over time.
@@ -420,14 +426,20 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
 
                 <!-- Project 3: Vibein -->
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-3 relative z-10">
+                    <div class="space-y-4 relative z-10">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
+                            <h3 class="text-base font-extrabold text-white tracking-tight">Vibein.us</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Product</span>
                         </div>
+                        
+                        <!-- Pulse Connections Canvas -->
+                        <div class="relative w-full h-36 rounded-xl overflow-hidden border border-white/5 bg-black/50">
+                            <canvas id="vibeinCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                        </div>
+
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Real-time socket network utilizing mutual intent matchmaking algorithms.</p>
                         
-                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400 font-sans">
                             <div>
                                 <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 High network friction and connection packet-level lag in campus-wide matching interfaces.
@@ -438,7 +450,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                             </div>
                             <div>
                                 <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
-                                Hosted user accounts pre-beta, scaling to 821 profiles with a stable 40% Daily Active User retention index.
+                                Hosted user accounts pre-beta, scaling to a combined registry of 1,621 users with a 20% active retention index.
                             </div>
                             <div>
                                 <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
@@ -446,10 +458,56 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                             </div>
                         </div>
                     </div>
-                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5 relative z-10">
-                        <span class="text-gray-500">2025</span>
-                        <div class="flex gap-3 text-blue-400 font-bold">
-                            <a href="https://vibein.us" target="_blank" class="hover:underline bg-blue-950/30 border border-blue-900/30 px-2 py-0.5 rounded">Live ↗</a>
+                    <div class="pt-3 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 text-xs font-mono border-t border-white/5 relative z-10">
+                        <span class="text-gray-500 self-center">2025</span>
+                        <div class="flex gap-2">
+                            <a href="https://vibein.us" target="_blank" class="text-center bg-teal-500/10 hover:bg-teal-500/20 text-teal-400 border border-teal-500/20 hover:border-teal-500/40 px-3 py-1.5 rounded-lg transition-colors font-bold tracking-wide">
+                                Join the Network Now ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: ArenaHQ -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4 relative z-10">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base font-extrabold text-white tracking-tight">ArenaHQ.us</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 bg-blue-950/40 border border-blue-900/40 px-2.5 py-0.5 rounded-full font-bold">Product</span>
+                        </div>
+                        
+                        <!-- Sandboxed Code execution matrix Canvas -->
+                        <div class="relative w-full h-36 rounded-xl overflow-hidden border border-white/5 bg-black/50">
+                            <canvas id="arenaCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                        </div>
+
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Live competitive coding tournament engine with sandboxed execution environments.</p>
+                        
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400 font-sans">
+                            <div>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
+                                High latency and lack of synchronous evaluation runtimes in traditional screening platforms.
+                            </div>
+                            <div>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
+                                Built WebSocket synchronized tournament engine, integrated CodeMirror 6 code inputs, and connected isolated Piston APIs for multiple language runtime execution.
+                            </div>
+                            <div>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
+                                Streamlines real-time coding events for up to 1,621 combined platform registrations with concurrent evaluation states.
+                            </div>
+                            <div>
+                                <span class="text-blue-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
+                                CodeMirror 6, Supabase, WebSockets, Piston API
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 text-xs font-mono border-t border-white/5 relative z-10">
+                        <span class="text-gray-500 self-center">2025</span>
+                        <div class="flex gap-2">
+                            <a href="https://arenahq.us" target="_blank" class="text-center bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/20 hover:border-blue-500/40 px-3 py-1.5 rounded-lg transition-colors font-bold tracking-wide">
+                                Fight a match on ArenaHQ ↗
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -460,10 +518,6 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
             <div class="pt-8 space-y-4">
                 <h3 class="text-sm font-bold tracking-wider text-white uppercase font-mono border-l-4 border-teal-500 pl-3">// Other Projects & Tools</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
-                    <div class="glass-card p-5 rounded-2xl space-y-3">
-                        <h4 class="font-extrabold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-blue-400">ArenaHQ ↗</a></h4>
-                        <p class="font-medium text-gray-300">Live competitive coding tournament engine built on WebSockets, loading CodeMirror 6 code boxes and piping isolated runner requests to Piston APIs.</p>
-                    </div>
                     <div class="glass-card p-5 rounded-2xl space-y-3">
                         <h4 class="font-extrabold text-white text-sm">WTFcode</h4>
                         <p class="font-medium text-gray-300">A local CLI tree parser that compiles directory import maps to reduce contextual prompt overhead for LLMs by 90% (compressing large repositories 832x).</p>
@@ -496,7 +550,7 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
                     </div>
                     <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium relative z-10">
                         <li>Designed client-server architectures using Event-Driven WebSockets and WebRTC modules, minimizing payload sizes for concurrent connection profiles.</li>
-                        <li>Iterated application logic loops through 50+ recorded user discovery interviews, achieving validation checks for pre-beta signup retention indices.</li>
+                        <li>Iterated application logic loops through 50+ recorded user discovery interviews, achieving validation checks for a combined registry of 1,621 users with 20% active retention.</li>
                         <li>Configured container deployments, edge functions, and Supabase RLS database-level Row Security policies.</li>
                     </ul>
                     <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px] relative z-10">
@@ -737,111 +791,359 @@ wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
             }
         }
 
-        // --- 4. Holographic AST Node Visualizer Canvas (Iron Man Style HUD) ---
-        const canvas = document.getElementById('prismCanvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            let width = canvas.width = canvas.offsetWidth;
-            let height = canvas.height = canvas.offsetHeight;
+        // --- 4. Holographic AST Node Visualizer Canvas (PRISM) ---
+        const prismCanvas = document.getElementById('prismCanvas');
+        if (prismCanvas) {
+            const ctx = prismCanvas.getContext('2d');
+            let w = prismCanvas.width = prismCanvas.offsetWidth;
+            let h = prismCanvas.height = prismCanvas.offsetHeight;
 
             window.addEventListener('resize', () => {
-                if (canvas) {
-                    width = canvas.width = canvas.offsetWidth;
-                    height = canvas.height = canvas.offsetHeight;
+                if (prismCanvas) {
+                    w = prismCanvas.width = prismCanvas.offsetWidth;
+                    h = prismCanvas.height = prismCanvas.offsetHeight;
                 }
             });
 
-            // AST Node Graph array
             const nodes = [];
-            const nodeCount = 18;
-            for (let i = 0; i < nodeCount; i++) {
+            for (let i = 0; i < 18; i++) {
                 nodes.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.8,
-                    vy: (Math.random() - 0.5) * 0.8,
-                    radius: Math.random() * 2 + 1
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.7,
+                    vy: (Math.random() - 0.5) * 0.7,
+                    r: Math.random() * 2 + 1
                 });
             }
-
             let angle = 0;
 
-            function animatePrismCanvas() {
-                if (!canvas) return;
-                ctx.clearRect(0, 0, width, height);
+            function drawPrism() {
+                if (!prismCanvas) return;
+                ctx.clearRect(0, 0, w, h);
 
-                // Grid Sweep
+                // Sonar ring
                 ctx.strokeStyle = 'rgba(20, 184, 166, 0.05)';
-                ctx.lineWidth = 1;
                 ctx.beginPath();
-                ctx.arc(width / 2, height / 2, Math.min(width, height) * 0.45, 0, Math.PI * 2);
+                ctx.arc(w / 2, h / 2, Math.min(w, h) * 0.45, 0, Math.PI * 2);
                 ctx.stroke();
 
                 angle += 0.01;
-                const centerX = width / 2;
-                const centerY = height / 2;
-                const radius = Math.min(width, height) * 0.45;
-                const endX = centerX + Math.cos(angle) * radius;
-                const endY = centerY + Math.sin(angle) * radius;
-
-                ctx.strokeStyle = 'rgba(59, 130, 246, 0.15)';
+                const endX = w / 2 + Math.cos(angle) * Math.min(w, h) * 0.45;
+                const endY = h / 2 + Math.sin(angle) * Math.min(w, h) * 0.45;
+                ctx.strokeStyle = 'rgba(59, 130, 246, 0.12)';
                 ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
+                ctx.moveTo(w / 2, h / 2);
                 ctx.lineTo(endX, endY);
                 ctx.stroke();
 
-                // Draw AST nodes & connections
-                nodes.forEach((node, idx) => {
-                    node.x += node.vx;
-                    node.y += node.vy;
-
-                    if (node.x < 0 || node.x > width) node.vx *= -1;
-                    if (node.y < 0 || node.y > height) node.vy *= -1;
+                nodes.forEach((n, idx) => {
+                    n.x += n.vx; n.y += n.vy;
+                    if (n.x < 0 || n.x > w) n.vx *= -1;
+                    if (n.y < 0 || n.y > h) n.vy *= -1;
 
                     ctx.fillStyle = idx % 2 === 0 ? '#14b8a6' : '#3b82f6';
                     ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
                     ctx.fill();
-
-                    // Node Glow
-                    ctx.shadowColor = ctx.fillStyle;
-                    ctx.shadowBlur = 4;
 
                     for (let j = idx + 1; j < nodes.length; j++) {
                         const other = nodes[j];
-                        const dx = node.x - other.x;
-                        const dy = node.y - other.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
+                        const dist = Math.hypot(n.x - other.x, n.y - other.y);
                         if (dist < 45) {
                             ctx.strokeStyle = `rgba(59, 130, 246, ${1 - dist / 45})`;
                             ctx.lineWidth = 0.5;
                             ctx.beginPath();
-                            ctx.moveTo(node.x, node.y);
+                            ctx.moveTo(n.x, n.y);
                             ctx.lineTo(other.x, other.y);
                             ctx.stroke();
                         }
                     }
                 });
 
-                ctx.shadowBlur = 0; // Reset shadow blur
+                ctx.fillStyle = 'rgba(20, 184, 166, 0.8)';
+                ctx.font = '8px monospace';
+                ctx.fillText('SCAN: AST_GRAPH_NODES', 8, 14);
+                ctx.fillText(`NODES: ${nodes.length}`, 8, 24);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+                ctx.fillText(`RISK_RATIO: ${(0.05 + Math.abs(Math.sin(angle)) * 0.75).toFixed(4)}`, w - 120, 14);
+                ctx.fillText('Q_STATE: stable-v1.4', w - 120, 24);
+
+                requestAnimationFrame(drawPrism);
+            }
+            drawPrism();
+        }
+
+        // --- 5. Cognitive Logic Oscilloscope Canvas (COGN) ---
+        const cognCanvas = document.getElementById('cognCanvas');
+        if (cognCanvas) {
+            const ctx = cognCanvas.getContext('2d');
+            let w = cognCanvas.width = cognCanvas.offsetWidth;
+            let h = cognCanvas.height = cognCanvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                if (cognCanvas) {
+                    w = cognCanvas.width = cognCanvas.offsetWidth;
+                    h = cognCanvas.height = cognCanvas.offsetHeight;
+                }
+            });
+
+            let time = 0;
+
+            function drawCogn() {
+                if (!cognCanvas) return;
+                ctx.clearRect(0, 0, w, h);
+
+                // Draw oscilloscope grid
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+                ctx.lineWidth = 0.5;
+                for (let x = 0; x < w; x += 20) {
+                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+                }
+                for (let y = 0; y < h; y += 20) {
+                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+                }
+
+                time += 0.05;
+                ctx.lineWidth = 1.2;
+
+                // Wave 1: Baseline Logic
+                ctx.strokeStyle = 'rgba(59, 130, 246, 0.4)';
+                ctx.beginPath();
+                for (let x = 0; x < w; x++) {
+                    const y = h / 2 + Math.sin(x * 0.015 + time) * 15 + Math.cos(x * 0.005 + time * 0.5) * 8;
+                    if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                // Wave 2: AI Generated Logic (Drifting)
+                ctx.strokeStyle = 'rgba(20, 184, 166, 0.5)';
+                ctx.beginPath();
+                for (let x = 0; x < w; x++) {
+                    const y = h / 2 + Math.sin(x * 0.018 + time * 1.2) * 14 + Math.cos(x * 0.008 + time * 0.7) * 12;
+                    if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                // Telemetry
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+                ctx.font = '8px monospace';
+                ctx.fillText('SIG: COGNITIVE_INTEGRITY_DRIFT', 8, 14);
+                ctx.fillText(`DRIFT_INDEX: ${(0.02 + Math.abs(Math.sin(time * 0.2)) * 0.06).toFixed(5)}`, 8, 24);
+                ctx.fillStyle = 'rgba(20, 184, 166, 0.8)';
+                ctx.fillText('COHERENCE: 98.4%', w - 90, 14);
+                ctx.fillText('MONITOR: active', w - 90, 24);
+
+                requestAnimationFrame(drawCogn);
+            }
+            drawCogn();
+        }
+
+        // --- 6. P2P Matchmaking Telemetry Canvas (VIBEIN) ---
+        const vibeinCanvas = document.getElementById('vibeinCanvas');
+        if (vibeinCanvas) {
+            const ctx = vibeinCanvas.getContext('2d');
+            let w = vibeinCanvas.width = vibeinCanvas.offsetWidth;
+            let h = vibeinCanvas.height = vibeinCanvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                if (vibeinCanvas) {
+                    w = vibeinCanvas.width = vibeinCanvas.offsetWidth;
+                    h = vibeinCanvas.height = vibeinCanvas.offsetHeight;
+                }
+            });
+
+            const particles = [];
+            let timer = 0;
+
+            function drawVibein() {
+                if (!vibeinCanvas) return;
+                ctx.clearRect(0, 0, w, h);
+
+                timer += 0.5;
+
+                // Dynamic matching pulses (rings)
+                ctx.strokeStyle = 'rgba(20, 184, 166, 0.07)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(w / 3, h / 2, (timer % 50) * 1.5, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.strokeStyle = 'rgba(59, 130, 246, 0.07)';
+                ctx.beginPath();
+                ctx.arc((w * 2) / 3, h / 2, ((timer + 25) % 50) * 1.5, 0, Math.PI * 2);
+                ctx.stroke();
+
+                // Draw User Nodes
+                const userA = { x: w / 3, y: h / 2 };
+                const userB = { x: (w * 2) / 3, y: h / 2 };
+
+                ctx.fillStyle = '#14b8a6';
+                ctx.beginPath(); ctx.arc(userA.x, userA.y, 4, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = '#3b82f6';
+                ctx.beginPath(); ctx.arc(userB.x, userB.y, 4, 0, Math.PI * 2); ctx.fill();
+
+                // Draw active stream lines
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+                ctx.beginPath();
+                ctx.moveTo(userA.x, userA.y);
+                ctx.lineTo(userB.x, userB.y);
+                ctx.stroke();
+
+                // Spawn matchmaking connection packets
+                if (Math.random() < 0.08) {
+                    particles.push({
+                        x: userA.x,
+                        y: userA.y,
+                        target: userB,
+                        progress: 0,
+                        speed: 0.02,
+                        color: '#14b8a6'
+                    });
+                }
+                if (Math.random() < 0.08) {
+                    particles.push({
+                        x: userB.x,
+                        y: userB.y,
+                        target: userA,
+                        progress: 0,
+                        speed: 0.02,
+                        color: '#3b82f6'
+                    });
+                }
+
+                // Render connection packets
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.progress += p.speed;
+
+                    // Interpolate
+                    const currentX = p.x + (p.target.x - p.x) * p.progress;
+                    const currentY = p.y + (p.target.y - p.y) * p.progress;
+
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(currentX, currentY, 2, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    if (p.progress >= 1) {
+                        particles.splice(i, 1);
+                    }
+                }
 
                 // Diagnostics Overlay
-                ctx.fillStyle = 'rgba(20, 184, 166, 0.75)';
+                ctx.fillStyle = 'rgba(20, 184, 166, 0.8)';
                 ctx.font = '8px monospace';
-                ctx.fillText('SYS_AST_SCANNER: ACTIVE', 10, 15);
-                ctx.fillText(`AST_NODE_COUNT: ${nodes.length}`, 10, 25);
-                ctx.fillText('ALG: XGBOOST_RISK_EVAL', 10, 35);
-                
-                ctx.fillStyle = 'rgba(59, 130, 246, 0.75)';
-                ctx.fillText(`RISK_PROB: ${(0.1 + Math.abs(Math.sin(angle * 0.5)) * 0.7).toFixed(4)}`, width - 130, 15);
-                ctx.fillText(`QUANTUM_COMMUTE_LVL: V1.42`, width - 130, 25);
-                ctx.fillText(`COMPILER_HZ: 4.88`, width - 130, 35);
+                ctx.fillText('PORT: VIBEIN_WEBSOCKETS', 8, 14);
+                ctx.fillText('MATCHMAKER: intent_scan', 8, 24);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+                ctx.fillText(`CONC_PACKETS: 1,621`, w - 105, 14);
+                ctx.fillText(`P2P_STREAM: stable`, w - 105, 24);
 
-                requestAnimationFrame(animatePrismCanvas);
+                requestAnimationFrame(drawVibein);
+            }
+            drawVibein();
+        }
+
+        // --- 7. Compiler Execution Metrics Canvas (ARENAHQ) ---
+        const arenaCanvas = document.getElementById('arenaCanvas');
+        if (arenaCanvas) {
+            const ctx = arenaCanvas.getContext('2d');
+            let w = arenaCanvas.width = arenaCanvas.offsetWidth;
+            let h = arenaCanvas.height = arenaCanvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                if (arenaCanvas) {
+                    w = arenaCanvas.width = arenaCanvas.offsetWidth;
+                    h = arenaCanvas.height = arenaCanvas.offsetHeight;
+                }
+            });
+
+            const executionTries = [];
+            for (let i = 0; i < 5; i++) {
+                executionTries.push({
+                    name: `TEST_${i+1}`,
+                    status: 'PENDING',
+                    time: 0,
+                    maxTime: 10 + Math.random() * 25,
+                    val: 0
+                });
             }
 
-            animatePrismCanvas();
+            let cycle = 0;
+
+            function drawArena() {
+                if (!arenaCanvas) return;
+                ctx.clearRect(0, 0, w, h);
+
+                cycle += 0.2;
+
+                // Vertical execution bars
+                executionTries.forEach((test, idx) => {
+                    const barW = 32;
+                    const barH = 50;
+                    const x = 30 + idx * 60;
+                    const y = h / 2 - 15;
+
+                    // Draw container box
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+                    ctx.strokeRect(x, y, barW, barH);
+
+                    // Simulate compiler progression
+                    if (test.status === 'PENDING') {
+                        test.val += 0.5;
+                        if (test.val >= test.maxTime) {
+                            test.status = Math.random() < 0.9 ? 'PASS' : 'FAIL';
+                            test.time = test.val.toFixed(1);
+                        }
+                    }
+
+                    // Fill state bar
+                    const percent = Math.min(test.val / test.maxTime, 1);
+                    if (test.status === 'PENDING') {
+                        ctx.fillStyle = 'rgba(59, 130, 246, 0.15)';
+                    } else if (test.status === 'PASS') {
+                        ctx.fillStyle = 'rgba(16, 185, 129, 0.25)';
+                    } else {
+                        ctx.fillStyle = 'rgba(239, 68, 68, 0.25)';
+                    }
+                    ctx.fillRect(x, y + barH * (1 - percent), barW, barH * percent);
+
+                    // Draw status tag
+                    ctx.font = '7px monospace';
+                    if (test.status === 'PENDING') {
+                        ctx.fillStyle = '#3b82f6';
+                        ctx.fillText('RUN...', x + 4, y + barH + 10);
+                    } else {
+                        ctx.fillStyle = test.status === 'PASS' ? '#10b981' : '#ef4444';
+                        ctx.fillText(test.status, x + 8, y + barH + 10);
+                    }
+                    
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                    ctx.fillText(test.name, x + 4, y - 5);
+                });
+
+                // Reset compilation cycle periodically
+                if (cycle > 80) {
+                    cycle = 0;
+                    executionTries.forEach(test => {
+                        test.status = 'PENDING';
+                        test.val = 0;
+                        test.maxTime = 10 + Math.random() * 25;
+                    });
+                }
+
+                // Diagnostics Overlay
+                ctx.fillStyle = 'rgba(20, 184, 166, 0.8)';
+                ctx.font = '8px monospace';
+                ctx.fillText('SANDBOX: PISTON_SANDBOX_RUN', 8, 14);
+                ctx.fillText('CONCURRENT_STATE: RUNNING', 8, 24);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+                ctx.fillText('COMPILE_PING: 4ms', w - 100, 14);
+                ctx.fillText('STATE: production', w - 100, 24);
+
+                requestAnimationFrame(drawArena);
+            }
+            drawArena();
         }
     </script>
 
