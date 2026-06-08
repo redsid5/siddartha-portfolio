@@ -13,7 +13,7 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,7 +50,7 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glass-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             background: rgba(17, 24, 39, 0.50);
             border-color: rgba(99, 102, 241, 0.25);
             box-shadow: 
@@ -84,17 +84,18 @@
     <!-- Navigation Header -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
         <div>
-            <a href="#" class="font-extrabold tracking-tight text-white hover:text-indigo-400 transition-colors text-sm sm:text-base uppercase">
+            <a href="#" class="font-extrabold tracking-tight text-white hover:text-indigo-400 transition-colors text-sm sm:text-base uppercase flex items-center gap-2">
+                <span class="text-indigo-500 font-mono">&lt;sid&gt;</span>
                 Siddartha Reddy Munugala
             </a>
         </div>
         
-        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="https://github.com/Redsid5" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
-            <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-white transition-colors">Email</a>
-            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b-2 border-indigo-500 pb-0.5">Resume</a>
-            <a href="sid.html" class="text-pink-400 hover:text-pink-300 transition-colors font-semibold bg-pink-950/20 border border-pink-900/30 px-2.5 py-0.5 rounded-full flex items-center gap-1">Personal 🌸</a>
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-400 font-mono">
+            <a href="https://github.com/Redsid5" target="_blank" class="hover:text-white transition-colors">git://GitHub</a>
+            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-white transition-colors">ln://LinkedIn</a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-white transition-colors">smtp://Email</a>
+            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b-2 border-indigo-500 pb-0.5">Resume.pdf</a>
+            <a href="sid.html" class="text-pink-400 hover:text-pink-300 transition-colors font-semibold bg-pink-950/20 border border-pink-900/30 px-2.5 py-0.5 rounded-full flex items-center gap-1 font-sans">Personal 🌸</a>
         </div>
     </nav>
 
@@ -105,8 +106,12 @@
         <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
             <div class="md:col-span-8 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
-                <div class="space-y-2">
-                    <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-semibold">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-mono text-[10px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-semibold">commit: 5237569</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-bold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
                     </p>
                     <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -115,19 +120,19 @@
                 </div>
                 
                 <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-medium max-w-xl">
-                    I build software products, AI-powered applications, and developer tools focused on solving real-world problems and creating measurable user impact.
+                    I engineer full-stack systems, compile optimized developer tools, and deploy containerized AI pipelines. Focused on solving complex structural problems through deterministic code execution, user telemetry, and performance profiling.
                 </p>
                 
-                <p class="text-gray-400 text-xs sm:text-sm font-mono">
-                    Minneapolis, MN | University of South Dakota | Expected May 2027
+                <p class="text-gray-400 text-xs sm:text-sm font-mono bg-white/5 border border-white/5 px-3.5 py-1.5 rounded-lg">
+                    SYS: Minneapolis, MN | University of South Dakota | Class: May 2027
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
-                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
-                        Download Resume (PDF)
+                <div class="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto font-mono text-xs">
+                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px] tracking-wide">
+                        cat resume.pdf
                     </a>
-                    <a href="mailto:Siddarth.lbf341@gmail.com" class="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-200 hover:text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
-                        Get in Touch
+                    <a href="mailto:Siddarth.lbf341@gmail.com" class="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-200 hover:text-white font-bold py-3.5 px-6 rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
+                        telnet touch_base
                     </a>
                 </div>
             </div>
@@ -143,18 +148,21 @@
         </section>
 
         <!-- Stats Proof Points Section -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center">
-            <div class="space-y-1.5">
+        <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center font-mono">
+            <div class="space-y-1">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
-                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">Platform Users</div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Platform Users</div>
+                <div class="text-[9px] text-gray-600">users_staged_total</div>
             </div>
-            <div class="space-y-1.5 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0">
+            <div class="space-y-1 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
-                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">User Interviews Conducted</div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">User Interviews</div>
+                <div class="text-[9px] text-gray-600">telemetry_interviews_run</div>
             </div>
-            <div class="space-y-1.5 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0">
+            <div class="space-y-1 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
-                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">Daily Active User Retention</div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Active User Retention</div>
+                <div class="text-[9px] text-gray-600">dau_retention_ratio</div>
             </div>
         </section>
 
@@ -170,64 +178,12 @@
                         My work focuses on shipping clean code and execution. Rather than building overdesigned frameworks, I prioritize shipping functioning software that produces measurable outcomes for users.
                     </p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl space-y-3">
-                    <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono text-indigo-400">// Core Focus</h3>
+                <div class="glass-card p-6 rounded-2xl space-y-3 font-mono">
+                    <h3 class="text-xs font-bold text-indigo-400 uppercase tracking-wider">// Core Focus</h3>
                     <p class="text-xs text-gray-400 leading-relaxed font-medium">
                         Writing clean full-stack code, translating user feedback directly into product iterations, and executing solid software architectures.
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section id="skills" class="space-y-6 border-t border-white/5 pt-12">
-            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-teal-500 pl-3">Technical Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Category 1 -->
-                <div class="glass-card rounded-2xl p-5 space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-indigo-400 text-sm">💡</span>
-                        <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">Languages</h3>
-                    </div>
-                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
-                        Python, TypeScript, JavaScript, SQL
-                    </div>
-                </div>
-                
-                <!-- Category 2 -->
-                <div class="glass-card rounded-2xl p-5 space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-teal-400 text-sm">⚙️</span>
-                        <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Frameworks</h3>
-                    </div>
-                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
-                        Next.js, React, Node.js, Tailwind CSS
-                    </div>
-                </div>
-
-                <!-- Category 3 -->
-                <div class="glass-card rounded-2xl p-5 space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-indigo-400 text-sm">🧠</span>
-                        <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">AI / ML</h3>
-                    </div>
-                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
-                        Claude & Gemini APIs, LangChain, OpenAI API, XGBoost
-                    </div>
-                </div>
-
-                <!-- Category 4 -->
-                <div class="glass-card rounded-2xl p-5 space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-teal-400 text-sm">🌐</span>
-                        <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Tools & Infra</h3>
-                    </div>
-                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
-                        Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -247,20 +203,20 @@
                             <h3 class="text-base font-extrabold text-white tracking-tight">PRISM</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Research</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Research system for predicting PR risk from structural code signals.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">AST-driven machine learning engine predicting branch merge hazards.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
-                                Pull request review cycles are slow and struggle to catch architectural regressions.
+                                Pull request review cycles suffer from architectural bottlenecks and high review latency.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
-                                Engineered the AST extraction parser (using tree-sitter) and built the XGBoost risk prediction model.
+                                Engineered abstract syntax tree (`AST`) node parsing via `tree-sitter`. Built gradient boosted tree models (`XGBoost`) utilizing 45 structural feature weights.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
-                                Predicted merge risk probability with validation metrics achieving AUC >= 0.80.
+                                Predicted merge risk factors, achieving test-set validation metrics of `AUC &gt;= 0.80` with generalizing threshold validation delta `&lt; 0.05`.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
@@ -283,20 +239,20 @@
                             <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Tooling</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Cognitive integrity layer tracking logic drift in AI-assisted codebases.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Static analysis layer evaluating cognitive drift in AI-assisted codebases.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
-                                AI-generated code introduces logic changes that drift reasoning patterns over time.
+                                AI-generated code introduces logic modifications that shift codebase reasoning paradigms over time.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
-                                Authored the CI/CD pull request metrics evaluator and designed three parsing signatures.
+                                Authored static evaluator parsing codebase baselines to flag logic drift. Implemented custom `Node.js` parsing scripts and structured `GitHub Actions` CI/CD workflows.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
-                                Automates PR scoring against repository baseline to isolate cognitive drifts.
+                                Scans repositories against a baseline schema to identify structural deviations, printing local audit execution telemetry.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
@@ -319,20 +275,20 @@
                             <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Product</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Anonymous professional network for student discovery.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Real-time socket network utilizing mutual intent matchmaking algorithms.</p>
                         
                         <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
-                                High social friction in traditional campus networking platforms.
+                                High network friction and connection packet-level lag in campus-wide matching interfaces.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
-                                Designed the full-stack architecture, recommendation logic, and instant messaging socket.
+                                Architected Next.js event-driven client, concurrent WebSocket server connection pools, Neon Postgres database constraints, and recommendation matching logic.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
-                                Scaled to 821 users pre-beta with 40% Daily Active User retention.
+                                Hosted user accounts pre-beta, scaling to 821 profiles with a stable 40% Daily Active User retention index.
                             </div>
                             <div>
                                 <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
@@ -356,16 +312,209 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
                     <div class="glass-card p-5 rounded-2xl space-y-3">
                         <h4 class="font-extrabold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-indigo-400">ArenaHQ ↗</a></h4>
-                        <p class="font-medium text-gray-300">Live competitive coding arena featuring socket execution sandboxes, real-time evaluation runtimes, and recruiter portal connections. Built with CodeMirror 6, Supabase, and Piston APIs.</p>
+                        <p class="font-medium text-gray-300">Live competitive coding tournament engine built on WebSockets, loading CodeMirror 6 code boxes and piping isolated runner requests to Piston APIs.</p>
                     </div>
                     <div class="glass-card p-5 rounded-2xl space-y-3">
                         <h4 class="font-extrabold text-white text-sm">WTFcode</h4>
-                        <p class="font-medium text-gray-300">A dependency-mapping CLI tool that parses code AST graphs locally to compress large repository context files 832x, reducing LLM token billing costs by 90%.</p>
+                        <p class="font-medium text-gray-300">A local CLI tree parser that compiles directory import maps to reduce contextual prompt overhead for LLMs by 90% (compressing large repositories 832x).</p>
                     </div>
                     <div class="glass-card p-5 rounded-2xl space-y-3">
                         <h4 class="font-extrabold text-white text-sm">ALASKA</h4>
-                        <p class="font-medium text-gray-300">Privacy-focused claims filler tool for veterans built during Wildfire Labs Hackathon (Top 10). Employs local AES-256-GCM browser encryption and Gemini Vision models.</p>
+                        <p class="font-medium text-gray-300">Privacy-first VA benefits assistant encrypting sensitive files inside the browser via client-side AES-256-GCM. Employs Gemini Vision parsing models.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Ledger Section -->
+        <section id="experience" class="space-y-6 border-t border-white/5 pt-12">
+            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">Professional Experience Ledger</h2>
+            <div class="space-y-6">
+                
+                <!-- Experience Item 1 -->
+                <div class="glass-card rounded-2xl p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <div>
+                            <h3 class="text-base font-extrabold text-white">Co-Founder & Lead Engineer</h3>
+                            <p class="text-xs text-indigo-400 font-mono font-semibold">Vibein / ArenaHQ</p>
+                        </div>
+                        <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
+                            <span class="text-white font-semibold">Jan 2025 – Present</span>
+                            <span class="text-gray-500">Minneapolis, MN | Remote</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                        <li>Designed client-server architectures using Event-Driven WebSockets and WebRTC modules, minimizing payload sizes for concurrent connection profiles.</li>
+                        <li>Iterated application logic loops through 50+ recorded user discovery interviews, achieving validation checks for pre-beta signup retention indices.</li>
+                        <li>Configured container deployments, edge functions, and Supabase RLS database-level Row Security policies.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Node.js</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Next.js</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">WebSockets</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Supabase</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Vercel</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="glass-card rounded-2xl p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <div>
+                            <h3 class="text-base font-extrabold text-white">IT Coordinator & Publicity Chair</h3>
+                            <p class="text-xs text-indigo-400 font-mono font-semibold">NSLS Executive Board</p>
+                        </div>
+                        <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
+                            <span class="text-white font-semibold">Sep 2024 – Present</span>
+                            <span class="text-gray-500">Vermillion, SD</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                        <li>Administrate chapter information directories, managing membership directories and data flows for student leadership cohorts.</li>
+                        <li>Coded communication automation scripts and metrics tracking dashboards, shortening member onboarding cycle times.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Python</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Google Apps Script</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Data Pipelines</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="glass-card rounded-2xl p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <div>
+                            <h3 class="text-base font-extrabold text-white">Production Operations Staff</h3>
+                            <p class="text-xs text-indigo-400 font-mono font-semibold">USD Athletics</p>
+                        </div>
+                        <div class="text-right sm:text-right flex flex-col items-start sm:items-end font-mono text-xs">
+                            <span class="text-white font-semibold">Aug 2025 – Present</span>
+                            <span class="text-gray-500">Vermillion, SD</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-4 space-y-1.5 text-xs text-gray-300 leading-relaxed font-medium">
+                        <li>Control live event signals including display operations and broadcast triggers under synchronous real-time production requirements.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-1 font-mono text-[9px]">
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Live Broadcast Systems</span>
+                        <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-400">Signal Routing</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tech Radar & Active Research Section -->
+        <section id="radar" class="space-y-6 border-t border-white/5 pt-12">
+            <div>
+                <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-teal-500 pl-3">Tech Radar & Active Research</h2>
+                <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Technical focus areas mapped by competency and current active research</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Radar Column 1 -->
+                <div class="glass-card rounded-2xl p-5 space-y-4">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">Languages & Core</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Python</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>TypeScript</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>SQL (Postgres)</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>C++ / Rust</span>
+                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Column 2 -->
+                <div class="glass-card rounded-2xl p-5 space-y-4">
+                    <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Protocols & Runtimes</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>WebSockets (ws)</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>REST APIs</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>WebRTC Data</span>
+                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Node.js / Bun</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Column 3 -->
+                <div class="glass-card rounded-2xl p-5 space-y-4">
+                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">AI & Data Analysis</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Claude/Gemini APIs</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>XGBoost / Trees</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>LangChain</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>AST Analysis</span>
+                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Column 4 -->
+                <div class="glass-card rounded-2xl p-5 space-y-4">
+                    <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Infrastructure</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Docker / Compose</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Supabase / Postgres</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>Redis Cache</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Production Ready"></span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gray-200">
+                            <span>CI/CD Actions</span>
+                            <span class="w-2 h-2 rounded-full bg-indigo-500 shadow-sm animate-pulse" title="Active Study"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="flex justify-center gap-6 font-mono text-[10px] text-gray-500 pt-2">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Production Competent</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                    <span>Active Exploration / Research</span>
                 </div>
             </div>
         </section>
