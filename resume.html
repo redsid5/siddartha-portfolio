@@ -9,9 +9,9 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: #1f2937;
             background-color: #ffffff;
-            line-height: 1.4;
+            line-height: 1.35;
             margin: 0;
-            padding: 30px;
+            padding: 24px;
         }
         .container {
             max-width: 800px;
@@ -19,41 +19,41 @@
         }
         header {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         h1 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
-            margin: 0 0 4px 0;
+            margin: 0 0 3px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #111827;
         }
         h2 {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
-            margin: 14px 0 6px 0;
+            margin: 10px 0 4px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #1f2937;
             border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 2px;
+            padding-bottom: 1px;
         }
         h3 {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
-            margin: 0 0 2px 0;
+            margin: 0 0 1px 0;
             color: #374151;
         }
         p {
-            font-size: 11px;
-            margin: 0 0 6px 0;
+            font-size: 10.5px;
+            margin: 0 0 4px 0;
             color: #4b5563;
         }
         .contact-info {
-            font-size: 10.5px;
+            font-size: 10px;
             color: #4b5563;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -67,13 +67,13 @@
             text-decoration: underline;
         }
         .experience-item, .project-item {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .item-header {
             display: flex;
             justify-content: space-between;
-            font-size: 11px;
-            margin-bottom: 2px;
+            font-size: 10.5px;
+            margin-bottom: 1px;
         }
         .role {
             font-weight: 700;
@@ -84,27 +84,25 @@
             font-weight: 500;
         }
         ul {
-            margin: 0 0 4px 0;
-            padding-left: 18px;
-            font-size: 11px;
+            margin: 0 0 3px 0;
+            padding-left: 16px;
+            font-size: 10.5px;
             color: #4b5563;
         }
         li {
-            margin-bottom: 3px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px 20px;
-            font-size: 11px;
-        }
-        .skills-category {
             margin-bottom: 2px;
         }
-        .category-title {
+        .skills-list {
+            font-size: 10.5px;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+        .skills-category {
+            margin-bottom: 3px;
+        }
+        .skills-category strong {
             font-weight: 700;
             color: #374151;
-            margin-bottom: 1px;
         }
         @media print {
             body {
@@ -123,8 +121,8 @@
 <body>
     <div class="container">
         <!-- Print / PDF Hint -->
-        <p class="no-print" style="text-align: right; margin-bottom: 10px;">
-            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 5px 10px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 11px;">Print / Save as PDF</a>
+        <p class="no-print" style="text-align: right; margin-bottom: 8px;">
+            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 10.5px;">Print / Save as PDF</a>
         </p>
 
         <!-- Header -->
@@ -157,7 +155,7 @@
                     <span class="role">University of South Dakota</span>
                     <span class="date-location">Vermillion, SD | Expected May 2027</span>
                 </div>
-                <div style="font-size: 11px; color: #4b5563; font-weight: 500; margin-top: 1px;">
+                <div style="font-size: 10.5px; color: #4b5563; font-weight: 500; margin-top: 1px;">
                     B.S. Computer Science, Minor in Innovation & Entrepreneurship
                 </div>
             </div>
@@ -166,26 +164,21 @@
         <!-- Technical Skills -->
         <section>
             <h2>Technical Skills</h2>
-            <div class="skills-grid">
+            <div class="skills-list">
                 <div class="skills-category">
-                    <div class="category-title">Languages</div>
-                    <div>Python, TypeScript, JavaScript, SQL</div>
+                    <strong>Languages:</strong> Python, TypeScript, JavaScript, SQL
                 </div>
                 <div class="skills-category">
-                    <div class="category-title">Frameworks & Libraries</div>
-                    <div>Next.js, React, Node.js, Tailwind CSS</div>
+                    <strong>Frameworks & Libraries:</strong> Next.js, React, Node.js, Tailwind CSS
                 </div>
                 <div class="skills-category">
-                    <div class="category-title">AI/ML</div>
-                    <div>Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost</div>
+                    <strong>AI/ML:</strong> Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost
                 </div>
                 <div class="skills-category">
-                    <div class="category-title">Tools & Infra</div>
-                    <div>Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git</div>
+                    <strong>Tools & Infra:</strong> Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git
                 </div>
-                <div class="skills-category" style="grid-column: span 2;">
-                    <div class="category-title">Other</div>
-                    <div>WebRTC, REST APIs, CodeMirror 6, Piston API</div>
+                <div class="skills-category">
+                    <strong>Other:</strong> WebRTC, REST APIs, CodeMirror 6, Piston API
                 </div>
             </div>
         </section>

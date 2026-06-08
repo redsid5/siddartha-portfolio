@@ -10,7 +10,7 @@
     <meta name="keywords" content="Siddartha Reddy Munugala, redsid5, Software Engineer, Full-Stack Developer, Product Builder, AI Systems Engineer, USD">
     <meta name="author" content="Siddartha Reddy Munugala">
     
-    <!-- Google Fonts: Inter (Clean, legible sans-serif font) -->
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
@@ -32,28 +32,43 @@
     
     <style type="text/css">
         body {
-            background-color: #0b0f17;
+            background-color: #030712;
             color: #f3f4f6;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
+                radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0);
+            background-size: 100% 100%, 100% 100%, 24px 24px;
         }
-        .project-card {
-            background: rgba(17, 24, 39, 0.4);
-            border: 1px solid #1f2937;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .glass-card {
+            background: rgba(17, 24, 39, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: #4f46e5;
-            background: rgba(17, 24, 39, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.15);
+        .glass-card:hover {
+            transform: translateY(-6px);
+            background: rgba(17, 24, 39, 0.50);
+            border-color: rgba(99, 102, 241, 0.25);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.5),
+                0 0 30px -5px rgba(99, 102, 241, 0.12);
+        }
+        .glass-nav {
+            background: rgba(3, 7, 18, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b0f17;
+            background: #030712;
         }
         ::-webkit-scrollbar-thumb {
             background: #1f2937;
@@ -67,51 +82,51 @@
 <body class="min-h-full flex flex-col relative">
 
     <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-[#0b0f17]/85 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
         <div>
-            <a href="#" class="font-bold tracking-tight text-white hover:text-indigo-400 transition-colors">
-                SIDDARTHA REDDY MUNUGALA
+            <a href="#" class="font-extrabold tracking-tight text-white hover:text-indigo-400 transition-colors text-sm sm:text-base uppercase">
+                Siddartha Reddy Munugala
             </a>
         </div>
         
-        <div class="flex items-center gap-6 text-sm font-medium text-gray-400">
-            <a href="https://github.com/Redsid5" target="_blank" class="hover:text-indigo-400 transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-indigo-400 transition-colors">LinkedIn</a>
-            <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-indigo-400 transition-colors">Email</a>
-            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b border-indigo-500">Resume</a>
-            <a href="sid.html" class="hover:text-pink-400 transition-colors font-medium">Personal Log 🌸</a>
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-400">
+            <a href="https://github.com/Redsid5" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+            <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-white transition-colors">Email</a>
+            <a href="resume.html" class="text-white hover:text-indigo-400 transition-colors font-semibold border-b-2 border-indigo-500 pb-0.5">Resume</a>
+            <a href="sid.html" class="text-pink-400 hover:text-pink-300 transition-colors font-semibold bg-pink-950/20 border border-pink-900/30 px-2.5 py-0.5 rounded-full flex items-center gap-1">Personal 🌸</a>
         </div>
     </nav>
 
     <!-- Main Container -->
-    <main class="relative pt-32 pb-24 px-6 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
+    <main class="relative pt-36 pb-24 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
         
         <!-- Hero Section -->
         <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            <div class="md:col-span-8 space-y-6">
+            <div class="md:col-span-8 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
                 <div class="space-y-2">
-                    <p class="text-sm font-mono text-indigo-400 tracking-wider uppercase font-semibold">
+                    <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-semibold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
                     </p>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                         Siddartha Reddy Munugala
                     </h1>
                 </div>
                 
-                <p class="text-gray-200 text-lg leading-relaxed font-medium">
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-medium max-w-xl">
                     I build software products, AI-powered applications, and developer tools focused on solving real-world problems and creating measurable user impact.
                 </p>
                 
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-400 text-xs sm:text-sm font-mono">
                     Minneapolis, MN | University of South Dakota | Expected May 2027
                 </p>
                 
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3.5 px-6 rounded-lg transition-all shadow-md flex items-center justify-center min-h-[48px]">
+                <div class="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
+                    <a href="resume.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
                         Download Resume (PDF)
                     </a>
-                    <a href="mailto:Siddarth.lbf341@gmail.com" class="border border-gray-800 bg-[#111827]/40 hover:bg-[#111827]/80 text-gray-300 hover:text-white font-semibold py-3.5 px-6 rounded-lg transition-all flex items-center justify-center min-h-[48px]">
+                    <a href="mailto:Siddarth.lbf341@gmail.com" class="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-200 hover:text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center min-h-[48px]">
                         Get in Touch
                     </a>
                 </div>
@@ -119,33 +134,34 @@
 
             <!-- Avatar Headshot -->
             <div class="md:col-span-4 flex justify-center md:justify-end">
-                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-gray-800 bg-[#111827] p-1 shadow-xl">
-                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-xl scale-[1.1] hover:scale-100 transition-transform duration-500">
+                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40 p-1 shadow-2xl relative group">
+                    <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-xl scale-[1.1] group-hover:scale-100 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-indigo-500/5 group-hover:opacity-0 transition-opacity"></div>
                 </div>
             </div>
 
         </section>
 
         <!-- Stats Proof Points Section -->
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-b border-gray-800 py-10 relative z-10 text-center sm:text-left">
-            <div class="space-y-1">
-                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">821+</div>
-                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">Platform Users</div>
+        <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center">
+            <div class="space-y-1.5">
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
+                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">Platform Users</div>
             </div>
-            <div class="space-y-1">
-                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">50+</div>
-                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">User Interviews Conducted</div>
+            <div class="space-y-1.5 border-t sm:border-t-0 sm:border-x border-white/10 pt-4 sm:pt-0">
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">50+</div>
+                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">User Interviews Conducted</div>
             </div>
-            <div class="space-y-1">
-                <div class="text-4xl sm:text-5xl font-extrabold text-indigo-400 tracking-tight">40%</div>
-                <div class="text-xs uppercase font-mono tracking-widest text-gray-400 font-bold">Daily Active User Retention</div>
+            <div class="space-y-1.5 border-t sm:border-t-0 border-white/10 pt-4 sm:pt-0">
+                <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">40%</div>
+                <div class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-bold">Daily Active User Retention</div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="space-y-6">
-            <h2 class="text-xl font-bold tracking-tight text-white">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400 text-sm leading-relaxed">
+            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400 text-sm leading-relaxed">
                 <div class="md:col-span-2 space-y-4">
                     <p class="text-base text-gray-300 font-medium">
                         I am a Computer Science student focused on software engineering, AI systems, and product development. I have experience building full-stack applications, conducting user research, developing machine learning solutions, and turning ideas into products used by real people.
@@ -154,9 +170,9 @@
                         My work focuses on shipping clean code and execution. Rather than building overdesigned frameworks, I prioritize shipping functioning software that produces measurable outcomes for users.
                     </p>
                 </div>
-                <div class="bg-[#111827]/30 border border-gray-800 p-6 rounded-xl space-y-3">
-                    <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">// Core Focus</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono text-indigo-400">// Core Focus</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed font-medium">
                         Writing clean full-stack code, translating user feedback directly into product iterations, and executing solid software architectures.
                     </p>
                 </div>
@@ -164,141 +180,170 @@
         </section>
 
         <!-- Technical Skills -->
-        <section id="skills" class="space-y-6 border-t border-gray-800 pt-12">
-            <h2 class="text-xl font-bold tracking-tight text-white">Technical Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-                <div class="space-y-2">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Languages</h3>
-                    <div class="text-gray-400 leading-relaxed font-medium">Python, TypeScript, JavaScript, SQL</div>
+        <section id="skills" class="space-y-6 border-t border-white/5 pt-12">
+            <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-teal-500 pl-3">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Category 1 -->
+                <div class="glass-card rounded-2xl p-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-indigo-400 text-sm">💡</span>
+                        <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">Languages</h3>
+                    </div>
+                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
+                        Python, TypeScript, JavaScript, SQL
+                    </div>
                 </div>
-                <div class="space-y-2">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Frameworks</h3>
-                    <div class="text-gray-400 leading-relaxed font-medium">Next.js, React, Node.js, Tailwind CSS</div>
+                
+                <!-- Category 2 -->
+                <div class="glass-card rounded-2xl p-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-teal-400 text-sm">⚙️</span>
+                        <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Frameworks</h3>
+                    </div>
+                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
+                        Next.js, React, Node.js, Tailwind CSS
+                    </div>
                 </div>
-                <div class="space-y-2">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">AI/ML</h3>
-                    <div class="text-gray-400 leading-relaxed font-medium font-medium">Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost</div>
+
+                <!-- Category 3 -->
+                <div class="glass-card rounded-2xl p-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-indigo-400 text-sm">🧠</span>
+                        <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase tracking-wider">AI / ML</h3>
+                    </div>
+                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
+                        Claude & Gemini APIs, LangChain, OpenAI API, XGBoost
+                    </div>
                 </div>
-                <div class="space-y-2">
-                    <h3 class="font-bold text-indigo-400 font-mono text-xs uppercase">Tools & Infra</h3>
-                    <div class="text-gray-400 leading-relaxed font-medium">Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git</div>
+
+                <!-- Category 4 -->
+                <div class="glass-card rounded-2xl p-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-teal-400 text-sm">🌐</span>
+                        <h3 class="font-bold text-teal-400 font-mono text-xs uppercase tracking-wider">Tools & Infra</h3>
+                    </div>
+                    <div class="text-gray-300 text-sm leading-relaxed font-semibold">
+                        Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <!-- Selected Projects (Showcasing 3 Strongest) -->
-        <section id="projects" class="space-y-6 border-t border-gray-800 pt-12">
+        <section id="projects" class="space-y-6 border-t border-white/5 pt-12">
             <div>
-                <h2 class="text-xl font-bold tracking-tight text-white">Selected Projects & Research</h2>
-                <p class="text-xs text-gray-500 font-mono mt-1">// Structured evidence of impact and technical execution</p>
+                <h2 class="text-xl font-bold tracking-tight text-white border-l-4 border-indigo-500 pl-3">Selected Projects & Research</h2>
+                <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Structured evidence of impact and technical execution</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Project 1: PRISM -->
-                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-base font-bold text-white tracking-tight">PRISM</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Research</span>
+                            <h3 class="text-base font-extrabold text-white tracking-tight">PRISM</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Research</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold font-sans">Research system for predicting PR risk from structural code signals.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Research system for predicting PR risk from structural code signals.</p>
                         
-                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 Pull request review cycles are slow and struggle to catch architectural regressions.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Engineered the AST extraction parser (using tree-sitter) and built the XGBoost risk prediction model.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Predicted merge risk probability with validation metrics achieving AUC >= 0.80.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Python, XGBoost, Tree-Sitter, NetworkX, SHAP
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
                         <span class="text-gray-500">2026</span>
-                        <div class="flex gap-3 text-indigo-400 font-semibold">
-                            <span>Code Private</span>
+                        <div class="flex gap-3 text-indigo-400 font-bold">
+                            <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Code Private</span>
                         </div>
                     </div>
                 </div>
-
+ 
                 <!-- Project 2: COGN -->
-                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-base font-bold text-white tracking-tight">COGN</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Tooling</span>
+                            <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Tooling</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold font-sans">Cognitive integrity layer tracking logic drift in AI-assisted codebases.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Cognitive integrity layer tracking logic drift in AI-assisted codebases.</p>
                         
-                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 AI-generated code introduces logic changes that drift reasoning patterns over time.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Authored the CI/CD pull request metrics evaluator and designed three parsing signatures.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Automates PR scoring against repository baseline to isolate cognitive drifts.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Node.js, GitHub Actions, AST Parsing
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
                         <span class="text-gray-500">2026</span>
-                        <div class="flex gap-3 text-indigo-400 font-semibold">
-                            <span>Git Action</span>
+                        <div class="flex gap-3 text-indigo-400 font-bold">
+                            <span class="bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Git Action</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3: Vibein -->
-                <div class="project-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-base font-bold text-white tracking-tight">Vibein</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded">Product</span>
+                            <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Product</span>
                         </div>
-                        <p class="text-xs text-gray-300 font-semibold font-sans">Anonymous professional network for student discovery.</p>
+                        <p class="text-xs text-gray-300 font-semibold leading-relaxed">Anonymous professional network for student discovery.</p>
                         
-                        <div class="text-xs space-y-3 pt-3 border-t border-gray-850 leading-relaxed text-gray-400">
+                        <div class="text-xs space-y-3.5 pt-4 border-t border-white/5 leading-relaxed text-gray-400">
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Problem (Why built):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Problem (Why built):</span>
                                 High social friction in traditional campus networking platforms.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Build (My Contribution):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Build (My Contribution):</span>
                                 Designed the full-stack architecture, recommendation logic, and instant messaging socket.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Impact (Result):</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Impact (Result):</span>
                                 Scaled to 821 users pre-beta with 40% Daily Active User retention.
                             </div>
                             <div>
-                                <strong class="text-white font-mono text-[10px] block uppercase text-indigo-300">Tech Stack:</strong>
+                                <span class="text-indigo-400 font-mono text-[9px] block uppercase font-bold tracking-wider mb-0.5">Tech Stack:</span>
                                 Next.js, Node.js, WebSockets, Supabase
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 flex justify-between items-center text-xs font-mono">
+                    <div class="pt-3 flex justify-between items-center text-xs font-mono border-t border-white/5">
                         <span class="text-gray-500">2025</span>
-                        <div class="flex gap-3 text-indigo-400 font-semibold">
-                            <a href="https://vibein.us" target="_blank" class="hover:underline">Live ↗</a>
+                        <div class="flex gap-3 text-indigo-400 font-bold">
+                            <a href="https://vibein.us" target="_blank" class="hover:underline bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">Live ↗</a>
                         </div>
                     </div>
                 </div>
@@ -307,31 +352,33 @@
 
             <!-- Other Projects & Contributions -->
             <div class="pt-8 space-y-4">
-                <h3 class="text-sm font-bold tracking-wider text-white uppercase font-mono">// Other Projects & Tools</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
-                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
-                        <h4 class="font-bold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-indigo-400">ArenaHQ ↗</a></h4>
-                        <p>Live competitive coding arena featuring socket execution sandboxes, real-time evaluation runtimes, and recruiter portal connections. Built with CodeMirror 6, Supabase, and Piston APIs.</p>
+                <h3 class="text-sm font-bold tracking-wider text-white uppercase font-mono border-l-4 border-teal-500 pl-3">// Other Projects & Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs leading-relaxed text-gray-400">
+                    <div class="glass-card p-5 rounded-2xl space-y-3">
+                        <h4 class="font-extrabold text-white text-sm"><a href="https://arenahq.us" target="_blank" class="hover:underline hover:text-indigo-400">ArenaHQ ↗</a></h4>
+                        <p class="font-medium text-gray-300">Live competitive coding arena featuring socket execution sandboxes, real-time evaluation runtimes, and recruiter portal connections. Built with CodeMirror 6, Supabase, and Piston APIs.</p>
                     </div>
-                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
-                        <h4 class="font-bold text-white text-sm">WTFcode</h4>
-                        <p>A dependency-mapping CLI tool that parses code AST graphs locally to compress large repository context files 832x, reducing LLM token billing costs by 90%.</p>
+                    <div class="glass-card p-5 rounded-2xl space-y-3">
+                        <h4 class="font-extrabold text-white text-sm">WTFcode</h4>
+                        <p class="font-medium text-gray-300">A dependency-mapping CLI tool that parses code AST graphs locally to compress large repository context files 832x, reducing LLM token billing costs by 90%.</p>
                     </div>
-                    <div class="border border-gray-800/60 p-5 rounded-xl space-y-2">
-                        <h4 class="font-bold text-white text-sm">ALASKA</h4>
-                        <p>Privacy-focused claims filler tool for veterans built during Wildfire Labs Hackathon (Top 10). Employs local AES-256-GCM browser encryption and Gemini Vision models.</p>
+                    <div class="glass-card p-5 rounded-2xl space-y-3">
+                        <h4 class="font-extrabold text-white text-sm">ALASKA</h4>
+                        <p class="font-medium text-gray-300">Privacy-focused claims filler tool for veterans built during Wildfire Labs Hackathon (Top 10). Employs local AES-256-GCM browser encryption and Gemini Vision models.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Personal Log Callout -->
-        <section class="border border-indigo-950/40 bg-indigo-950/5 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+        <section class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
             <div class="space-y-1">
-                <h3 class="text-base font-bold text-white">Looking for Sid's personal side? 🌸</h3>
+                <h3 class="text-base font-bold text-white flex items-center justify-center sm:justify-start gap-2">
+                    Looking for Sid's personal side? <span class="animate-bounce">🌸</span>
+                </h3>
                 <p class="text-sm text-gray-400">Check out the personal log for sports, cooking, and hobbies outside of software engineering.</p>
             </div>
-            <a href="sid.html" class="bg-indigo-900/30 hover:bg-indigo-900/50 text-indigo-400 border border-indigo-800/50 font-semibold py-2.5 px-5 rounded-lg transition-all text-sm min-h-[44px] flex items-center justify-center whitespace-nowrap">
+            <a href="sid.html" class="backdrop-blur-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 border border-pink-500/20 hover:border-pink-500/40 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm min-h-[44px] flex items-center justify-center whitespace-nowrap">
                 View Personal Log
             </a>
         </section>
@@ -339,7 +386,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-12 text-center text-xs text-gray-600">
+    <footer class="border-t border-white/5 py-12 text-center text-xs text-gray-600">
         <div>&copy; 2026 Siddartha Reddy Munugala. All rights reserved.</div>
         <div class="mt-1.5 font-mono text-[10px] text-gray-700">Minneapolis, MN | University of South Dakota</div>
     </footer>
