@@ -37,14 +37,14 @@
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0);
-            background-size: 24px 24px;
+                radial-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 0);
+            background-size: 32px 32px;
         }
         
         /* Floating Nebulas */
         @keyframes pulse-slow {
-            0%, 100% { opacity: 0.12; transform: scale(1); }
-            50% { opacity: 0.18; transform: scale(1.05); }
+            0%, 100% { opacity: 0.10; transform: scale(1); }
+            50% { opacity: 0.16; transform: scale(1.04); }
         }
         .nebula-indigo {
             animation: pulse-slow 8s ease-in-out infinite;
@@ -56,10 +56,10 @@
         /* Interactive Card Glow Effect */
         .glass-card {
             position: relative;
-            background: rgba(10, 15, 30, 0.3);
+            background: rgba(8, 12, 24, 0.3);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             overflow: hidden;
         }
@@ -72,7 +72,7 @@
             bottom: 0;
             background: radial-gradient(
                 350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
-                rgba(99, 102, 241, 0.08),
+                rgba(99, 102, 241, 0.09),
                 transparent 80%
             );
             z-index: 0;
@@ -85,25 +85,25 @@
         }
         .glass-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.20);
             box-shadow: 
                 0 20px 40px -15px rgba(0, 0, 0, 0.6),
-                0 0 25px -5px rgba(99, 102, 241, 0.12);
+                0 0 25px -5px rgba(99, 102, 241, 0.10);
         }
 
         /* Glass Navigation */
         .glass-nav {
-            background: rgba(0, 0, 0, 0.70);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Metallic Gradient Headers */
         .section-header {
             font-size: 1.25rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
             background: linear-gradient(to right, #ffffff 40%, #9ca3af 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -129,8 +129,8 @@
 
     <!-- Ambient Glowing Nebulas (Background Layer) -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-500/10 blur-[120px] nebula-indigo"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-500/8 blur-[120px] nebula-teal"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-500/10 blur-[130px] nebula-indigo"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-500/8 blur-[130px] nebula-teal"></div>
     </div>
 
     <!-- Navigation Header -->
@@ -142,7 +142,7 @@
             </a>
         </div>
         
-        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-400 font-mono">
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-400 font-mono font-semibold">
             <a href="https://github.com/Redsid5" target="_blank" class="hover:text-white transition-colors">git://GitHub</a>
             <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank" class="hover:text-white transition-colors">ln://LinkedIn</a>
             <a href="mailto:Siddarth.lbf341@gmail.com" class="hover:text-white transition-colors">smtp://Email</a>
@@ -155,13 +155,18 @@
     <main class="relative z-10 pt-36 pb-24 px-4 sm:px-8 max-w-5xl mx-auto w-full flex-grow space-y-20">
         
         <!-- Hero Section -->
-        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative py-6">
+            <!-- Blueprint Grid Crosshair Marks -->
+            <div class="absolute -top-4 -left-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
+            <div class="absolute -top-4 -right-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
+            <div class="absolute -bottom-4 -left-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
+            <div class="absolute -bottom-4 -right-4 font-mono text-xs text-indigo-500/25 select-none">+</div>
             
-            <div class="md:col-span-7 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            <div class="md:col-span-7 space-y-6 text-center md:text-left flex flex-col items-center md:items-start relative z-10">
                 <div class="space-y-3">
-                    <div class="flex items-center gap-2">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-mono text-[10px] font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-semibold">commit: 63dc8c8</span>
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> env: prod-active</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-400 font-mono text-[10px] font-bold">commit: a1c2223</span>
                     </div>
                     <p class="text-xs sm:text-sm font-mono text-indigo-400 tracking-wider uppercase font-bold">
                         Full-Stack Developer | Product Builder | AI Systems Engineer
@@ -189,42 +194,83 @@
                 </div>
             </div>
 
-            <!-- Elevated Technical Visual Profile Box (Combines Headshot & Code Telemetry) -->
+            <!-- Interactive Dev Console Component -->
             <div class="md:col-span-5 flex justify-center md:justify-end">
-                <div class="glass-card w-full max-w-[340px] rounded-2xl overflow-hidden shadow-2xl relative border border-white/10">
-                    <!-- Window bar controls -->
-                    <div class="bg-slate-900/60 border-b border-white/5 px-4 py-2.5 flex justify-between items-center">
-                        <div class="flex items-center gap-1.5">
+                <div class="glass-card w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl relative border border-white/8">
+                    <!-- Window Controls and Tab Headers -->
+                    <div class="bg-slate-900/60 border-b border-white/5 px-4 pt-3 flex justify-between items-center">
+                        <div class="flex items-center gap-1.5 pb-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                             <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                             <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
                         </div>
-                        <span class="text-[10px] font-mono text-gray-500">profile_spec.json</span>
+                        
+                        <!-- File Tabs -->
+                        <div class="flex gap-1 font-mono text-[10px] pb-1">
+                            <button id="tab-bio" onclick="switchConsoleTab('bio')" class="px-2.5 py-1 rounded-t-lg bg-black/60 border-t border-x border-white/10 text-white font-semibold flex items-center gap-1">
+                                📁 bio.sh
+                            </button>
+                            <button id="tab-prism" onclick="switchConsoleTab('prism')" class="px-2.5 py-1 rounded-t-lg text-gray-500 hover:text-gray-300 flex items-center gap-1">
+                                📄 prism.py
+                            </button>
+                            <button id="tab-vibein" onclick="switchConsoleTab('vibein')" class="px-2.5 py-1 rounded-t-lg text-gray-500 hover:text-gray-300 flex items-center gap-1">
+                                📄 vibein.ts
+                            </button>
+                        </div>
                     </div>
-                    <!-- Card Body -->
-                    <div class="p-5 space-y-4">
-                        <div class="flex items-center gap-4">
-                            <!-- Glowing Headshot Box -->
-                            <div class="w-16 h-16 rounded-xl overflow-hidden border border-white/10 bg-slate-950 p-0.5 shadow-lg flex-shrink-0">
-                                <img src="siddartha_headshot.jpg" alt="Siddartha Reddy Munugala" class="w-full h-full object-cover rounded-[10px] scale-[1.1]">
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-extrabold text-white">Siddartha Reddy</h4>
-                                <p class="text-[10px] font-mono text-indigo-400">Lead Systems Engineer</p>
+
+                    <!-- Code Console Display -->
+                    <div class="p-5 min-h-[220px] bg-black/30 flex flex-col justify-between">
+                        <!-- Code Blocks -->
+                        <div class="font-mono text-[10px] leading-relaxed overflow-x-auto text-gray-300">
+                            
+                            <!-- bio.sh Code -->
+                            <pre id="code-bio" class="space-y-1">
+<span class="text-gray-500">$ curl -s https://api.siddartha.dev/profile</span>
+{
+  <span class="text-indigo-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,
+  <span class="text-indigo-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,
+  <span class="text-indigo-400">"specialization"</span>: [
+    <span class="text-teal-400">"Full-Stack Products"</span>,
+    <span class="text-teal-400">"AI Workflows"</span>
+  ],
+  <span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>
+}</pre>
+
+                            <!-- prism.py Code -->
+                            <pre id="code-prism" class="hidden space-y-1">
+<span class="text-indigo-400">import</span> tree_sitter, xgboost <span class="text-indigo-400">as</span> xgb
+
+<span class="text-indigo-400">def</span> <span class="text-teal-400">evaluate_pr_risk</span>(diff_ast):
+    <span class="text-gray-500"># Parse diff syntax trees</span>
+    features = extract_weights(diff_ast)
+    risk_prob = model.predict(features)
+    
+    <span class="text-indigo-400">return</span> risk_prob <span class="text-gray-500"># validation AUC &gt;= 0.80</span></pre>
+
+                            <!-- vibein.ts Code -->
+                            <pre id="code-vibein" class="hidden space-y-1">
+<span class="text-indigo-400">import</span> { WebSocketServer } <span class="text-indigo-400">from</span> <span class="text-teal-400">'ws'</span>;
+
+<span class="text-indigo-400">const</span> wss = <span class="text-indigo-400">new</span> WebSocketServer({ port: 8080 });
+wss.on(<span class="text-teal-400">'connection'</span>, (socket) =&gt; {
+    <span class="text-gray-500">// Handle concurrent connection pools</span>
+    socket.on(<span class="text-teal-400">'message'</span>, (packet) =&gt; {
+        evaluateMatchmaking(packet);
+    });
+});</pre>
+
+                        </div>
+
+                        <!-- Mini Interactive Actions Console -->
+                        <div class="mt-4 pt-3 border-t border-white/5 flex justify-between items-center font-mono text-[9px]">
+                            <span class="text-gray-500">siddartha@dev:~</span>
+                            <div class="flex gap-2">
+                                <button onclick="triggerConsoleAction()" class="bg-indigo-950/40 hover:bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 px-2 py-1 rounded transition-colors active:scale-95">
+                                    [ init_handshake ]
+                                </button>
                             </div>
                         </div>
-                        <!-- Mini JSON Display -->
-                        <pre class="bg-black/40 border border-white/5 rounded-xl p-3.5 text-[10px] font-mono text-gray-300 overflow-x-auto leading-relaxed">
-<span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"production_ready"</span>,
-<span class="text-indigo-400">"focus"</span>: [
-  <span class="text-teal-400">"AST Parsing"</span>,
-  <span class="text-teal-400">"WebSocket Pools"</span>,
-  <span class="text-teal-400">"ML Risk Models"</span>
-],
-<span class="text-indigo-400">"telemetry"</span>: {
-  <span class="text-indigo-400">"retention"</span>: <span class="text-amber-400">"0.40"</span>,
-  <span class="text-indigo-400">"interviews"</span>: <span class="text-amber-400">50</span>
-}</pre>
                     </div>
                 </div>
             </div>
@@ -233,6 +279,10 @@
 
         <!-- Stats Proof Points Section -->
         <section class="glass-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 text-center font-mono">
+            <!-- Blueprint indicators -->
+            <div class="absolute top-2 left-2 text-[9px] text-indigo-500/10 font-mono select-none">ID_01</div>
+            <div class="absolute bottom-2 right-2 text-[9px] text-indigo-500/10 font-mono select-none">ID_03</div>
+            
             <div class="space-y-1 relative z-10">
                 <div class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent tracking-tight">821+</div>
                 <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Platform Users</div>
@@ -251,7 +301,8 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="space-y-6">
+        <section id="about" class="space-y-6 relative py-4">
+            <div class="absolute -top-2 -left-2 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
             <h2 class="section-header border-l-4 border-indigo-500 pl-3">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400 text-sm leading-relaxed">
                 <div class="md:col-span-2 space-y-4">
@@ -272,7 +323,8 @@
         </section>
 
         <!-- Selected Projects (Showcasing 3 Strongest) -->
-        <section id="projects" class="space-y-6 border-t border-white/5 pt-12">
+        <section id="projects" class="space-y-6 border-t border-white/5 pt-12 relative">
+            <div class="absolute -top-3 -right-2 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
             <div>
                 <h2 class="section-header border-l-4 border-indigo-500 pl-3">Selected Projects & Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Structured evidence of impact and technical execution</p>
@@ -285,7 +337,7 @@
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">PRISM</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Research</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Research</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">AST-driven machine learning engine predicting branch merge hazards.</p>
                         
@@ -321,7 +373,7 @@
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">COGN</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Tooling</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Tooling</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Static analysis layer evaluating cognitive drift in AI-assisted codebases.</p>
                         
@@ -357,7 +409,7 @@
                     <div class="space-y-3 relative z-10">
                         <div class="flex justify-between items-center">
                             <h3 class="text-base font-extrabold text-white tracking-tight">Vibein</h3>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold">Product</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-full font-semibold font-bold">Product</span>
                         </div>
                         <p class="text-xs text-gray-300 font-semibold leading-relaxed">Real-time socket network utilizing mutual intent matchmaking algorithms.</p>
                         
@@ -411,7 +463,8 @@
         </section>
 
         <!-- Professional Experience Ledger Section -->
-        <section id="experience" class="space-y-6 border-t border-white/5 pt-12">
+        <section id="experience" class="space-y-6 border-t border-white/5 pt-12 relative">
+            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
             <h2 class="section-header border-l-4 border-indigo-500 pl-3">Professional Experience Ledger</h2>
             <div class="space-y-6">
                 
@@ -489,7 +542,8 @@
         </section>
 
         <!-- Tech Radar & Active Research Section -->
-        <section id="radar" class="space-y-6 border-t border-white/5 pt-12">
+        <section id="radar" class="space-y-6 border-t border-white/5 pt-12 relative">
+            <div class="absolute -top-3 -right-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
             <div>
                 <h2 class="section-header border-l-4 border-teal-500 pl-3">Tech Radar & Active Research</h2>
                 <p class="text-xs text-gray-500 font-mono mt-1.5 ml-3">// Technical focus areas mapped by competency and current active research</p>
@@ -604,7 +658,8 @@
         </section>
 
         <!-- Personal Log Callout -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+        <section class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left relative">
+            <div class="absolute -top-3 -left-3 font-mono text-[9px] text-indigo-500/20 select-none">+</div>
             <div class="space-y-1 relative z-10">
                 <h3 class="text-base font-bold text-white flex items-center justify-center sm:justify-start gap-2">
                     Looking for Sid's personal side? <span class="animate-bounce">🌸</span>
@@ -624,8 +679,9 @@
         <div class="mt-1.5 font-mono text-[10px] text-gray-700">Minneapolis, MN | University of South Dakota</div>
     </footer>
 
-    <!-- Interactive Mouse-Tracking Script -->
-    <script type="text/javascript font-mono">
+    <!-- Interactive Custom Scripts -->
+    <script type="text/javascript">
+        // --- 1. Interactive Mouse Hover Tracking for Card Glows ---
         document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -635,6 +691,44 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+
+        // --- 2. Interactive Console Tab Switcher ---
+        function switchConsoleTab(tabName) {
+            // Tab IDs
+            const tabs = ['bio', 'prism', 'vibein'];
+            
+            tabs.forEach(t => {
+                const tabBtn = document.getElementById(`tab-${t}`);
+                const codePre = document.getElementById(`code-${t}`);
+                
+                if (t === tabName) {
+                    // Make Active
+                    tabBtn.className = "px-2.5 py-1 rounded-t-lg bg-black/60 border-t border-x border-white/10 text-white font-semibold flex items-center gap-1";
+                    codePre.classList.remove('hidden');
+                } else {
+                    // Make Inactive
+                    tabBtn.className = "px-2.5 py-1 rounded-t-lg text-gray-500 hover:text-gray-300 flex items-center gap-1";
+                    codePre.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- 3. Interactive Shell Handshake Button ---
+        let clickCount = 0;
+        function triggerConsoleAction() {
+            clickCount++;
+            const bioPre = document.getElementById('code-bio');
+            
+            if (clickCount === 1) {
+                bioPre.innerHTML = `<span class="text-gray-500">$ run init_handshake</span>\n<span class="text-emerald-400">Initializing encryption handshakes...</span>\n<span class="text-emerald-400">Connection established. Latency: 4ms.</span>\n\n{\n  <span class="text-indigo-400">"nodes"</span>: <span class="text-teal-400">"online"</span>,\n  <span class="text-indigo-400">"integrity_score"</span>: <span class="text-amber-400">"0.99"</span>\n}`;
+            } else if (clickCount === 2) {
+                bioPre.innerHTML = `<span class="text-gray-500">$ check uptime</span>\n<span class="text-teal-400">Server Status: stable</span>\n<span class="text-teal-400">Telemetry modules: 100% active</span>\n<span class="text-teal-400">Uptime: 247 days, 14h, 32m</span>`;
+            } else {
+                // Reset
+                bioPre.innerHTML = `<span class="text-gray-500">$ reset console</span>\n{\n  <span class="text-indigo-400">"identity"</span>: <span class="text-teal-400">"Siddartha Reddy"</span>,\n  <span class="text-indigo-400">"role"</span>: <span class="text-teal-400">"Systems Engineer"</span>,\n  <span class="text-indigo-400">"status"</span>: <span class="text-teal-400">"ready_for_production"</span>\n}`;
+                clickCount = 0;
+            }
+        }
     </script>
 
 </body>
