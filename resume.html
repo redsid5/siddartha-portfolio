@@ -1,287 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddartha Reddy Munugala | Resume</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #1f2937;
-            background-color: #ffffff;
-            line-height: 1.35;
-            margin: 0;
-            padding: 24px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h1 {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0 0 3px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #111827;
-        }
-        h2 {
-            font-size: 11.5px;
-            font-weight: 700;
-            margin: 10px 0 4px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #1f2937;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 1px;
-        }
-        h3 {
-            font-size: 11px;
-            font-weight: 700;
-            margin: 0 0 1px 0;
-            color: #374151;
-        }
-        p {
-            font-size: 10.5px;
-            margin: 0 0 4px 0;
-            color: #4b5563;
-        }
-        .contact-info {
-            font-size: 10px;
-            color: #4b5563;
-            margin-bottom: 6px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .contact-info a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .experience-item, .project-item {
-            margin-bottom: 8px;
-        }
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10.5px;
-            margin-bottom: 1px;
-        }
-        .role {
-            font-weight: 700;
-            color: #1f2937;
-        }
-        .date-location {
-            color: #6b7280;
-            font-weight: 500;
-        }
-        ul {
-            margin: 0 0 3px 0;
-            padding-left: 16px;
-            font-size: 10.5px;
-            color: #4b5563;
-        }
-        li {
-            margin-bottom: 2px;
-        }
-        .skills-list {
-            font-size: 10.5px;
-            color: #4b5563;
-            line-height: 1.4;
-        }
-        .skills-category {
-            margin-bottom: 3px;
-        }
-        .skills-category strong {
-            font-weight: 700;
-            color: #374151;
-        }
-        @media print {
-            body {
-                padding: 15px;
-                font-size: 10px;
-            }
-            .no-print {
-                display: none !important;
-            }
-            h2 {
-                margin-top: 8px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siddartha Reddy Munugala — AI & Innovation Intern Resume</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    color: #111111;
+    font-size: 8.8pt;
+    line-height: 1.18;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Navigation Bar for Screen Only */
+  .resume-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 1000;
+  }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 9pt;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  }
+  .btn-secondary {
+    background: #ffffff;
+    color: #374151;
+    border-color: #d1d5db;
+  }
+  .btn-secondary:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+  }
+  
+  /* Page Container & Styling */
+  .page-container {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.4in 0.5in;
+    background: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  h1 {
+    font-size: 16pt;
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 1px;
+    text-align: center;
+  }
+  .contact {
+    font-size: 8pt;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #444444;
+  }
+  .section { margin-top: 6px; }
+  .section-title {
+    font-size: 8.8pt;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid #111111;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+  }
+  .summary { font-size: 8.8pt; text-align: justify; }
+  .entry { margin-bottom: 4px; page-break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .title { font-size: 9pt; font-weight: 700; }
+  .date { font-size: 8pt; color: #444444; white-space: nowrap; font-weight: 600; }
+  .subline { font-size: 8.5pt; color: #444444; margin-top: 0px; margin-bottom: 1px; font-style: italic; }
+  .small { font-size: 8.2pt; color: #555555; }
+  ul { padding-left: 12px; margin-top: 1px; }
+  li { margin-bottom: 1px; font-size: 8.8pt; text-align: justify; }
+  .skills p { margin-bottom: 1px; font-size: 8.8pt; }
+  .skills strong { font-weight: 700; }
+  
+  /* Print overrides */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: white;
+    }
+    .page-container {
+      padding: 0 !important;
+    }
+    .page {
+      max-width: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 !important;
+    }
+    @page { 
+      size: letter; 
+      margin: 0.35in 0.45in; 
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Print / PDF Hint -->
-        <p class="no-print" style="text-align: right; margin-bottom: 8px;">
-            <a href="javascript:window.print()" style="background: #2563eb; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 10.5px;">Print / Save as PDF</a>
-        </p>
+  <!-- Navigation Header (Screen only) -->
+  <header class="resume-nav no-print">
+    <a href="index.html" class="nav-btn btn-secondary">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="nav-btn btn-primary">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle;"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+      Print / Save as PDF
+    </button>
+  </header>
 
-        <!-- Header -->
-        <header>
-            <h1>Siddartha Reddy Munugala</h1>
-            <div class="contact-info">
-                <span>Minneapolis, MN</span>
-                <span>•</span>
-                <span>Email: <a href="mailto:Siddarth.lbf341@gmail.com">Siddarth.lbf341@gmail.com</a></span>
-                <span>•</span>
-                <span>GitHub: <a href="https://github.com/Redsid5" target="_blank">github.com/Redsid5</a></span>
-                <span>•</span>
-                <span>LinkedIn: <a href="https://www.linkedin.com/in/siddartha-reddy-munugala-95b35a333/" target="_blank">linkedin.com/in/siddartha-reddy-munugala-95b35a333</a></span>
-            </div>
-        </header>
+  <div class="page-container">
+    <main class="page">
+      <h1>Siddartha Reddy Munugala</h1>
+      <div class="contact">Vermillion, SD | Siddarth.lbf341@gmail.com | github.com/Redsid5 | linkedin.com/in/siddartha-reddy-munugala-95b35a333 | vibein.us | arenahq.us</div>
 
-        <!-- Professional Summary -->
-        <section>
-            <h2>Professional Summary</h2>
-            <p>
-                Computer Science student and full-stack developer with experience building real-time socket applications, ML risk prediction pipelines, and custom developer tools. Focuses on shipping clean, high-performance code and executing rapid product loops.
-            </p>
-        </section>
+      <section class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary">Computer Science student and AI builder with demonstrated experience applying AI tools to real-world problems across product development, workflows, and automation. Built AI-powered platforms using Gemini API, Claude API, OpenAI API, LangChain, and multi-agent systems, with strengths in prototype development, workflow design, and data-driven recommendations. Seeking AI & Innovation Intern roles focused on talent acquisition, recruiting automation, and process improvement.</p>
+      </section>
 
-        <!-- Education -->
-        <section>
-            <h2>Education</h2>
-            <div class="experience-item">
-                <div class="item-header">
-                    <span class="role">University of South Dakota</span>
-                    <span class="date-location">Vermillion, SD | Expected May 2027</span>
-                </div>
-                <div style="font-size: 10.5px; color: #4b5563; font-weight: 500; margin-top: 1px;">
-                    B.S. Computer Science, Minor in Innovation & Entrepreneurship
-                </div>
-            </div>
-        </section>
+      <section class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+          <div class="row"><div class="title">University of South Dakota, B.S. in Computer Science</div><div class="date">Expected May 2027</div></div>
+          <div class="subline">Minor in Innovation & Entrepreneurship | Vermillion, South Dakota</div>
+          <div class="small">Relevant Coursework: Data Structures, Algorithms, Systems Programming, Database Systems, Software Engineering</div>
+        </div>
+      </section>
 
-        <!-- Technical Skills -->
-        <section>
-            <h2>Technical Skills</h2>
-            <div class="skills-list">
-                <div class="skills-category">
-                    <strong>Languages:</strong> Python, TypeScript, JavaScript, SQL
-                </div>
-                <div class="skills-category">
-                    <strong>Frameworks & Libraries:</strong> Next.js, React, Node.js, Tailwind CSS
-                </div>
-                <div class="skills-category">
-                    <strong>AI/ML:</strong> Anthropic Claude API, Gemini API, LangChain, OpenAI API, XGBoost
-                </div>
-                <div class="skills-category">
-                    <strong>Tools & Infra:</strong> Supabase, Firebase, Neon Postgres, Docker, Redis, Vercel, Git
-                </div>
-                <div class="skills-category">
-                    <strong>Other:</strong> WebRTC, REST APIs, CodeMirror 6, Piston API
-                </div>
-            </div>
-        </section>
+      <section class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills">
+          <p><strong>Languages:</strong> Python, TypeScript, JavaScript, SQL, HTML, CSS</p>
+          <p><strong>AI & Automation:</strong> OpenAI API, Claude API, Gemini API, LangChain, XGBoost, SHAP, Whisper, multi-agent systems</p>
+          <p><strong>Web & Tools:</strong> Next.js 14, React, Node.js, Tailwind CSS, WebRTC, WebSockets, REST APIs, Git, GitHub Actions, Docker, Vercel</p>
+          <p><strong>Data & Infrastructure:</strong> PostgreSQL, Supabase, Firebase, Neon Postgres, Redis, workflow automation, database automation</p>
+          <p><strong>Media & Systems:</strong> FFmpeg, CodeMirror 6, tree-sitter, NetworkX</p>
+        </div>
+      </section>
 
-        <!-- Experience -->
-        <section>
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="item-header">
-                    <span class="role">Co-Founder & Lead Engineer</span>
-                    <span class="date-location">Vibein / ArenaHQ | Jan 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Led full-stack architecture and feature iterations for two active web applications using Node.js, WebSockets, and WebRTC.</li>
-                    <li>Conducted 50+ user interviews to iterate features, achieving 20% active retention across 1,621 users.</li>
-                    <li>Managed deployment pipelines on Vercel and Supabase, implementing secure database-level access controls.</li>
-                </ul>
-            </div>
+      <section class="section">
+        <div class="section-title">Experience</div>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <span class="role">IT Coordinator & Publicity Chair</span>
-                    <span class="date-location">NSLS Executive Board | Sep 2024 – Present</span>
-                </div>
-                <ul>
-                    <li>Manage chapter digital directories, tracking pipelines, and IT infrastructure for a collegiate leadership organization.</li>
-                    <li>Implemented communication scripts and recruitment dashboards, streamlining member onboarding workflows.</li>
-                </ul>
-            </div>
+        <div class="entry">
+          <div class="row"><div class="title">Co-Founder & Lead Engineer, VibeIn / ArenaHQ</div><div class="date">Jan 2025 - Present</div></div>
+          <div class="subline">Vermillion, South Dakota</div>
+          <ul>
+            <li>Built and launched AI-powered platforms using Next.js, Supabase, WebRTC, and Gemini API, supporting 1,621 registered users across pre-beta products.</li>
+            <li>Designed workflow-based features and communication systems using Twilio and Supabase Realtime, improving user engagement and operational speed.</li>
+            <li>Identified inefficiencies in authentication, API integrations, and notifications, resolving 8+ critical production issues under a hard deadline.</li>
+            <li>Coordinated 50+ user interviews and translated stakeholder feedback into product improvements, workflow updates, and data-driven recommendations.</li>
+            <li>Maintained deployment pipelines and sustained 99%+ uptime across both platforms.</li>
+          </ul>
+        </div>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <span class="role">Creative Director & Brand Consultant</span>
-                    <span class="date-location">Freelance | Jun 2019 – Dec 2023</span>
-                </div>
-                <ul>
-                    <li>Managed brand identities and distribution campaigns for 10+ internet creators and small businesses.</li>
-                    <li>Maintained 100% client retention, coordinating asset logistics and brand channels under strict NDAs.</li>
-                </ul>
-            </div>
+        <div class="entry">
+          <div class="row"><div class="title">Production Operations Staff, USD Athletics</div><div class="date">Aug 2025 - Present</div></div>
+          <div class="subline">University of South Dakota | Part-Time On-Campus</div>
+          <ul>
+            <li>Operated live-event systems and coordinated crew workflows to maintain timing accuracy and smooth execution under strict real-time constraints.</li>
+          </ul>
+        </div>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <span class="role">Production Operations Staff</span>
-                    <span class="date-location">USD Athletics | Aug 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Direct live-event audio, stadium display boards, and broadcast cues under strict real-time production parameters.</li>
-                </ul>
-            </div>
-        </section>
+        <div class="entry">
+          <div class="row"><div class="title">IT Coordinator & Publicity Chair, NSLS Executive Board</div><div class="date">Sep 2024 - Present</div></div>
+          <div class="subline">University of South Dakota</div>
+          <ul>
+            <li>Built member tracking workflows, communication scripts, and recruitment dashboards to improve data accuracy and operational efficiency.</li>
+            <li>Streamlined onboarding workflows and supported internal communications across chapter stakeholders.</li>
+          </ul>
+        </div>
+      </section>
 
-        <!-- Selected Projects -->
-        <section>
-            <h2>Selected Projects & Research</h2>
+      <section class="section">
+        <div class="section-title">Projects</div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="role">PRISM — PR Risk Intelligence & Structural Modeling (Research)</span>
-                    <span class="date-location">2026</span>
-                </div>
-                <ul>
-                    <li>Designed an ML system predicting post-merge engineering risk from pull request structural signals, utilizing XGBoost over 45 engineered features (AST complexity via tree-sitter, dependency graphs via NetworkX).</li>
-                    <li>Implemented explainability workflows via SHAP TreeExplainer, achieving model validation target (AUC &gt;= 0.80) and keeping cross-repository generalization gap ΔAUC &lt; 0.05.</li>
-                    <li>Authored two formal research proposals (USD faculty version and MSU mentorship version) with full mathematical appendices.</li>
-                </ul>
-            </div>
+        <div class="entry">
+          <div class="row"><div class="title">WTFcode, Natural Language Dev CLI</div><div class="date">2026</div></div>
+          <ul>
+            <li>Built a multi-agent autonomous tool that moves from idea to prototype to execution using natural language, enabling multi-step reasoning and code automation.</li>
+            <li>Designed workflow pipelines that translate complex requests into structured steps, automation, and code generation.</li>
+          </ul>
+        </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="role">COGN — Cognitive Integrity Layer for AI-Assisted Codebases</span>
-                    <span class="date-location">2026</span>
-                </div>
-                <ul>
-                    <li>Coined the concept of "cognitive drift"—shifts in reasoning patterns introduced by AI-generated code.</li>
-                    <li>Designed three core primitives (cogn.signature, cogn.transfer, cogn.integrity) and a CI/CD GitHub Action that scores PRs for cognitive coherence against repository baselines.</li>
-                    <li>Positioned as open-source developer tooling; launched manual Cognitive Audit Reports targeting early adopter developers.</li>
-                </ul>
-            </div>
+        <div class="entry">
+          <div class="row"><div class="title">EKO, AI Dubbing & Localization Platform</div><div class="date">2026 - Present</div></div>
+          <ul>
+            <li>Designed an AI-powered audio workflow using Python, FFmpeg, and Whisper-style transcription pipelines for translation, voice preservation, and timing alignment.</li>
+            <li>Architected queue-based job processing and a Next.js review interface to support parallel processing and multilingual export orchestration.</li>
+          </ul>
+        </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="role">Vibein (vibein.us) — Anonymous Professional Network</span>
-                    <span class="date-location">2025</span>
-                </div>
-                <ul>
-                    <li>Designed and built an anonymous matchmaking tool relying on peer recommendation matrices and mutual intent.</li>
-                    <li>Scaled network to a combined registry of 1,621 users pre-beta with 20% active user retention using campus club distribution playbooks.</li>
-                </ul>
-            </div>
+        <div class="entry">
+          <div class="row"><div class="title">PRISM, PR Risk Intelligence & Structural Modeling</div><div class="date">2026</div></div>
+          <ul>
+            <li>Engineered an ML pipeline using 45 features, tree-sitter parsing, and NetworkX graphs to predict engineering risk from code changes.</li>
+            <li>Implemented XGBoost and SHAP explainability to produce data-backed recommendations with AUC ≥ 0.80 and a cross-repository gap below 0.05.</li>
+          </ul>
+        </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="role">ArenaHQ (arenahq.us) — Live Competitive Coding Platform</span>
-                    <span class="date-location">2025</span>
-                </div>
-                <ul>
-                    <li>Created a live evaluation tournament engine with CodeMirror 6, Supabase WebSockets, and P2P camera authentication.</li>
-                    <li>Designed recruiter fast-track workflows, bypassing traditional screening loops.</li>
-                </ul>
-            </div>
-        </section>
-    </div>
+        <div class="entry">
+          <div class="row"><div class="title">COGN, Cognitive Integrity Layer for AI-Assisted Codebases</div><div class="date">2026</div></div>
+          <ul>
+            <li>Built a GitHub Action that evaluates pull requests for reasoning consistency and repository integrity in AI-assisted codebases.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="row"><div class="title">ALASKA, Encrypted AI Assistant for Military Veterans</div><div class="date">2026</div></div>
+          <ul>
+            <li>Developed an encrypted assistant with AES-256-GCM, crisis detection, and routing logic in 48 hours, earning a top-10 hackathon finish.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Leadership & Activities</div>
+        <ul>
+          <li>USD INFORMS, authored a 10-week strategic operational plan and built a chapter admin portal.</li>
+          <li>NSLS Executive Board, IT Coordinator & Publicity Chair.</li>
+          <li>USD Marketing Club, Member.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Awards & Certifications</div>
+        <ul>
+          <li>Top-10 Hackathon Finish, ALASKA.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
